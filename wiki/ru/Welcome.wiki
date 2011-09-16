@@ -1,7 +1,8 @@
-#summary Добро пожаловать!
+#summary russian
 #labels Featured
 
 = Introduction =
+RU
 
 Add your content here.
 
