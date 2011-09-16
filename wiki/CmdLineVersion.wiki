@@ -1,5 +1,4 @@
 #summary Cmdline version (apg-cl.exe)
-#labels Deprecated
 
 = Introduction =
 
