@@ -3,6 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
         Title="Awesome Password Generator" Width="384" SizeToContent="Height" ResizeMode="CanMinimize" Closed="Window_Closed" Height="710.52">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="myBrush" Color="#FF1C45B6" />
+        
+        <Style x:Key="hlStyle1" TargetType="{x:Type Hyperlink}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="TextBlock.TextDecorations" Value="Underline" />
+                    <Setter Property="Foreground" Value="#FF0000FF" />
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+        </Style>
+    </Window.Resources>
+    
     <StackPanel>
         <Expander Name="expPassword" Header="Password" IsExpanded="True" Expanded="expPassword_Expanded" Collapsed="expPassword_Collapsed">
             <StackPanel Margin="4" Orientation="Horizontal">
@@ -122,14 +137,13 @@
         </Expander>
         <Expander Name="expCmdline" Header="Command line builder" IsExpanded="False" Expanded="expCmdline_Expanded" Collapsed="expCmdline_Collapsed">
             <StackPanel Orientation="Vertical" Margin="4">
-                <StackPanel Margin="4" Orientation="Horizontal">
-                    <Image Source="res\command_prompt_x48.ico" VerticalAlignment="Top" />
-                    <StackPanel Orientation="Vertical">
-                        <Label>
-                            <TextBlock TextWrapping="Wrap">todo: </TextBlock>
-                        </Label>
-                    </StackPanel>
-                </StackPanel>
+                <DockPanel Margin="4" LastChildFill="False">
+                    <Image Source="res\command_prompt_x48.ico" VerticalAlignment="Top" Stretch="None" />
+                    <Separator Width="8" Visibility="Hidden" />
+                    <Label>
+                        <TextBlock Margin="-5" TextWrapping="Wrap">Command lines below includes all options you set up before: password length, quantity, charsets and other. Run apg-cl.exe with generated cmdline parameters.</TextBlock>
+                    </Label>
+                </DockPanel>
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                     <Label Width="75">Destination:</Label>
                     <RadioButton Name="cmdCmdlineFile" Margin="6,5,0,0" IsChecked="True" Checked="cmdCmdlineFile_Checked">File</RadioButton>
@@ -148,13 +162,19 @@
                     </Button>
                     <TextBox Name="txtCmdlineShort" />
                 </DockPanel>
-                <Label>todo: link to Usage examples in batch, PowerShell and C#</Label>
+                <TextBlock>
+                    <Hyperlink NavigateUri="http://code.google.com/p/awesome-password-generator/wiki/CmdLineVersion" Style="{StaticResource hlStyle1}" RequestNavigate="hyperlink_RequestNavigate">
+                        <TextBlock>Usage examples in batch, PowerShell and C#</TextBlock>
+                        <Image Source="res\link_x16.ico" VerticalAlignment="Top" Stretch="None" />
+                    </Hyperlink>
+                </TextBlock>
             </StackPanel>
         </Expander>
         <Expander Name="expAbout" Header="About..." IsExpanded="False" Expanded="expAbout_Expanded" Collapsed="expAbout_Collapsed">
             <StackPanel Orientation="Vertical" Margin="4">
                 <StackPanel Margin="4" Orientation="Horizontal">
                     <Image Source="res\logoff_x48.ico" VerticalAlignment="Top" />
+                    <Separator Width="4" Visibility="Hidden" />
                     <StackPanel Orientation="Vertical">
                         <Label Name="lblAbout1">About...</Label>
                         <Label Name="lblAbout2" xml:space="preserve">Copyright (c) 2011  ____alex</Label>
@@ -198,3 +218,4 @@
         </Expander>
     </StackPanel>
 </Window>
+

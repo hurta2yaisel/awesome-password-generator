@@ -1238,17 +1238,28 @@ namespace Awesome_Password_Generator
 
         private void hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            string appPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            string eula = appPath + "\\" + e.Uri.OriginalString;
-            if (!File.Exists(eula))
+            if (e.Uri.IsAbsoluteUri)
             {
-                System.Windows.MessageBox.Show("ERROR: License file \"" + e.Uri.OriginalString + "\" is missing!",
-                    System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
-                    MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+                // open a webpage
 
-            Process.Start(new ProcessStartInfo(eula));
+                Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            }
+            else
+            {
+                // open a file
+
+                string appPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                string eula = appPath + "\\" + e.Uri.OriginalString;
+                if (!File.Exists(eula))
+                {
+                    System.Windows.MessageBox.Show("ERROR: License file \"" + e.Uri.OriginalString + "\" is missing!",
+                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                Process.Start(new ProcessStartInfo(eula));
+            }
 
             e.Handled = true;
         }
