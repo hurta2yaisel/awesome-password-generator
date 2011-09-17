@@ -5,9 +5,26 @@
         Title="Awesome Password Generator" Width="384" SizeToContent="Height" ResizeMode="CanMinimize" Closed="Window_Closed" Height="710.52">
 
     <Window.Resources>
-        <SolidColorBrush x:Key="myBrush" Color="#FF1C45B6" />
-        
         <Style x:Key="hlStyle1" TargetType="{x:Type Hyperlink}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#FF0000FF" />
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+        </Style>
+
+        <Style x:Key="hlStyle2" TargetType="{x:Type Hyperlink}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#FF0000FF" />
+                    <Setter Property="TextBlock.TextDecorations" Value="Underline" />
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+        </Style>
+
+        <Style x:Key="tbStyle1" TargetType="{x:Type TextBlock}">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="TextBlock.TextDecorations" Value="Underline" />
@@ -163,8 +180,8 @@
                     <TextBox Name="txtCmdlineShort" />
                 </DockPanel>
                 <TextBlock>
-                    <Hyperlink NavigateUri="http://code.google.com/p/awesome-password-generator/wiki/CmdLineVersion" Style="{StaticResource hlStyle1}" RequestNavigate="hyperlink_RequestNavigate">
-                        <TextBlock>Usage examples in batch, PowerShell and C#</TextBlock>
+                    <Hyperlink Style="{StaticResource hlStyle1}" NavigateUri="http://code.google.com/p/awesome-password-generator/wiki/CmdLineVersion" RequestNavigate="hyperlink_RequestNavigate">
+                        <TextBlock Style="{StaticResource tbStyle1}">Usage examples in batch, PowerShell and C#</TextBlock>
                         <Image Source="res\link_x16.ico" VerticalAlignment="Top" Stretch="None" />
                     </Hyperlink>
                 </TextBlock>
@@ -195,7 +212,7 @@
                             <TreeViewItem IsExpanded="True">
                                 <TreeViewItem.Header>
                                     <TextBlock>
-                                        <Hyperlink NavigateUri="gpl-3.0.txt" RequestNavigate="hyperlink_RequestNavigate">GNU General Public License v3</Hyperlink>
+                                        <Hyperlink Style="{StaticResource hlStyle2}" NavigateUri="gpl-3.0.txt" RequestNavigate="hyperlink_RequestNavigate">GNU General Public License v3</Hyperlink>
                                     </TextBlock>
                                 </TreeViewItem.Header>
                             </TreeViewItem>
@@ -206,7 +223,7 @@
                                     <StackPanel Orientation="Vertical">
                                         <TextBlock>Extended WPF Toolkit (WPFToolkit.Extended.dll)</TextBlock>
                                         <TextBlock>
-                                            <Hyperlink NavigateUri="Ms-PL.txt" RequestNavigate="hyperlink_RequestNavigate">Microsoft Public License (Ms-PL)</Hyperlink>
+                                            <Hyperlink Style="{StaticResource hlStyle2}" NavigateUri="Ms-PL.txt" RequestNavigate="hyperlink_RequestNavigate">Microsoft Public License (Ms-PL)</Hyperlink>
                                         </TextBlock>
                                     </StackPanel>
                                 </TreeViewItem.Header>
