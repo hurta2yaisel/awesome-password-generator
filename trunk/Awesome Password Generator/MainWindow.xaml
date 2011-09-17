@@ -135,11 +135,6 @@
                     <RadioButton Name="cmdCmdlineFile" Margin="6,5,0,0" IsChecked="True" Checked="cmdCmdlineFile_Checked">File</RadioButton>
                     <RadioButton Name="cmdCmdlineOutput" Margin="6,5,0,0" Checked="cmdCmdlineOutput_Checked">Output</RadioButton>
                 </StackPanel>
-                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                    <Label Width="75" Name="lblForUsingIn">For use in:</Label>
-                    <RadioButton Margin="6,5,0,0" IsChecked="True">cmd/batch script</RadioButton>
-                    <RadioButton Margin="6,5,0,0">PowerShell</RadioButton>
-                </StackPanel>
                 <Label>Here are long and short versions, you can use any of them.</Label>
                 <DockPanel>
                     <Button Name="cmdCmdlineCopyLong" DockPanel.Dock="Right" Width="24" Margin="2,0,0,0" Click="cmdCmdlineCopyLong_Click">

@@ -830,8 +830,8 @@ namespace Awesome_Password_Generator
             }
 
             // charsets
-            clLong += "--charsets:";
-            clShort += "-c:";
+            clLong += "\"--charsets:";
+            clShort += "\"-c:";
             int c;
             switch (lastExpanded_PswType)
             {
@@ -866,8 +866,8 @@ namespace Awesome_Password_Generator
                     }
                     break;
             }
-            clLong += " ";
-            clShort += " ";
+            clLong += "\" ";
+            clShort += "\" ";
 
             // user defined charset
             switch (lastExpanded_PswType)
@@ -875,8 +875,8 @@ namespace Awesome_Password_Generator
                 case pswType.Password:
                     if ((bool)chkPswUserDefinedCharacters.IsChecked)
                     {
-                        clLong += "--userDefinedCharset:\"" + txtPswUserDefinedCharacters.Text + "\" ";
-                        clShort += "-udc:\"" + txtPswUserDefinedCharacters.Text + "\" ";
+                        clLong += "\"--userDefinedCharset:" + txtPswUserDefinedCharacters.Text + "\" ";
+                        clShort += "\"-udc:" + txtPswUserDefinedCharacters.Text + "\" ";
                     }
                     break;
                 case pswType.WPA:
@@ -884,8 +884,8 @@ namespace Awesome_Password_Generator
                     {
                         if ((bool)chkWpaUserDefinedCharacters.IsChecked)
                         {
-                            clLong += "--userDefinedCharset:\"" + txtWpaUserDefinedCharacters.Text + "\" ";
-                            clShort += "-udc:\"" + txtWpaUserDefinedCharacters.Text + "\" ";
+                            clLong += "\"--userDefinedCharset:" + txtWpaUserDefinedCharacters.Text + "\" ";
+                            clShort += "\"-udc:" + txtWpaUserDefinedCharacters.Text + "\" ";
                         }
                     }
                     break;
@@ -932,8 +932,8 @@ namespace Awesome_Password_Generator
             // destination
             if ((bool)cmdCmdlineFile.IsChecked)
             {
-                clLong += "--destination:file:";
-                clShort += "-d:f:";
+                clLong += "\"--destination:file:";
+                clShort += "\"-d:f:";
                 if ((bool)rbBulkAppend.IsChecked)
                 {
                     clLong += "append:";
@@ -944,8 +944,8 @@ namespace Awesome_Password_Generator
                     clLong += "replace:";
                     clShort += "r:";
                 }
-                clLong += "\"" + txtBulkFile.Text + "\"";
-                clShort += "\"" + txtBulkFile.Text + "\"";
+                clLong += txtBulkFile.Text + "\"";
+                clShort += txtBulkFile.Text + "\"";
             }
             else if ((bool)cmdCmdlineOutput.IsChecked)
             {
