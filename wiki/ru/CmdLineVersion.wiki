@@ -34,6 +34,7 @@ for /f "usebackq delims=" %%i in (`"cmdline test.exe"`) do (
 }}}
 
 <code language="cmd">@echo off
+
 for /f "usebackq delims=" %%i in (`"cmdline test.exe"`) do (
 	echo *** %%i ***
 )
@@ -45,9 +46,24 @@ for /f "usebackq delims=" %%i in (`"cmdline test.exe"`) do (
 )
 </code>
 
+(отметить двойные скобки)
+
+=== PowerShell ===
+
+=== C# ===
+
+
+== Ограничения ==
+
+  * Невозможность использования Unicode-символов в качестве пользовательского набора символов и в имени файла;
+  * Проблемы со спец-символами
+
+
+
 = Introduction =
 
 Add your content here.
+
 
 
 = Details =
