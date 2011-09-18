@@ -23,6 +23,31 @@ apg-cl.exe -q:5 -l:10 "-c:ruL,ruU,digits" -d:c
 
 == Примеры на batch, PowerShell и C# ==
 
+=== batch-скрипт ===
+
+{{{
+@echo off
+
+for /f "usebackq delims=" %%i in (`"cmdline test.exe"`) do (
+	echo *** %%i ***
+)
+}}}
+
+<code language="cmd">
+@echo off
+
+for /f "usebackq delims=" %%i in (`"cmdline test.exe"`) do (
+	echo *** %%i ***
+)
+</code>
+
+<code language="bat">
+@echo off
+
+for /f "usebackq delims=" %%i in (`"cmdline test.exe"`) do (
+	echo *** %%i ***
+)
+</code>
 
 = Introduction =
 
