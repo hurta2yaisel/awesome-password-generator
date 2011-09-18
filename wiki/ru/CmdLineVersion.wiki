@@ -29,7 +29,7 @@ Powershell
 
 powerShell
 
-PowerShell
+`PowerShell`
 
 ==Примеры на batch, PowerShell и C#==
 
