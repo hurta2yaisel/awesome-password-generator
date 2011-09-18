@@ -4,6 +4,7 @@
 
 = Консольная версия (apg-cl.exe) =
 <font size="3" color="red">This is some text!</font>
+<font color="red">This is some text!</font>
 Создана специально для использования в скриптах и обладает тем же функционалом, что и GUI-версия генератора.
 
 == Использование ==
