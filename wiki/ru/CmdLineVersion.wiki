@@ -33,26 +33,34 @@ apg-cl.exe -q:5 -l:10 "-c:ruL,ruU,digits" -d:c
 || 2 || Невозможно зарезервировать память ||
 || 3 || Невозможно сохранить пароли в файл ||
 
-<font color="red">Внимание:</font> если при выполнении `agp-cl.exe` возникла ошибка, то она будет выведена на экран (в консоль). Учтите это при генерации паролей в консоль - есть шанс получить вместо паролей сообщение об ошибке! Проверяйте errorlevel после вызова программы!
+<font color="red">Внимание:</font> если при выполнении `agp-cl.exe` возникла ошибка, то она будет выведена на экран (в консоль). Учтите это при генерации паролей в консоль - есть шанс получить вместо паролей сообщение об ошибке! Проверяйте `errorlevel` после вызова программы!
 
 == Примеры на batch, `PowerShell` и C# ==
 
 === Командная строка и batch-скрипт ===
 
-Следующая команда сгенерирует 5 паролей и запишет их в файл c:\passwords.txt:
+Генерируем 5 паролей в файл c:\passwords.txt:
 {{{
+@echo off
+
 apg-cl.exe -q:5 -l:10 "-c:enL,digits" -ett -ecc "-d:f:r:c:\passwords.txt"
+
+if %errorlevel%==0 goto okey
+echo.
+echo Some error!
+
+:okey
 }}}
 
-Если же пароли надо обрабатывать в скрипте "на лету", не используя промежуточный файл, сделать это можно так:
+Если пароли надо обрабатывать в скрипте "на лету", не используя промежуточный файл, сделать это можно так:
 {{{
 @echo off
 setlocal enabledelayedexpansion
 
-set c=1
+set c=0
 for /f "usebackq delims=" %%i in (`"apg-cl.exe -q:5 -l:10 -c:enL,digits -d:c"`) do (
-	echo Password #!c!: %%i
 	set /a c=!c!+1
+	echo Password #!c!: %%i
 )
 }}}
 Результат:
@@ -68,10 +76,34 @@ Password #5: dmp4tj7h5o
 
 === `PowerShell` ===
 
-Генерим 5 паролей
+Генерируем 5 паролей в файл c:\passwords.txt:
+{{{
+./apg-cl.exe -q:5 -l:10 "-c:enL,digits" -ett -ecc "-d:f:r:c:\passwords.txt"
+
+if($LASTEXITCODE -ne 0)
+{
+	write-host "`nSome error!" -foreground red
+	exit
+}
+}}}
+
+Обходимся без файла - обрататываем пароли в скрипте:
 {{{
 $passwords=./apg-cl.exe -q:5 -l:10 "-c:enL,digits" -ett -ecc -d:c
 
+if($LASTEXITCODE -ne 0)
+{
+	write-host "Some error!" -foreground red
+	$passwords	# display apg-cl output
+	exit
+}
+
+$c=0
+foreach($password in $passwords)
+{
+	$c++
+	echo "Password $c`: $password"
+}
 }}}
 
 === C# ===
