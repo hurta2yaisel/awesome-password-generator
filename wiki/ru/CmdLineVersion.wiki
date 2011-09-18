@@ -34,14 +34,12 @@ for /f "usebackq delims=" %%i in (`"cmdline test.exe"`) do (
 }}}
 
 <code language="cmd">@echo off
-
 for /f "usebackq delims=" %%i in (`"cmdline test.exe"`) do (
 	echo *** %%i ***
 )
 </code>
 
 <code language="bat">@echo off
-
 for /f "usebackq delims=" %%i in (`"cmdline test.exe"`) do (
 	echo *** %%i ***
 )
