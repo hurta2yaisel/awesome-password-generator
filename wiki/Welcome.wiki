@@ -1,6 +1,12 @@
 #summary Welcome!
 #labels Featured
 
+cmdline[CmdLineVersion]
+
+cmdline[CmdLineVersion ?]
+
+!cmdline[CmdLineVersion ?]
+
 = Introduction =
 
 Add your content here.
