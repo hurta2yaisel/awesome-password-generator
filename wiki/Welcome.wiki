@@ -1,6 +1,17 @@
 #summary Welcome!
 #labels Featured
 
+<table border="0">
+<tr>
+  <td>First</td>
+  <td>Row</td>
+</tr>   
+<tr>
+  <td>Second</td>
+  <td>Row</td>
+</tr>
+</table>
+
 cmdline[CmdLineVersion]
 
 cmdline[CmdLineVersion ?]
