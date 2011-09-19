@@ -41,3 +41,6 @@ http://code.google.com/p/awesome-password-generator/source/browse/wiki/pics/sing
 
 7
 single.png
+
+8
+[http://awesome-password-generator.googlecode.com/svn/wiki/pics/single.png]
