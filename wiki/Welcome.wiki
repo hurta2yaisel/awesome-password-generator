@@ -3,6 +3,10 @@
 
 || <g:plusone size="medium"></g:plusone> || === language selection === || http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png ||
 
+text
+<hr/>
+text
+
 ----
 
 ^ Heading 1      ^ Heading 2       ^ Heading 3          ^
