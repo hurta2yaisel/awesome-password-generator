@@ -32,3 +32,12 @@ pics/single.png
 
 4
 http://code.google.com/p/awesome-password-generator/wiki/pics/single.png
+
+5
+[http://code.google.com/p/awesome-password-generator/source/browse/wiki/pics/single.png]
+
+6
+http://code.google.com/p/awesome-password-generator/source/browse/wiki/pics/single.png
+
+7
+single.png
