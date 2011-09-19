@@ -1,10 +1,10 @@
 #summary Welcome!
 #labels Featured
 
-<table border="0">
+<table border="0" width="100%">
 <tr>
-  <td>First</td>
-  <td>Row</td>
+  <td width="70%">http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png</td>
+  <td width=100>Row</td>
 </tr>   
 <tr>
   <td>Second</td>
