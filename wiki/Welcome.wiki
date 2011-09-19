@@ -3,18 +3,18 @@
 
 <table border="0" width="100%">
 <tr>
-  <td>Description
-For users: 
+  <td>Description<br/>
+For users:<br/>
 easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases.
-Just launch the generator and a shiny new password will be copied in the clipboard automatically!
+Just launch the generator and a shiny new password will be copied in the clipboard automatically!</br>
 - Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;
 - Wi-Fi (WPA) passphrases for your wireless devices;
 - Easy-to-type passwords like p2Dzu.uszx, not c57]"/z&Q9;
 - Passwords without confusing characters like 0 (zero) and O (oh);
 
-For system administrators/IT-professionals:
+For system administrators/IT-professionals:<br/>
 powerfull tool for single or bulk password generation, with command line version 
-for using from scripts (examples for batch and PowerShell included :).
+for using from scripts (examples for batch and PowerShell included :).<br/>
 - GUI single/bulk password/wi-fi passphrase generation
 - Easy-to-type and Exclude confusing characters options
 - Quick and secure: "Copy to clipboard automatically" and "Clear clipboard on exit" options
