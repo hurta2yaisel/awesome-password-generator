@@ -3,7 +3,7 @@
 
 <table border="0" width="100%">
 <tr>
-  <td width="70%"><img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png" /></td>
+  <td width="70%"></td>
   <td width=100>Row</td>
 </tr>   
 <tr>
