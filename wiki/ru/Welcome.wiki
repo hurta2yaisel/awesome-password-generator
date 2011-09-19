@@ -26,3 +26,9 @@
 
 2
 [http://code.google.com/p/awesome-password-generator/wiki/pics/single.png]
+
+3
+pics/single.png
+
+4
+http://code.google.com/p/awesome-password-generator/wiki/pics/single.png
