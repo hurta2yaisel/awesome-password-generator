@@ -3,13 +3,29 @@
 
 <table border="0" width="100%">
 <tr>
-  <td><img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png" /></td>
-  <td>Row</td>
+  <td>Description
+For users: 
+easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases.
+Just launch the generator and a shiny new password will be copied in the clipboard automatically!
+- Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;
+- Wi-Fi (WPA) passphrases for your wireless devices;
+- Easy-to-type passwords like p2Dzu.uszx, not c57]"/z&Q9;
+- Passwords without confusing characters like 0 (zero) and O (oh);
+
+For system administrators/IT-professionals:
+powerfull tool for single or bulk password generation, with command line version 
+for using from scripts (examples for batch and PowerShell included :).
+- GUI single/bulk password/wi-fi passphrase generation
+- Easy-to-type and Exclude confusing characters options
+- Quick and secure: "Copy to clipboard automatically" and "Clear clipboard on exit" options
+- Command line: apg-cl.exe has same functionality as GUI version. Do not mess with 
+  command line options - just run GUI, set up password length, quantity, charsets and other
+  options as you wish, and click "Command line builder". Run apg-cl.exe with generated
+  command line parameters!
+- Open Source: use PasswordGenerator class in your applications!
+</td>
+  <td><img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png" />Download!</td>
 </tr>   
-<tr>
-  <td>Second</td>
-  <td>Row</td>
-</tr>
 </table>
 
 cmdline[CmdLineVersion]
