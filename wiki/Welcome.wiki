@@ -1,7 +1,7 @@
 #summary Welcome!
 #labels Featured
 
-|| <g:plusone size="medium"></g:plusone> || <table border="1"><tr/></table> === language selection === ---- || http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png ||
+|| <g:plusone size="medium"></g:plusone> || <table border="1"><tr/></table> === language selection === ---- <tr width="100%"/> || http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png ||
 
 ----
 
