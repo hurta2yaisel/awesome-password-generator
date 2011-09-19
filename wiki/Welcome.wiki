@@ -24,7 +24,7 @@ for using from scripts (examples for batch and PowerShell included :).<br/>
 <li>Open Source: use PasswordGenerator class in your applications!</li>
 </ol>
 </td>
-  <td><img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png" />Download!</td>
+  <td><img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png" />Download!</td>
 </tr>   
 </table>
 
