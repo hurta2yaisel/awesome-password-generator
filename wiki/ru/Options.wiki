@@ -1,0 +1,4 @@
+Easy to type password
+Exclude confusing characters
+(?) Copy to clipboard automatically
+(?) Clear clipboard on exit
