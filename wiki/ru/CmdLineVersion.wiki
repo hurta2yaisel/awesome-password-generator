@@ -10,6 +10,8 @@
 
 == Использование ==
 
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/cmdlineBuilderUsage.png
+
 Для этого нужно:
   * Запустить GUI-версию (`Awesome Password Generator.exe`), настроить там длину пароля, количество, используемые наборы символов и прочее;
   * Кликнуть `Command line builder`;
