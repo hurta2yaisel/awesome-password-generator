@@ -3,11 +3,11 @@
 = Стойкость пароля =
 В программе есть индикатор стойкости пароля
 
-|| *Время полного перебора, дней* || *Стойкость пароля* ||
-|| 0 - 14 || http://awesome-password-generator.googlecode.com/svn/wiki/pics/weak.png (слабый) ||
-|| 14 - 90 || http://awesome-password-generator.googlecode.com/svn/wiki/pics/normal.png (нормальный) ||
-|| 90 - 365 || http://awesome-password-generator.googlecode.com/svn/wiki/pics/good.png (хороший) ||
-|| >365 || http://awesome-password-generator.googlecode.com/svn/wiki/pics/excellent.png (отличный) ||
+|| *Стойкость пароля* || *Время полного перебора, дней* ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/weak.png (слабый) || 0 - 14 ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/normal.png (нормальный) || 14 - 90 ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/good.png (хороший) || 90 - 365 ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/excellent.png (отличный) || >365 ||
 
 Скорость перебора принимается равной 1.33 миллиарда паролей в секунду - это скорость перебора NTLM паролей при помощи видеокарты NVIDIA !GeForce GTX 295, т.е. на одном домашнем компьютере.
 
