@@ -15,4 +15,4 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/easytotype.png
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/excludeConfusingCharacters.png
 
-Т.к. взломщик не знает, что вы сгенерировали пароль с такой опцией, можно считать, что стойкость пароля не уменьшается.
+Пока взломщик не знает, что вы сгенерировали пароль с такой опцией, можно считать, что стойкость пароля не уменьшается.
