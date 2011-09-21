@@ -13,10 +13,9 @@
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/cmdlineBuilderUsage.png
 
 Для этого нужно:
-  * Запустить GUI-версию (`Awesome Password Generator.exe`), настроить там длину пароля, количество, используемые наборы символов и прочее;
-  * Кликнуть `Command line builder`;
-  * Выбрать вариант вывода паролей: в консоль или в файл (имя файла берется из раздела `Bulk password generation`);
-  * Запустить `apg-cl.exe` с одной из сгенерированных строк в качестве параметров, например команда
+  # Запустить GUI-версию (`Awesome Password Generator.exe`), настроить там длину пароля, количество, используемые наборы символов и прочее;
+  # Кликнуть `Command line builder`, выбрать вариант вывода паролей: в консоль или в файл (имя файла берется из раздела `Bulk password generation`);
+  # Запустить `apg-cl.exe` с одной из сгенерированных строк в качестве параметров, например команда
 {{{
 apg-cl.exe -q:5 -l:10 "-c:enL,digits" -d:c
 }}}
