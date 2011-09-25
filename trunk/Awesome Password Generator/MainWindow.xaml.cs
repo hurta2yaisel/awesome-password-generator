@@ -947,10 +947,10 @@ namespace Awesome_Password_Generator
                 clLong += txtBulkFile.Text + "\"";
                 clShort += txtBulkFile.Text + "\"";
             }
-            else if ((bool)cmdCmdlineOutput.IsChecked)
+            else if ((bool)cmdCmdlineConsole.IsChecked)
             {
-                clLong += "--destination:output";
-                clShort += "-d:o";
+                clLong += "--destination:console";
+                clShort += "-d:c";
             }
 
             txtCmdlineLong.Text = clLong;
@@ -1222,7 +1222,7 @@ namespace Awesome_Password_Generator
 
         //--------------------------------------------------
 
-        private void cmdCmdlineOutput_Checked(object sender, RoutedEventArgs e)
+        private void cmdCmdlineConsole_Checked(object sender, RoutedEventArgs e)
         {
             GenerateCommandLines();
         }

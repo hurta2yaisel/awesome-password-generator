@@ -16,7 +16,7 @@ namespace apg_cl
         static Hashtable CommandLineArgs = new Hashtable();    // Indexed command line args
 
         static PasswordGenerator.PasswordGenerationOptions pgo = new PasswordGenerator.PasswordGenerationOptions();
-        private enum DestinationType { output, file };
+        private enum DestinationType { console, file };
         static private DestinationType destinationType;
         static private string fileName;
         static private bool appendToFile;   // or replace if FALSE
@@ -179,8 +179,8 @@ namespace apg_cl
             string destType = GetLongArgOrValueName(dest.Split(':')[0]);
             switch (destType)
             {
-                case "output":
-                    destinationType = DestinationType.output;
+                case "console":
+                    destinationType = DestinationType.console;
                     break;
                 case "file":
                     if (dest.Split(':').Length < 3)
@@ -239,7 +239,7 @@ namespace apg_cl
             names.Add("-ett", "--easytotype");
             names.Add("-ecc", "--excludeConfusingCharacters");
             names.Add("-d", "--destination");
-            names.Add("o", "output");
+            names.Add("c", "console");
             names.Add("f", "file");
             names.Add("a", "append");
             names.Add("r", "replace");
@@ -288,7 +288,7 @@ namespace apg_cl
         {
             switch (destinationType)
             {
-                case DestinationType.output:
+                case DestinationType.console:
                     for (int i = 0; i < pgo.quantity; i++)
                         Console.WriteLine(pswgen.GeneratePassword());
                     break;
