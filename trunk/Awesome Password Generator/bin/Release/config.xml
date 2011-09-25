@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config Version="1.0">
+  <MainWindowPosition Top="297" Left="813" />
+  <Controls>
+    <Expander Name="expPassword" IsExpanded="False">
+      <Control Name="udPswLength" Value="10" />
+      <Control Name="chkPswLowercase" IsChecked="True" />
+      <Control Name="chkPswUppercase" IsChecked="True" />
+      <Control Name="chkPswDigits" IsChecked="True" />
+      <Control Name="chkPswSpecial" IsChecked="True" />
+      <Control Name="chkPswUserDefinedCharacters" IsChecked="False" />
+      <Control Name="txtPswUserDefinedCharacters" Text="" />
+    </Expander>
+    <Expander Name="expWPA" IsExpanded="True">
+      <Control Name="rbWpaPassphrase" IsChecked="True" />
+      <Control Name="sldWpaLength" Value="63" />
+      <Control Name="udWpaLength" Value="63" />
+      <Control Name="chkWpaLowercase" IsChecked="True" />
+      <Control Name="chkWpaUppercase" IsChecked="True" />
+      <Control Name="chkWpaDigits" IsChecked="True" />
+      <Control Name="chkWpaSpecial" IsChecked="True" />
+      <Control Name="chkWpaUserDefinedCharacters" IsChecked="False" />
+      <Control Name="txtWpaUserDefinedCharacters" Text="" />
+      <Control Name="rbWpa256bitKey" IsChecked="False" />
+    </Expander>
+    <Expander Name="expSingleGeneration" IsExpanded="False">
+      <Control Name="chkSingle_EasyToType" IsChecked="True" />
+      <Control Name="chkSingle_ExcludeConfusingChars" IsChecked="True" />
+      <Control Name="chkCopyToClipboardAutomatically" IsChecked="True" />
+      <Control Name="chkClearClipboardOnExit" IsChecked="True" />
+    </Expander>
+    <Expander Name="expBulkGeneration" IsExpanded="True">
+      <Control Name="txtBulkFile" Text="c:\passwords.txt" />
+      <Control Name="rbBulkAppend" IsChecked="False" />
+      <Control Name="rbBulkReplace" IsChecked="True" />
+      <Control Name="udBulkQuantity" Value="1000" />
+      <Control Name="chkBulkEasyToType" IsChecked="True" />
+      <Control Name="chkBulkExcludeConfusingChars" IsChecked="True" />
+    </Expander>
+    <Expander Name="expCmdline" IsExpanded="False">
+      <Control Name="cmdCmdlineFile" IsChecked="True" />
+      <Control Name="cmdCmdlineConsole" IsChecked="False" />
+    </Expander>
+    <Expander Name="expAbout" IsExpanded="False" />
+  </Controls>
+</Config>
