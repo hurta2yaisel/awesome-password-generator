@@ -1,0 +1,19 @@
+#summary Password strength
+
+= Password strength =
+Here`s how the program evaluates the strength of the generated passwords:
+
+|| *Password strength* || *Max crack time, days* ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/weak.png || 0 - 14 ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/normal.png || 14 - 90 ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/good.png || 90 - 365 ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/excellent.png || >365 ||
+
+Crack speed: assuming 1.33 billion guesses per second (or passwords per second - pps). NVIDIA !GeForce GTX 295 can try up to 1.33 billion Vista NTLM passwords per second, so it's just a speed of a single home PC.
+
+Professional cracking speed can be 100 billion pps and higher, but:
+  * Different algorithms have different crack speeds. E.g. RAR-archive crack speed on a single PC is about 1-2 thousands pps;
+  * Remote cracking of online accounts (e-mail, social networks, online games) is also about 1000 pps;
+  * Previously mentioned professional cracking is expensive; hacker will not waste such resources and time without good reason.
+
+Anyway, use passwords with EXCELLENT strength.
