@@ -1,4 +1,4 @@
-#summary Cmdline version (apg-cl.exe)
+#summary Console version (apg-cl.exe)
 
 = Introduction =
 
