@@ -49,7 +49,14 @@
                         <CheckBox Name="chkPswLowercase" Tag="enL" Margin="4" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">a..z</CheckBox>
                         <CheckBox Name="chkPswUppercase" Tag="enU" Margin="4" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">A..Z</CheckBox>
                         <CheckBox Name="chkPswDigits" Tag="digits" Margin="4" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">0..9</CheckBox>
-                        <CheckBox Name="chkPswSpecial" Tag="special" Margin="4" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">!@#...</CheckBox>
+                        <CheckBox Name="chkPswSpecial" Tag="special" Margin="4" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click" Content="!@#...">
+                            <CheckBox.ToolTip>
+                                <TextBlock>
+                                    ! @ # $ % ^ &amp; * ( ) ~ - _ = + \ | / [ ] { } ; : ` &apos; &quot; , . &lt; &gt; ?<LineBreak/>
+                                    Space is not included! Use User-defined charset for it.
+                                </TextBlock>
+                            </CheckBox.ToolTip>
+                        </CheckBox>
                     </DockPanel>
                     <DockPanel>
                         <CheckBox Name="chkPswUserDefinedCharacters" Tag="userDefined" Margin="4,8" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click"></CheckBox>
@@ -164,7 +171,7 @@
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                     <Label Width="75">Destination:</Label>
                     <RadioButton Name="cmdCmdlineFile" Margin="6,5,0,0" IsChecked="True" Checked="cmdCmdlineFile_Checked">File</RadioButton>
-                    <RadioButton Name="cmdCmdlineOutput" Margin="6,5,0,0" Checked="cmdCmdlineOutput_Checked">Output</RadioButton>
+                    <RadioButton Name="cmdCmdlineConsole" Margin="6,5,0,0" Checked="cmdCmdlineConsole_Checked">Console</RadioButton>
                 </StackPanel>
                 <Label>Here are long and short versions, you can use any of them.</Label>
                 <DockPanel>

@@ -54,7 +54,7 @@ namespace Password_Generator
         {
             // fill charsets
             charsets.Add("hex", new charset("", "0123456789ABCDEF", 0));
-            charsets.Add("special", new charset("!@#...", "!@#$%^&*()`~-_=+\\|[]{};:'\",.<>/?", 0));
+            charsets.Add("special", new charset("!@#...", "!@#$%^&*()~-_=+\\|/[]{};:`'\",.<>?", 0));
             charsets.Add("digits", new charset("0..9", "0123456789", 50));
             charsets.Add("userDefined", new charset("", "", 20));
             charsets.Add("-", new charset("", " |`'018", -1)); // confusing characters
