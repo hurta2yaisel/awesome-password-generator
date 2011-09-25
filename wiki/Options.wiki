@@ -1,4 +1,19 @@
-Easy to type password
-Exclude confusing characters
-(?) Copy to clipboard automatically
-(?) Clear clipboard on exit
+#summary Options
+
+= Options =
+== Easy to type password ==
+Strong password is usually long and contains symbols from different charsets: lowercase and uppercase letters, digits and special symbols. Such password is hard to type and even more hard to remember.
+
+Solutions is to generate password from lowercase letters (which are easiest to type - you even don't need to press Shift) with 1-2 symbols from each of another charsets. Such password is easier to type and to remember.
+
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/easytotype.png
+
+As password consist of symbols from all selected charsets, strength is not reduced.
+
+== Exclude confusing characters ==
+Some symbols like 0 (zero) and O (letter) are very similar (difficult to distinguish) which cause difficulties when typing. This option makes it possible to exclude such symbols.
+
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/excludeConfusingCharacters.png
+
+While hacker does not know you have generated password with this option, we can assume that the strength is not reduced.
+
