@@ -5,12 +5,15 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Collections;
 using Password_Generator;
+using System.Threading;
 
 
 namespace apg_cl
 {
     class Program
     {
+        static Mutex m = new Mutex(false, "Awesome Password Generator");   // for inno setup (see AppMutex)
+
         static PasswordGenerator pswgen = new PasswordGenerator();
 
         static Hashtable CommandLineArgs = new Hashtable();    // Indexed command line args

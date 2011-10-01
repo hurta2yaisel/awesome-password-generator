@@ -18,6 +18,7 @@ using System.Collections;
 using Password_Generator;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 
 namespace Awesome_Password_Generator
@@ -27,6 +28,8 @@ namespace Awesome_Password_Generator
     /// </summary>
     public partial class MainWindow : Window
     {
+        Mutex m = new Mutex(false, "Awesome Password Generator");   // for inno setup (see AppMutex)
+
         private PasswordGenerator pswgen = null;
 
         private bool initializeComponentIsCompleted = false;   // will be TRUE after InitializeComponent()

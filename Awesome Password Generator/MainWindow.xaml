@@ -2,7 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
-        Title="Awesome Password Generator" Width="384" SizeToContent="Height" ResizeMode="CanMinimize" Closed="Window_Closed" Height="710.52">
+        Title="Awesome Password Generator" Width="384" SizeToContent="Height" ResizeMode="CanMinimize" Closed="Window_Closed" Height="710.52"
+        FontFamily="Segoe UI" FontSize="12">
 
     <Window.Resources>
         <Style x:Key="hlStyle1" TargetType="{x:Type Hyperlink}">
@@ -204,15 +205,45 @@
                         <Label Name="lblAbout2" xml:space="preserve">Copyright (c) 2011  ____alex</Label>
                     </StackPanel>
                 </StackPanel>
-                <Label>Homepage:</Label>
-                <TextBlock>
-                    <Hyperlink NavigateUri="http://code.google.com/p/awesome-password-generator/">Homepage</Hyperlink>
-                </TextBlock>
-                <Label>Forum:</Label>
-                <TextBlock>
-                    <Hyperlink NavigateUri="http://groups.google.com/group/awesome-password-generator">Forum</Hyperlink>
-                </TextBlock>
-                <Label>Donate:</Label>
+                <Separator />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock>
+                        <Hyperlink Style="{StaticResource hlStyle1}" NavigateUri="http://code.google.com/p/awesome-password-generator/" RequestNavigate="hyperlink_RequestNavigate">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="res\globe_10_x16.ico" VerticalAlignment="Center" Stretch="None" />
+                                <TextBlock Margin="3,0,0,0" Style="{StaticResource tbStyle1}">Home page</TextBlock>
+                            </StackPanel>
+                        </Hyperlink>
+                    </TextBlock>
+                    <Separator Width="15" Visibility="Hidden" />
+                    <TextBlock>
+                        <Hyperlink Style="{StaticResource hlStyle1}" NavigateUri="http://code.google.com/p/awesome-password-generator/wiki/Welcome" RequestNavigate="hyperlink_RequestNavigate">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="res\bookcase_x16.ico" VerticalAlignment="Center" Stretch="None" />
+                                <TextBlock Margin="3,0,0,0" Style="{StaticResource tbStyle1}">Wiki</TextBlock>
+                            </StackPanel>
+                        </Hyperlink>
+                    </TextBlock>
+                    <Separator Width="15" Visibility="Hidden" />
+                    <TextBlock>
+                        <Hyperlink Style="{StaticResource hlStyle1}" NavigateUri="http://groups.google.com/group/awesome-password-generator" RequestNavigate="hyperlink_RequestNavigate">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="res\chat bubble alt_x16.ico" VerticalAlignment="Center" Stretch="None" />
+                                <TextBlock Margin="3,0,0,0" Style="{StaticResource tbStyle1}">Forum</TextBlock>
+                            </StackPanel>
+                        </Hyperlink>
+                    </TextBlock>
+                    <Separator Width="15" Visibility="Hidden" />
+                    <TextBlock>
+                        <Hyperlink Style="{StaticResource hlStyle1}" NavigateUri="http://code.google.com/p/awesome-password-generator/wiki/Donate" RequestNavigate="hyperlink_RequestNavigate">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="res\Coins_x16.ico" VerticalAlignment="Center" Stretch="None" />
+                                <TextBlock Margin="3,0,0,0" Style="{StaticResource tbStyle1}">Donate</TextBlock>
+                            </StackPanel>
+                        </Hyperlink>
+                    </TextBlock>
+                </StackPanel>
+                <Separator />
                 <GroupBox Header="License information">
                     <TreeView BorderThickness="0">
                         <TreeViewItem IsExpanded="True" Header="Main program" BorderThickness="0" Focusable="False">
