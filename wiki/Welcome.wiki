@@ -17,12 +17,12 @@ fldsjfl
 <tr>
   <td><h1>Description</h1><br/>
 <b>Awesome Password Generator</b> is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!<br/>
-<ol>
+<ul>
 <li>Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;</li>
 <li>Wi-Fi (WPA) passphrases for your wireless devices;</li>
-<li>Easy-to-type passwords like p2Dzu.uszx, not c57]"/z&Q9;</li>
+<li>Easy-to-type passwords like <tt>p-zuus2Dzx</tt>, not c]57%/z&Q9;</li>
 <li>Passwords without confusing characters like 0 (zero) and O (oh);</li>
-</ol>
+</ul>
 For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with command line version for using from scripts (examples for batch and PowerShell included :).<br/>
 <ul>
 <li>GUI single/bulk password/wi-fi passphrase generation</li>
