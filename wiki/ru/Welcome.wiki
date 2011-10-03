@@ -18,9 +18,8 @@
   * Открытые исходники: используйте класс !PasswordGenerator в своих приложениях!
 
 = Системные требования =
-  - Windows XP, Vista, 7, Server 2000/2003/2008 (todo:check!)
+  - Windows 2000, XP, Vista, 7 или Windows Server 2000, 2003, 2008 (todo:check!)
   - [http://www.microsoft.com/downloads/ru-ru/details.aspx?familyid=5765d7a8-7722-4888-a970-ac39b33fd8ab&displaylang=ru .NET Framework 4.0]
-  - todo:maybe other software requiments? install bare os and check it out!
 
 1
 [pics/single.png]
