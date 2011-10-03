@@ -7,7 +7,7 @@
 <g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
 </td>
 <td align="center">
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png EN
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png English http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png Русский
 </td>
 <td align="right">
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png
