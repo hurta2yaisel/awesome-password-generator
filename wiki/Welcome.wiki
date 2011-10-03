@@ -6,7 +6,7 @@
 <td>
 <g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
 </td>
-<td align="center" valign="center">
+<td align="center" valign="middle">
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png English http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png Русский
 </td>
 <td align="right">
