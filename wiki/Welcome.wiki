@@ -20,7 +20,7 @@ language selection
 <table border="0" width="100%">
 <tr>
 <td valign="top">
-<h1>Description</h1>
+= Description =
 *Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!
 <ul>
 <li>Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;</li>
@@ -37,6 +37,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 <li>[ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options - just run GUI, set up password length, quantity, charsets and other options as you wish, and click *Command line builder*. Run <tt>apg-cl.exe</tt> with generated command line parameters!</li>
 <li>Open Source: use !PasswordGenerator class in your applications!</li>
 </ul>
+
 = System requirements =
   * Windows 2000, XP, Vista, 7 or Windows Server 2000, 2003, 2008 (todo:check!)
   * [http://www.microsoft.com/download/en/details.aspx?id=17113 .NET Framework 4.0]
