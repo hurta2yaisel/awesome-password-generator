@@ -21,29 +21,11 @@
   - Windows 2000, XP, Vista, 7 или Windows Server 2000, 2003, 2008 (todo:check!)
   - [http://www.microsoft.com/downloads/ru-ru/details.aspx?familyid=5765d7a8-7722-4888-a970-ac39b33fd8ab&displaylang=ru .NET Framework 4.0]
 
-1
-[pics/single.png]
+= section X =
+Вы также можете посмотреть документацию, посетить форум или оставить отчет о найденных ошибках
 
-2
-[http://code.google.com/p/awesome-password-generator/wiki/pics/single.png]
+На Wiki вы найдете документацию
 
-3
-pics/single.png
-
-4
-http://code.google.com/p/awesome-password-generator/wiki/pics/single.png
-
-5
-[http://code.google.com/p/awesome-password-generator/source/browse/wiki/pics/single.png]
-
-6
-http://code.google.com/p/awesome-password-generator/source/browse/wiki/pics/single.png
-
-7
-single.png
-
-8
-[http://awesome-password-generator.googlecode.com/svn/wiki/pics/single.png]
-
-9
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/single.png
+Почитать документацию
+Пообщаться на форуме
+Оставить отчет о найденных ошибках или предложения по улучшению программы

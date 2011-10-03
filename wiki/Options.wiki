@@ -1,5 +1,3 @@
-#summary Options
-
 = Options =
 == Easy to type password ==
 Strong password is usually long and contains symbols from different charsets: lowercase and uppercase letters, digits and special symbols. Such password is hard to type and even more hard to remember.
