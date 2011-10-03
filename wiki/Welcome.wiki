@@ -24,13 +24,13 @@ fldsjfl
 <li>Passwords without confusing characters like 0 (zero) and O (oh);</li>
 </ol>
 For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with command line version for using from scripts (examples for batch and PowerShell included :).<br/>
-<ol>
+<ul>
 <li>GUI single/bulk password/wi-fi passphrase generation</li>
 <li>Easy-to-type and Exclude confusing characters options</li>
 <li>Quick and secure: "Copy to clipboard automatically" and "Clear clipboard on exit" options</li>
 <li>Command line: apg-cl.exe has same functionality as GUI version. Do not mess with command line options - just run GUI, set up password length, quantity, charsets and other options as you wish, and click "Command line builder". Run apg-cl.exe with generated command line parameters!</li>
 <li>Open Source: use PasswordGenerator class in your applications!</li>
-</ol>
+</ul>
 </td>
   <td><img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png" />Download!</td>
 </tr>   
