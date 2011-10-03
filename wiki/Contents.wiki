@@ -1,4 +1,5 @@
-= [Strength Password strength] =
-= [Options] =
-= [ConsoleVersion Console version (`apg-cl.exe`) =
-= [Donate] =
+= Contents =
+== [Strength Password strength] ==
+== [Options] ==
+== [ConsoleVersion Console version (`apg-cl.exe`)] ==
+== [Donate] ==
