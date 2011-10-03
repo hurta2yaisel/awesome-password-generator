@@ -1,4 +1,5 @@
-= [Strength Password strength] =
-= [Options] =
-= [ConsoleVersion Console version (`apg-cl.exe`) =
-= [Donate] =
+= Содержание =
+  === [Strength Стойкость пароля] ===
+  === [Options Опции] ===
+  === [ConsoleVersion Консольная версия (apg-cl.exe)] ===
+  === [Donate Помочь проекту] ===
