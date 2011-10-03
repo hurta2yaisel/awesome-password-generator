@@ -23,7 +23,7 @@ fldsjfl
 <li>Easy-to-type passwords like <tt>p-zuus2Dzx</tt>, not <tt>c]57%/z&Q9</tt>;</li>
 <li>Passwords without confusing characters like 0 (zero) and O (oh);</li>
 </ul>
-For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with command line version for using from scripts (examples for batch and PowerShell included :).<br/>
+`For system` administrators/IT-professionals is is *also* a powerfull tool for single or bulk password generation, with command line version for using from scripts (examples in batch and !PowerShell included :).<br/>
 <ul>
 <li>GUI single/bulk password/wi-fi passphrase generation</li>
 <li>Easy-to-type and Exclude confusing characters </li>
