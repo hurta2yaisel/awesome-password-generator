@@ -42,8 +42,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </td>
 </tr>   
-</table>
-= System requirements =
+</table>= System requirements =
   * Windows 2000, XP, Vista, 7 or Windows Server 2000, 2003, 2008 (todo:check!)
   * [http://www.microsoft.com/download/en/details.aspx?id=17113 .NET Framework 4.0]
 
