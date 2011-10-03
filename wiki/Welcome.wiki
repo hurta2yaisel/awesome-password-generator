@@ -23,16 +23,16 @@ fldsjfl
 <li>Easy-to-type passwords like `p-zuus2Dzx`, not `c]57%/z&Q9`;</li>
 <li>Passwords without confusing characters like 0 (zero) and O (oh);</li>
 </ul>
-For system administrators/IT-professionals is is *also* a powerfull tool for single or bulk password generation, with command line version for using from scripts (examples in batch and !PowerShell included :).<br/>
+For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with console version for using from scripts (examples in batch and !PowerShell included :).<br/>
 <ul>
 <li>GUI single/bulk password/wi-fi passphrase generation;</li>
-<li>Easy-to-type and Exclude confusing characters [Options options];</li>
+<li>*Easy-to-type* and *Exclude confusing characters* [Options options];</li>
 <li>Quick and secure: *Copy to clipboard automatically* and *Clear clipboard on exit* options;</li>
 <li>[ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options - just run GUI, set up password length, quantity, charsets and other options as you wish, and click "Command line builder". Run <tt>apg-cl.exe</tt> with generated command line parameters!</li>
 <li>Open Source: use PasswordGenerator class in your applications!</li>
 </ul>
 </td>
-  <td><img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png" />Download!</td>
+  <td>http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png"</td>
 </tr>   
 </table>
 
