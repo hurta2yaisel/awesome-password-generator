@@ -5,18 +5,6 @@
 
 ----
 
-<table border="1"><tr/></table> === language selection === ---- <tr width="100%"/>
-
-----
-
-fldsjfl
-
-----
-
-<table border="1" width="100%"><tr/></table>
-
-----
-
 <table border="0" width="100%">
 <tr>
   <td><h1>Description</h1><br/>
