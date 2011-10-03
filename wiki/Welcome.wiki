@@ -15,8 +15,8 @@ fldsjfl
 
 <table border="0" width="100%">
 <tr>
-  <td>= Description =<br/>
-<b>Awesome Password Generator</b> is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!<br/>
+  <td><h1>Description</h1><br/>
+*Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!<br/>
 <ul>
 <li>Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;</li>
 <li>Wi-Fi (WPA) passphrases for your wireless devices;</li>
