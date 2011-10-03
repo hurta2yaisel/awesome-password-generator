@@ -33,8 +33,8 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 <li>GUI single/bulk password/wi-fi passphrase generation;</li>
 <li>*Easy-to-type* and *Exclude confusing characters* [Options options];</li>
 <li>Quick and secure: *Copy to clipboard automatically* and *Clear clipboard on exit* options;</li>
-<li>[ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options - just run GUI, set up password length, quantity, charsets and other options as you wish, and click "Command line builder". Run <tt>apg-cl.exe</tt> with generated command line parameters!</li>
-<li>Open Source: use PasswordGenerator class in your applications!</li>
+<li>[ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options - just run GUI, set up password length, quantity, charsets and other options as you wish, and click *Command line builder*. Run <tt>apg-cl.exe</tt> with generated command line parameters!</li>
+<li>Open Source: use !PasswordGenerator class in your applications!</li>
 </ul>
 </td>
 <td>
