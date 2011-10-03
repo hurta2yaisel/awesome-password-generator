@@ -1,9 +1,6 @@
 #summary Welcome!
 #labels Featured
 
-|| <g:plusone size="medium"></g:plusone> || <table border="1"><tr/></table> === language selection === ---- || http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png ||
-
-
 <table border="1" width="100%">
   <tr>
     <td>
@@ -30,7 +27,7 @@
 <li>Easy-to-type passwords like `p-zuus2Dzx`, not `c]57%/z&Q9`;</li>
 <li>Passwords without confusing characters like 0 (zero) and O (oh);</li>
 </ul>
-For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with console version for using from scripts (examples in batch and !PowerShell included :).<br/>
+For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with console version for using from scripts ([ConsoleVersion#Usage_examples_in_batch,_PowerShell_and_C# examples] in batch and !PowerShell included :).<br/>
 <ul>
 <li>GUI single/bulk password/wi-fi passphrase generation;</li>
 <li>*Easy-to-type* and *Exclude confusing characters* [Options options];</li>
