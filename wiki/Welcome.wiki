@@ -31,6 +31,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 <li>[ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options - just run GUI, set up password length, quantity, charsets and other options as you wish, and click "Command line builder". Run <tt>apg-cl.exe</tt> with generated command line parameters!</li>
 <li>Open Source: use PasswordGenerator class in your applications!</li>
 </ul>
+<g:plusone size="medium"></g:plusone>
 </td>
   <td>http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png"</td>
 </tr>   
