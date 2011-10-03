@@ -3,6 +3,21 @@
 
 || <g:plusone size="medium"></g:plusone> || <table border="1"><tr/></table> === language selection === ---- || http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png ||
 
+
+<table border="0" width="100%">
+  <tr>
+    <td>
+      <g:plusone size="medium"></g:plusone>
+    </td>
+    <td>
+      language selection
+    </td>
+    <td>
+      http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png
+    </td>
+  </tr>
+</table>
+
 ----
 
 <table border="0" width="100%">
