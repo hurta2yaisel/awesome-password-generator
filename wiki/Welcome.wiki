@@ -15,7 +15,7 @@
   <tr>
     <td>
       <h1>Description</h1>
-      *Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!<br/>
+*Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!<br/>
       <ul>
         <li>Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;</li>
         <li>Wi-Fi (WPA) passphrases for your wireless devices;</li>
