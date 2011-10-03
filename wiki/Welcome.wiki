@@ -26,8 +26,8 @@ fldsjfl
 For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with command line version for using from scripts (examples for batch and PowerShell included :).<br/>
 <ul>
 <li>GUI single/bulk password/wi-fi passphrase generation</li>
-<li>Easy-to-type and Exclude confusing characters options</li>
-<li>Quick and secure: "Copy to clipboard automatically" and "Clear clipboard on exit" options</li>
+<li>Easy-to-type and Exclude confusing characters <a href=http://code.google.com/p/awesome-password-generator/wiki/Options>options</a></li>
+<li>Quick and secure: <b>Copy to clipboard automatically</b> and <b>Clear clipboard on exit</b> options</li>
 <li><a href=http://code.google.com/p/awesome-password-generator/wiki/ConsoleVersion>Console version</a>: <tt>apg-cl.exe</tt> has same functionality as GUI version. Do not mess with command line options - just run GUI, set up password length, quantity, charsets and other options as you wish, and click "Command line builder". Run <tt>apg-cl.exe</tt> with generated command line parameters!</li>
 <li>Open Source: use PasswordGenerator class in your applications!</li>
 </ul>
