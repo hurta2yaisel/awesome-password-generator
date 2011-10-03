@@ -1,7 +1,7 @@
 #summary Welcome!
 #labels Featured
 
-<table border="1" width="100%" cellpadding="0">
+<table border="0" width="100%" cellpadding="0">
 <tr>
 <td>
 <g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
