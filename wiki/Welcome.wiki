@@ -4,12 +4,6 @@
 <table border="1" width="100%" cellpadding="0">
   <tr>
     <td>
-      <g:plusone size="medium"></g:plusone>
-    </td>
-    <td>
-      language selection
-    </td>
-    <td>
       http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png
     </td>
   </tr>
