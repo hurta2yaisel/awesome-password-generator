@@ -2,11 +2,11 @@
 #labels Featured
 
 <table border="1" width="100%" cellpadding="0">
-  <tr>
-    <td>
-      <img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png" />
-    </td>
-  </tr>
+<tr>
+<td>
+<img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png" />
+</td>
+</tr>
 </table>
 
 ----
