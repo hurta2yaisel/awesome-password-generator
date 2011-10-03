@@ -34,6 +34,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
   * Quick and secure: *Copy to clipboard automatically* and *Clear clipboard on exit* options;
   * [ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options - just run GUI, set up password length, quantity, charsets and other options as you wish, and click *Command line builder*. Run <tt>apg-cl.exe</tt> with generated command line parameters!
   * Open Source: use !PasswordGenerator class in your applications!
+
 = System requirements =
   * Windows 2000, XP, Vista, 7 or Windows Server 2000, 2003, 2008 (todo:check!)
   * [http://www.microsoft.com/download/en/details.aspx?id=17113 .NET Framework 4.0]
