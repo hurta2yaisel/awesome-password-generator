@@ -6,10 +6,10 @@
 <td>
 <g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
 </td>
-<td>
+<td align="center">
 language selection
 </td>
-<td>
+<td align="right">
 <img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png" />
 </td>
 </tr>
