@@ -44,6 +44,9 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </tr>   
 </table>
 
+= System requirements =
+  * Windows 2000, XP, Vista, 7, Server 2000/2003/2008 (todo:check!)
+  * [http://www.microsoft.com/download/en/details.aspx?id=17113 .NET Framework 4.0]
 
 cmdline[CmdLineVersion]
 
