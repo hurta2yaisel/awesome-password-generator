@@ -4,7 +4,7 @@
 <table border="1" width="100%" cellpadding="0">
 <tr>
 <td>
-<g:plusone size="medium"></g:plusone>
+<g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
 </td>
 <td>
 language selection
