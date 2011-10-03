@@ -27,6 +27,7 @@ language selection
 <li>Wi-Fi (WPA) passphrases for your wireless devices;</li>
 <li>Easy-to-type passwords like `p-zuus2Dzx`, not `c]57%/z&Q9`;</li>
 <li>Passwords without confusing characters like 0 (zero) and O (oh);</li>
+<li>This is a free software.<li>
 </ul>
 For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with console version for using from scripts (examples in batch and !PowerShell included :).
 <ul>
@@ -38,7 +39,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 </ul>
 </td>
 <td valign="top">
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png"
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </td>
 </tr>   
 </table>
