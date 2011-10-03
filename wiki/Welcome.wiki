@@ -17,6 +17,10 @@
 
 ----
 
+[ConsoleVersion#Usage_examples_in_batch,_PowerShell_and_C# examples]
+
+----
+
 <table border="0" width="100%">
 <tr>
   <td><h1>Description</h1><br/>
