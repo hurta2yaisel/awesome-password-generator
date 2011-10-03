@@ -19,7 +19,7 @@ language selection
 
 <table border="0" width="100%">
 <tr>
-<td>
+<td valign="top">
 <h1>Description</h1>
 *Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!
 <ul>
@@ -37,7 +37,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 <li>Open Source: use !PasswordGenerator class in your applications!</li>
 </ul>
 </td>
-<td>
+<td valign="top">
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png"
 </td>
 </tr>   
