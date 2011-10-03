@@ -17,7 +17,7 @@
 
 ----
 
-[ConsoleVersion#Usage_examples_in_batch,_PowerShell_and_C# examples]
+[ConsoleVersion#Usage_examples_in_batch,_PowerShell_and_C#]
 
 ----
 
