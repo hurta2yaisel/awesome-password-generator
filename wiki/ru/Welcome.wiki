@@ -1,7 +1,23 @@
-#summary Welcome!
+<table border="0" width="100%" cellpadding="0">
+<tr>
+<td>
+<g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
+</td>
+<td align="center" valign="middle">
+[http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [http://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
+</td>
+<td align="right">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png
+</td>
+</tr>
+</table>
 
+----
+
+<table border="0" width="100%">
+<tr>
+<td valign="top">
 = Описание =
-
 *Awesome Password Generator* - это простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA). Просто откройте генератор, и новый пароль будет скопирован в буфер автоматически!
   * Обычные, "общего назначения" пароли для e-mail, онлайн-аккаунтов и любых настольных приложений;
   * Wi-Fi (WPA) ключи для ваших беспроводных устройств;
@@ -17,8 +33,15 @@
   * Открытые исходники: используйте класс !PasswordGenerator в своих приложениях!
 
 = Системные требования =
-  - Windows 2000, XP, Vista, 7 или Windows Server 2000, 2003, 2008 (todo:check!)
-  - [http://www.microsoft.com/downloads/ru-ru/details.aspx?familyid=5765d7a8-7722-4888-a970-ac39b33fd8ab&displaylang=ru .NET Framework 4.0]
+  * Windows 2000, XP, Vista, 7 или Windows Server 2000, 2003, 2008 (todo:check!)
+  * [http://www.microsoft.com/downloads/ru-ru/details.aspx?familyid=5765d7a8-7722-4888-a970-ac39b33fd8ab&displaylang=ru .NET Framework 4.0]
+
+</td>
+<td valign="top">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
+</td>
+</tr>   
+</table>
 
 = Скачать =
 Вы можете [http://code.google.com/p/awesome-password-generator/downloads/list скачать последнюю версию] или выбрать из списка [http://code.google.com/p/awesome-password-generator/downloads/list всех версий].
@@ -26,5 +49,5 @@
 = А также =
   * Читайте документацию в [Contents Wiki]-разделе;
   * Общайтесь в [http://groups.google.com/group/awesome-password-generator форуме];
-  * [http://code.google.com/p/awesome-password-generator/issues/list Сообщите о найденной ошибке или оставьте предложение] по улучшению программы.
+  * [http://code.google.com/p/awesome-password-generator/issues/list Сообщите о найденной ошибке или оставьте предложение] по улучшению программы;
   * [Donate Помогите проекту]
