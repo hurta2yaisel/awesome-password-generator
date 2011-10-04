@@ -1,5 +1,4 @@
 #summary Welcome!
-#labels Featured
 
 <table border="0" width="100%" cellpadding="0">
 <tr>
@@ -49,6 +48,7 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 You can [http://code.google.com/p/awesome-password-generator/downloads/list download latest version] or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions].
 
 = Also =
-  * See [http://code.google.com/p/awesome-password-generator/wiki/Contents Wiki] page for project documentation;
+  * See [Contents Wiki] page for project documentation;
   * Chat in [http://groups.google.com/group/awesome-password-generator forum];
   * [http://code.google.com/p/awesome-password-generator/issues/list Report a bug or write your suggestions] about how to improve the program.
+  * [Donate]

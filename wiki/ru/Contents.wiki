@@ -1,3 +1,5 @@
+#labels Featured
+
 = Содержание =
   === [Strength Стойкость пароля] ===
   === [Options Опции] ===

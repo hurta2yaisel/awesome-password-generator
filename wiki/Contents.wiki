@@ -1,3 +1,5 @@
+#labels Featured
+
 = Contents =
   === [Strength Password strength] ===
   === [Options] ===

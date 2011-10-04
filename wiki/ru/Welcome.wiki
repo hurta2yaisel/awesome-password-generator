@@ -1,5 +1,4 @@
 #summary Welcome!
-#labels Featured
 
 = Описание =
 
@@ -25,6 +24,7 @@
 Вы можете [http://code.google.com/p/awesome-password-generator/downloads/list скачать последнюю версию] или выбрать из списка [http://code.google.com/p/awesome-password-generator/downloads/list всех версий].
 
 = А также =
-  * Читайте документацию в [http://code.google.com/p/awesome-password-generator/wiki/Contents Wiki]-разделе;
+  * Читайте документацию в [Contents Wiki]-разделе;
   * Общайтесь в [http://groups.google.com/group/awesome-password-generator форуме];
-  * Сообщите о найденной ошибке или оставьте предложение по улучшению программы.
+  * [http://code.google.com/p/awesome-password-generator/issues/list Сообщите о найденной ошибке или оставьте предложение] по улучшению программы.
+  * [Donate Помогите проекту]
