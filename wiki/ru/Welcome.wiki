@@ -21,21 +21,10 @@
   - Windows 2000, XP, Vista, 7 или Windows Server 2000, 2003, 2008 (todo:check!)
   - [http://www.microsoft.com/downloads/ru-ru/details.aspx?familyid=5765d7a8-7722-4888-a970-ac39b33fd8ab&displaylang=ru .NET Framework 4.0]
 
-= Download =
-You can download latest version or browse all versions.
-Вы также можете посмотреть документацию, посетить форум или оставить отчет о найденных ошибках
+= Скачать =
+Вы можете [http://code.google.com/p/awesome-password-generator/downloads/list скачать последнюю версию] или выбрать из списка [http://code.google.com/p/awesome-password-generator/downloads/list всех версий].
 
-= Also =
-  * See [http://code.google.com/p/awesome-password-generator/wiki/Contents Wiki] page for project documentation;
-  * Chat in [http://groups.google.com/group/awesome-password-generator forum];
-  * [http://code.google.com/p/awesome-password-generator/issues/list Report a bug or write your suggestions] about how to improve the program.
-
-
-See Wiki page for project documentation, chat in forum, report a bug or write your suggestions about how to improve the program in the Issues section.
-
-На Wiki вы найдете документацию
-
-
-Почитать документацию
-Пообщаться на форуме
-Оставить отчет о найденных ошибках или предложения по улучшению программы
+= А также =
+  * Читайте документацию в [http://code.google.com/p/awesome-password-generator/wiki/Contents Wiki]-разделе;
+  * Общайтесь в [http://groups.google.com/group/awesome-password-generator форуме];
+  * Сообщите о найденной ошибке или оставьте предложение по улучшению программы.

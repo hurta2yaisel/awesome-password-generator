@@ -45,51 +45,10 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </tr>   
 </table>
 
-cmdline[CmdLineVersion]
+= Download =
+You can [http://code.google.com/p/awesome-password-generator/downloads/list download latest version] or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions].
 
-cmdline[CmdLineVersion ?]
-
-!cmdline[CmdLineVersion ?]
-
-[CmdLineVersion ?]
-
-[CmdLineVersion]
-
-= Introduction =
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-
-
-Wiki markup help
-=Heading1=
-==Heading2==
-===Heading3===
-
-*bold*     _italic_
-`inline code`
-escape: `*`
-
-Indent lists 2 spaces:
-  * bullet item
-  # numbered list
-
-{{{
-verbatim code block
-}}}
-
-Horizontal rule
-----
-
-WikiWordLink
-[http://domain/page label]
-http://domain/page
-
-|| table || cells ||
+= Also =
+  * See [http://code.google.com/p/awesome-password-generator/wiki/Contents Wiki] page for project documentation;
+  * Chat in [http://groups.google.com/group/awesome-password-generator forum];
+  * [http://code.google.com/p/awesome-password-generator/issues/list Report a bug or write your suggestions] about how to improve the program.
