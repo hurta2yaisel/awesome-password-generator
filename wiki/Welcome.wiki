@@ -7,7 +7,7 @@
 [http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [http://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
 </td>
 <td align="right">
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png
+<a id="dlFull" style="text-decoration: none;" href="http://www.teamviewer.com/download/TeamViewer_Setup_ru.exe"> <img src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/download.png"><span style="cursor: pointer;" class="download-text">Начать работу с<br>полной версией</span> </a>
 </td>
 </tr>
 </table>
