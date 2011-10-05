@@ -16,7 +16,7 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa256bit-single.
 
 ----
 
-== Bulk password/passphrase generation mode ==
+= Bulk password/passphrase generation mode =
 
 <table border="0" cellpadding="4">
 <tr>
@@ -31,12 +31,12 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-bulk.png
 
 ----
 
-=== Command line builder ===
+= Command line builder =
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/cmdlineBuilder.png
 
 ----
 
-=== About ===
+= About =
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/about.png
