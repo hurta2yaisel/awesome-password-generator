@@ -1,18 +1,24 @@
-Single password/passphrase generation mode
+=== Single password/passphrase generation mode ===
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-single.png
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa256bit-single.png
 
-Bulk password/passphrase generation mode
+----
+
+=== Bulk password/passphrase generation mode ===
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-bulk.png
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-bulk.png
 
-Command line builder
+----
+
+=== Command line builder ===
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/cmdlineBuilder.png
 
-About
+----
+
+=== About ===
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/about.png
