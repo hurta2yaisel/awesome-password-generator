@@ -32,6 +32,7 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-bulk.png
 ----
 
 = Command line builder =
+More about console version (`apg-cl.exe`) - [ConsoleVersion here].
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/cmdlineBuilder.png
 

@@ -29,8 +29,8 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png
   * GUI-интерфейс для генерации одиночных или множества паролей и WPA-ключей;
   * [Options Опции] *Легко набираемые пароли* и *Исключить спорные символы*;
   * Быстрота и безопасность: опции *Копировать в буфер автоматически* и *Очищать буфер при выходе*;
-  * [ConsoleVersion Консольная версия] `apg-cl.exe` с тем же функционалом, что и GUI-версия. И не надо изучать мануалы - просто откройте GUI, выберите длину пароля, количество, используемые наборы символов и другие опции, затем кликните *Command line builder*. Запустите `apg-cl.exe`, используя сгенерированные параметры!
-  * Открытые исходники: используйте класс !PasswordGenerator в своих приложениях!
+  * [ConsoleVersion Консольная версия] `apg-cl.exe` с тем же функционалом, что и GUI-версия. И не надо изучать мануалы - просто откройте GUI, выберите длину пароля, количество, используемые наборы символов и другие опции, затем кликните *Command line builder*. Запустите `apg-cl.exe`, используя сгенерированные параметры;
+  * Открытые исходники (GNU GPLv3).
 
 = Системные требования =
   * Windows 2000, XP, Vista, 7 или Windows Server 2000, 2003, 2008 (todo:check!)
@@ -39,6 +39,8 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/download_x100.png
 </td>
 <td valign="top">
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
+
+[Screenshots Еще скриншоты]
 </td>
 </tr>   
 </table>
