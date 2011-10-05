@@ -1,15 +1,12 @@
 === Single password/passphrase generation mode ===
 
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-single.png
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa256bit-single.png
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png || http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-single.png || http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa256bit-single.png ||
 
 ----
 
 === Bulk password/passphrase generation mode ===
 
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-bulk.png
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-bulk.png
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-bulk.png || http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-bulk.png ||
 
 ----
 
