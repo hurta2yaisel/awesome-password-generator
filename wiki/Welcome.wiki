@@ -1,12 +1,12 @@
 <table border="1" width="100%" cellpadding="0">
 <tr>
-<td>
+<td width="33%">
 <g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
 </td>
 <td align="center" valign="middle">
 [http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [http://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
 </td>
-<td align="right">
+<td width="33%" align="right">
 [http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/download.png]
 </td>
 </tr>
