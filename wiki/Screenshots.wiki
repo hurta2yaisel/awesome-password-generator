@@ -1,14 +1,14 @@
 === Single password/passphrase generation mode ===
 
-<table border="0" width="100%" cellpadding="0">
+<table border="0" width="100%" cellpadding="4">
 <tr>
-<td>
+<td valign="top">
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </td>
-<td>
+<td valign="top">
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-single.png
 </td>
-<td>
+<td valign="top">
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa256bit-single.png
 </td>
 </tr>
