@@ -1,0 +1,43 @@
+= Генерация одного пароля/WPA-ключа =
+
+<table border="0" cellpadding="4">
+<tr>
+<td valign="top">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
+</td>
+<td valign="top">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-single.png
+</td>
+<td valign="top">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa256bit-single.png
+</td>
+</tr>
+</table>
+
+----
+
+= Генерация множества паролей/WPA-ключей =
+
+<table border="0" cellpadding="4">
+<tr>
+<td valign="top">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-bulk.png
+</td>
+<td valign="top">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-bulk.png
+</td>
+</tr>
+</table>
+
+----
+
+= Построитель параметров для консольной версии =
+Подробнее о консольной версии генератора - [ConsoleVersion здесь].
+
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/cmdlineBuilder.png
+
+----
+
+= О программе =
+
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/about.png
