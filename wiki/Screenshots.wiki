@@ -1,4 +1,4 @@
-=== Single password/passphrase generation mode ===
+== Single password/passphrase generation mode ==
 
 <table border="0" width="100%" cellpadding="4">
 <tr>
@@ -16,9 +16,18 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa256bit-single.
 
 ----
 
-=== Bulk password/passphrase generation mode ===
+== Bulk password/passphrase generation mode ==
 
-|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-bulk.png || http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-bulk.png ||
+<table border="0" width="100%" cellpadding="4">
+<tr>
+<td valign="top">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-bulk.png
+</td>
+<td valign="top">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-bulk.png
+</td>
+</tr>
+</table>
 
 ----
 
