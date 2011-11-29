@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
         Title="Awesome Password Generator" Width="384" SizeToContent="Height" ResizeMode="CanMinimize" Closed="Window_Closed" Height="710.52"
-        FontFamily="Segoe UI" FontSize="12">
+        FontFamily="Segoe UI,Microsoft Sans Serif" FontSize="12">
 
     <Window.Resources>
         <Style x:Key="hlStyle1" TargetType="{x:Type Hyperlink}">
@@ -106,7 +106,7 @@
         </Expander>
         <Expander Name="expSingleGeneration" Header="Single password generation" IsExpanded="true" Expanded="expSingleGeneration_Expanded" Collapsed="expSingleGeneration_Collapsed">
             <StackPanel Margin="4" Orientation="Vertical">
-                <TextBox Name="txtResult" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Consolas" VerticalContentAlignment="Center" FontSize="20" TextChanged="txtResult_TextChanged" FontWeight="Bold" IsReadOnly="True" Height="54">B775621A80539A7D9032889FD4BD964CC38419449E24F4C27883E1CE52060D59</TextBox>
+                <TextBox Name="txtResult" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Consolas,Courier New" FontSize="20" VerticalContentAlignment="Center" TextChanged="txtResult_TextChanged" FontWeight="Bold" IsReadOnly="True" Height="54">B775621A80539A7D9032889FD4BD964CC38419449E24F4C27883E1CE52060D59</TextBox>
                 <DockPanel LastChildFill="False">
                     <Label Name="lblStrength" DockPanel.Dock="Top" HorizontalContentAlignment="Center" Background="PaleGreen">Strength: GOOD</Label>
                     <Separator DockPanel.Dock="Top" Height="0" Visibility="Hidden" />
@@ -120,9 +120,12 @@
                     </StackPanel>
                     <Separator DockPanel.Dock="Right" Width="10" Visibility="Hidden"></Separator>
                     <CheckBox Name="chkSingle_EasyToType" DockPanel.Dock="Top" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">Easy to type password</CheckBox>
+                    <Separator Tag="NotSegoeUIFontCompensator" Visibility="Collapsed" Height="2" Margin="0" DockPanel.Dock="Top" />
                     <CheckBox Name="chkSingle_ExcludeConfusingChars" DockPanel.Dock="Top" IsChecked="True" Unchecked="cmdRegenerate_Click" Checked="cmdRegenerate_Click">Exclude confusing characters</CheckBox>
+                    <Separator Tag="NotSegoeUIFontCompensator" Visibility="Collapsed" Height="2" Margin="0" DockPanel.Dock="Top" />
                     <Separator Height="2" Visibility="Hidden" DockPanel.Dock="Top"></Separator>
                     <CheckBox Name="chkCopyToClipboardAutomatically" DockPanel.Dock="Top" IsChecked="True">Copy to clipboard automatically</CheckBox>
+                    <Separator Tag="NotSegoeUIFontCompensator" Visibility="Collapsed" Height="2" Margin="0" DockPanel.Dock="Top" />
                     <CheckBox Name="chkClearClipboardOnExit" DockPanel.Dock="Top" IsChecked="True">Clear clipboard on exit</CheckBox>
                 </DockPanel>
             </StackPanel>
@@ -156,7 +159,8 @@
                     <Label>Quantity</Label>
                     <extToolkit:IntegerUpDown Name="udBulkQuantity" Margin="4,2,0,0" Width="70" Value="1000" Minimum="0" />
                 </StackPanel>
-                <CheckBox Name="chkBulkEasyToType" Margin="5,4" DockPanel.Dock="Top" IsChecked="True">Easy to type passwords</CheckBox>
+                <CheckBox Name="chkBulkEasyToType" Margin="5,4,0,0" DockPanel.Dock="Top" IsChecked="True">Easy to type passwords</CheckBox>
+                <Separator Tag="NotSegoeUIFontCompensator" Visibility="Collapsed" Height="2" Margin="0" DockPanel.Dock="Top" />
                 <CheckBox Name="chkBulkExcludeConfusingChars" Margin="5,0" DockPanel.Dock="Top" IsChecked="True">Exclude confusing characters</CheckBox>
             </DockPanel>
         </Expander>

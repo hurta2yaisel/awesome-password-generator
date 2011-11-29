@@ -46,6 +46,8 @@ namespace Awesome_Password_Generator
         string[] bulkPasswords;
         BackgroundWorker bgworker = new BackgroundWorker();
 
+        private int monospaceFontSizeBig = 40, monospaceFontSizeMedium = 30, monospaceFontSizeSmall = 20;
+
         //--------------------------------------------------
         //--------------------------------------------------
 
@@ -53,6 +55,23 @@ namespace Awesome_Password_Generator
         {
             InitializeComponent();
             initializeComponentIsCompleted = true;
+
+            // deal with fonts
+            bool segoeUIFontisPresent = false, consolasFontIsPresent = false;
+            foreach (FontFamily fontFamily in Fonts.SystemFontFamilies)
+            {
+                // FontFamily.Source contains the font family name.
+                if (fontFamily.Source == "Segoe UI") segoeUIFontisPresent = true;
+                if (fontFamily.Source == "Consolas") consolasFontIsPresent = true;
+            }
+            if(!segoeUIFontisPresent)
+                foreach (object control in FindAllChildren(this))
+                    if (control is Separator && control.GetType().GetProperty("Tag") != null && ((Separator)control).Tag != null && ((Separator)control).Tag.ToString() == "NotSegoeUIFontCompensator")
+                        ((Separator)control).Visibility = Visibility.Hidden;
+            if (!consolasFontIsPresent)
+            {
+                monospaceFontSizeBig = 40; monospaceFontSizeMedium = 29; monospaceFontSizeSmall = 18;
+            }
 
             LoadConfig();
             cmdRegenerate_Click(null, null);    // generate password
@@ -403,11 +422,11 @@ namespace Awesome_Password_Generator
         {
             // adjust font size
             if (txtResult.Text.Length <= 14)
-                txtResult.FontSize = 40;
+                txtResult.FontSize = monospaceFontSizeBig;
             else if (txtResult.Text.Length <= 20)
-                txtResult.FontSize = 30;
+                txtResult.FontSize = monospaceFontSizeMedium;
             else
-                txtResult.FontSize = 20;
+                txtResult.FontSize = monospaceFontSizeSmall;
         }
 
         //--------------------------------------------------
