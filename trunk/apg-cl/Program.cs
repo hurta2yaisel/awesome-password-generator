@@ -272,7 +272,7 @@ namespace apg_cl
             Console.WriteLine();
             Console.WriteLine("Awesome Password Generator " +
                 System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() +
-                " (cmdline version)");
+                " (console version)");
             Console.WriteLine("Copyright (c) 2011  __alex");
             Console.WriteLine("Licensed under GNU General Public License v3");
             Console.WriteLine("Homepage: http://code.google.com/p/awesome-password-generator/");
