@@ -33,7 +33,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
   * Open Source (GNU GPLv3).
 
 = System requirements =
-  * Windows 2000, XP, Vista, 7 or Windows Server 2000, 2003, 2008 (todo:check!)
+  * Windows XP / Vista / 7
   * [http://www.microsoft.com/download/en/details.aspx?id=17113 .NET Framework 4.0]
 </td>
 <td valign="top">
