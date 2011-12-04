@@ -248,7 +248,7 @@
                     </TextBlock>
                 </StackPanel>
                 <Separator />
-                <GroupBox Header="License information">
+                <GroupBox Header="License information" Margin="0,4,0,0">
                     <TreeView BorderThickness="0">
                         <TreeViewItem IsExpanded="True" Header="Main program" BorderThickness="0" Focusable="False">
                             <TreeViewItem IsExpanded="True">
