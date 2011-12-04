@@ -221,7 +221,7 @@
                     </TextBlock>
                     <Separator Width="15" Visibility="Hidden" />
                     <TextBlock>
-                        <Hyperlink Style="{StaticResource hlStyle1}" NavigateUri="http://code.google.com/p/awesome-password-generator/wiki/Welcome" RequestNavigate="hyperlink_RequestNavigate">
+                        <Hyperlink Style="{StaticResource hlStyle1}" NavigateUri="http://code.google.com/p/awesome-password-generator/wiki/Contents" RequestNavigate="hyperlink_RequestNavigate">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="res\bookcase_x16.ico" VerticalAlignment="Center" Stretch="None" />
                                 <TextBlock Margin="3,0,0,0" Style="{StaticResource tbStyle1}">Wiki</TextBlock>
