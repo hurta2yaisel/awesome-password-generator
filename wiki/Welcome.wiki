@@ -7,7 +7,7 @@
 [http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [http://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
 </td>
 <td width="33%" align="right">
-[http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/download.png]
+[http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/pics/download.png]
 </td>
 </tr>
 </table>
@@ -45,7 +45,7 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </table>
 
 = Download =
-You can [http://code.google.com/p/awesome-password-generator/downloads/list download latest version] or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions].
+You can [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe download latest version] or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions].
 
 = Also =
   * See [Contents Wiki] page for project documentation;
