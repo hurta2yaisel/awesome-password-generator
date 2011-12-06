@@ -1,1 +1,2 @@
+#labels Deprecated
 <a href="http://www.download.hr">Download Software</a> - Windows software, freeware and shareware downloads
