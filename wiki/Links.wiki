@@ -2,6 +2,4 @@
 
 <a href="http://www.download.hr">Download Software</a> - Windows software, freeware and shareware downloads
 
-<a target="_blank" href="http://www.izone.ru/">
-<img border="0" src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/award203.gif" width="106" height="59" alt="Софт-каталог IZone.ru">
-</a>
+<a target="_blank" href="http://www.izone.ru/"><img border="0" src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/award203.gif" width="106" height="59" alt="Софт-каталог IZone.ru"></a>
