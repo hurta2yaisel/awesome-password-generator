@@ -13,18 +13,18 @@
 		<State_Province />
 		<Zip_Postal_Code />
 		<Country />
-		<Company_WebSite_URL />
+		<Company_WebSite_URL>http://code.google.com/p/awesome-password-generator/</Company_WebSite_URL>
 		<Contact_Info>
 			<Author_First_Name>__alex</Author_First_Name>
 			<Author_Last_Name />
 			<Author_Email>athome.alex@gmail.com</Author_Email>
-			<Contact_First_Name />
-			<Contact_Last_Name />
-			<Contact_Email />
+			<Contact_First_Name>Alexander</Contact_First_Name>
+			<Contact_Last_Name>Ivanov</Contact_Last_Name>
+			<Contact_Email>athome.alex@gmail.com</Contact_Email>
 		</Contact_Info>
 		<Support_Info>
 			<Sales_Email />
-			<Support_Email />
+			<Support_Email>athome.alex@gmail.com</Support_Email>
 			<General_Email>athome.alex@gmail.com</General_Email>
 			<Sales_Phone />
 			<Support_Phone />
@@ -120,7 +120,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 			<Application_XML_File_URL>http://awesome-password-generator.googlecode.com/svn/wiki/PAD/agp1.0.0.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
-			<Primary_Download_URL>http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe</Primary_Download_URL>
+			<Primary_Download_URL>http://awesome-password-generator.googlecode.com/files/agp1.0.0-setup.exe</Primary_Download_URL>
 			<Secondary_Download_URL />
 			<Additional_Download_URL_1 />
 			<Additional_Download_URL_2 />
