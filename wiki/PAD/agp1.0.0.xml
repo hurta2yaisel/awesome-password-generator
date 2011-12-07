@@ -70,8 +70,8 @@
 			<Keywords>password generator, password, generator, security, random</Keywords>
 			<Char_Desc_45 />
 			<Char_Desc_80>The best password generator in known Universe!</Char_Desc_80>
-			<Char_Desc_250 />
-			<Char_Desc_450 />
+			<Char_Desc_250>Awesome Password Generator is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases.</Char_Desc_250>
+			<Char_Desc_450>Awesome Password Generator is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!</Char_Desc_450>
 			<Char_Desc_2000>Awesome Password Generator is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!
 
     * Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;
@@ -92,8 +92,8 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 			<Keywords>генератор паролей,генератор,пароль,безопасность</Keywords>
 			<Char_Desc_45 />
 			<Char_Desc_80>Лучший генератор паролей в известной части Вселенной!</Char_Desc_80>
-			<Char_Desc_250 />
-			<Char_Desc_450 />
+			<Char_Desc_250>Awesome Password Generator - это простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA).</Char_Desc_250>
+			<Char_Desc_450>Awesome Password Generator - это простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA). Просто откройте генератор, и новый пароль будет скопирован в буфер автоматически!</Char_Desc_450>
 			<Char_Desc_2000>Awesome Password Generator - это простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA). Просто откройте генератор, и новый пароль будет скопирован в буфер автоматически!
 
     * Обычные, "общего назначения" пароли для e-mail, онлайн-аккаунтов и любых настольных приложений;
@@ -117,7 +117,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 			<Application_Order_URL />
 			<Application_Screenshot_URL>http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png</Application_Screenshot_URL>
 			<Application_Icon_URL>http://awesome-password-generator.googlecode.com/svn/wiki/pics/icon.png</Application_Icon_URL>
-			<Application_XML_File_URL />
+			<Application_XML_File_URL>http://awesome-password-generator.googlecode.com/svn/wiki/PAD/agp1.0.0.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
 			<Primary_Download_URL>http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe</Primary_Download_URL>
