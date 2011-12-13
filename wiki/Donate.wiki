@@ -22,6 +22,22 @@ WMZ:
 Z868836627664 (equivalent to USD)
 </td>
 </tr>
+<tr>
+<td>
+WME:
+</td>
+<td>
+E583182868196 (equivalent to EUR)
+</td>
+</tr>
+<tr>
+<td>
+WMR:
+</td>
+<td>
+!R383883553199 (equivalent to RUR)
+</td>
+</tr>
 </table>
 WMZ: Z868836627664 (equivalent to USD)
 
