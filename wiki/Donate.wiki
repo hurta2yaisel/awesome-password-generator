@@ -4,7 +4,7 @@ under construction
 
 Your donation will support the development of Awesome Password Generator and keep the project running. Thank you in advance!
 
-== WebMoney ==
+== !WebMoney ==
 
 <table border="0" cellpadding="0">
 <tr>
@@ -13,8 +13,10 @@ Your donation will support the development of Awesome Password Generator and kee
 </td>
 <td>
 WMZ: Z868836627664 (equivalent to USD)
+<br>
 WME: E583182868196 (equivalent to EUR)
-WMR: R383883553199 (equivalent to RUR)
+<br>
+WMR: !R383883553199 (equivalent to RUR)
 </td>
 </tr>
 </table>
@@ -34,9 +36,9 @@ There is a number of options that you can use to add funds to the WebMoney purse
 </tr>
 </table>
 
-Яндекс.Деньги:
-Номер счёта:
-С помощью системы Яндекс.Деньги можно осуществить пожертвование через банковский перевод, через огромное число [http://money.yandex.ru/doc.xml?id=522781 терминалов], через ряд [http://money.yandex.ru/doc.xml?id=522870 банкоматов]. Подробности указаны на [http://money.yandex.ru/prepaid.xml этой страничке]. Всё что нужно знать - номер счёта, указанный выше.
+РЇРЅРґРµРєСЃ.Р”РµРЅСЊРіРё:
+РќРѕРјРµСЂ СЃС‡С‘С‚Р°:
+РЎ РїРѕРјРѕС‰СЊСЋ СЃРёСЃС‚РµРјС‹ РЇРЅРґРµРєСЃ.Р”РµРЅСЊРіРё РјРѕР¶РЅРѕ РѕСЃСѓС‰РµСЃС‚РІРёС‚СЊ РїРѕР¶РµСЂС‚РІРѕРІР°РЅРёРµ С‡РµСЂРµР· Р±Р°РЅРєРѕРІСЃРєРёР№ РїРµСЂРµРІРѕРґ, С‡РµСЂРµР· РѕРіСЂРѕРјРЅРѕРµ С‡РёСЃР»Рѕ [http://money.yandex.ru/doc.xml?id=522781 С‚РµСЂРјРёРЅР°Р»РѕРІ], С‡РµСЂРµР· СЂСЏРґ [http://money.yandex.ru/doc.xml?id=522870 Р±Р°РЅРєРѕРјР°С‚РѕРІ]. РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё СѓРєР°Р·Р°РЅС‹ РЅР° [http://money.yandex.ru/prepaid.xml СЌС‚РѕР№ СЃС‚СЂР°РЅРёС‡РєРµ]. Р’СЃС‘ С‡С‚Рѕ РЅСѓР¶РЅРѕ Р·РЅР°С‚СЊ - РЅРѕРјРµСЂ СЃС‡С‘С‚Р°, СѓРєР°Р·Р°РЅРЅС‹Р№ РІС‹С€Рµ.
 
 
 
