@@ -1,1 +1,75 @@
-under construction
+== Спасибо! ==
+
+Ваше пожертвование поддержит разработку Awesome Password Generator. Заранее спасибо!
+
+== !WebMoney ==
+
+<table border="0" cellpadding="0">
+<tr>
+<td>
+[http://awesome-password-generator.googlecode.com/svn/wiki/pics/WebMoney.png]
+</td>
+<td width="20"></td>
+<td>
+<table border="0">
+<tr>
+<td>
+WMZ:
+</td>
+<td width="5"></td>
+<td>
+*Z868836627664*
+</td>
+<td width="5"></td>
+<td>
+(эквивалент долларов)
+</td>
+</tr>
+<tr>
+<td>
+WME:
+</td>
+<td width="5"></td>
+<td>
+*E583182868196*
+</td>
+<td width="5"></td>
+<td>
+(эквивалент евро)
+</td>
+</tr>
+<tr>
+<td>
+WMR:
+</td>
+<td width="5"></td>
+<td>
+*`R383883553199`*
+</td>
+<td width="5"></td>
+<td>
+(эквивалент рублей)
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+Есть множество способов пополнить WebMoney-кошелек. Подробности - на [http://www.webmoney.ru/ webmoney.ru].
+
+== Яндекс.Деньги ==
+
+<table border="0" cellpadding="0">
+<tr>
+<td>
+[http://awesome-password-generator.googlecode.com/svn/wiki/pics/YandexMoney.png]
+</td>
+<td width="20"></td>
+<td>
+Номер счёта: <b>410011190316396</b>
+</td>
+</tr>
+</table>
+
+С помощью системы Яндекс.Деньги можно осуществить пожертвование через банковский перевод, через огромное число [http://money.yandex.ru/doc.xml?id=522781 терминалов], через ряд [http://money.yandex.ru/doc.xml?id=522870 банкоматов]. Подробности указаны на [http://money.yandex.ru/prepaid.xml этой страничке]. Всё что нужно знать - номер счёта, указанный выше.

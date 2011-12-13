@@ -1,5 +1,3 @@
-under construction
-
 == Thank you! ==
 
 Your donation will support the development of Awesome Password Generator and keep the project running. Thank you in advance!
@@ -74,10 +72,3 @@ RUR purse: <b>410011190316396</b>
 </tr>
 </table>
 
-Яндекс.Деньги:
-Номер счёта:
-С помощью системы Яндекс.Деньги можно осуществить пожертвование через банковский перевод, через огромное число [http://money.yandex.ru/doc.xml?id=522781 терминалов], через ряд [http://money.yandex.ru/doc.xml?id=522870 банкоматов]. Подробности указаны на [http://money.yandex.ru/prepaid.xml этой страничке]. Всё что нужно знать - номер счёта, указанный выше.
-
-
-
-bitcoin
