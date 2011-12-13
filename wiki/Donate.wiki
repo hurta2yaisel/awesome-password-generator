@@ -13,11 +13,18 @@ Your donation will support the development of Awesome Password Generator and kee
 </td>
 <td width="20"></td>
 <td>
-WMZ: Z868836627664 (equivalent to USD)
+WMZ:
 
-WME: E583182868196 (equivalent to EUR)
+WME:
 
-WMR: !R383883553199 (equivalent to RUR)
+WMR:
+</td>
+Z868836627664 (equivalent to USD)
+
+E583182868196 (equivalent to EUR)
+
+!R383883553199 (equivalent to RUR)
+<td>
 </td>
 </tr>
 </table>
