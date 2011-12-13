@@ -56,7 +56,7 @@ WMR:
 </tr>
 </table>
 
-Есть множество способов пополнить WebMoney-кошелек. Подробности - на [http://www.webmoney.ru/ webmoney.ru].
+Есть множество способов пополнить !WebMoney-кошелек. Подробности - на [http://www.webmoney.ru/ webmoney.ru].
 
 == Яндекс.Деньги ==
 
