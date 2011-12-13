@@ -58,20 +58,6 @@ WMR:
 
 There is a number of options that you can use to add funds to the !WebMoney purses, including prepaid cards. See [http://www.wmtransfer.com/ wmtransfer.com] for more information.
 
-== Yandex.Money ==
-
-<table border="0" cellpadding="0">
-<tr>
-<td>
-[http://awesome-password-generator.googlecode.com/svn/wiki/pics/YandexMoney.png]
-</td>
-<td width="20"></td>
-<td>
-RUR purse: <b>410011190316396</b>
-</td>
-</tr>
-</table>
-
 == Bitcoin ==
 
 <table border="0" cellpadding="0">
@@ -82,6 +68,20 @@ RUR purse: <b>410011190316396</b>
 <td width="20"></td>
 <td>
 *198m8WrxXzBANH9Bv7kAoQAVLPXdj5SnKj*
+</td>
+</tr>
+</table>
+
+== Yandex.Money ==
+
+<table border="0" cellpadding="0">
+<tr>
+<td>
+[http://awesome-password-generator.googlecode.com/svn/wiki/pics/YandexMoney.png]
+</td>
+<td width="20"></td>
+<td>
+RUR purse: <b>410011190316396</b>
 </td>
 </tr>
 </table>

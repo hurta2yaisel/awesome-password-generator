@@ -58,6 +58,20 @@ WMR:
 
 Есть множество способов пополнить !WebMoney-кошелек. Подробности - на [http://www.webmoney.ru/ webmoney.ru].
 
+== Bitcoin ==
+
+<table border="0" cellpadding="0">
+<tr>
+<td>
+[http://awesome-password-generator.googlecode.com/svn/wiki/pics/Bitcoin.png]
+</td>
+<td width="20"></td>
+<td>
+*198m8WrxXzBANH9Bv7kAoQAVLPXdj5SnKj*
+</td>
+</tr>
+</table>
+
 == Яндекс.Деньги ==
 
 <table border="0" cellpadding="0">
