@@ -11,7 +11,7 @@ Your donation will support the development of Awesome Password Generator and kee
 <td>
 [http://awesome-password-generator.googlecode.com/svn/wiki/pics/WebMoney.png]
 </td>
-<td></td>
+<td width=30></td>
 <td>
 WMZ: Z868836627664 (equivalent to USD)
 
