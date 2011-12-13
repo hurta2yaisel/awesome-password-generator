@@ -1,1 +1,43 @@
 under construction
+
+== Thank you! ==
+
+Your donation will support the development of Awesome Password Generator and keep the project running. Thank you in advance!
+
+== WebMoney ==
+
+<table border="0" cellpadding="0">
+<tr>
+<td>
+[http://awesome-password-generator.googlecode.com/svn/wiki/pics/WebMoney.png]
+</td>
+<td>
+WMZ: Z868836627664 (equivalent to USD)
+WME: E583182868196 (equivalent to EUR)
+WMR: R383883553199 (equivalent to RUR)
+</td>
+</tr>
+</table>
+
+There is a number of options that you can use to add funds to the WebMoney purses, including prepaid cards. See [http://www.wmtransfer.com/ wmtransfer.com] for more information.
+
+== Yandex Money ==
+
+<table border="0" cellpadding="0">
+<tr>
+<td>
+[http://awesome-password-generator.googlecode.com/svn/wiki/pics/YandexMoney.png]
+</td>
+<td>
+410011190316396
+</td>
+</tr>
+</table>
+
+Яндекс.Деньги:
+Номер счёта:
+С помощью системы Яндекс.Деньги можно осуществить пожертвование через банковский перевод, через огромное число [http://money.yandex.ru/doc.xml?id=522781 терминалов], через ряд [http://money.yandex.ru/doc.xml?id=522870 банкоматов]. Подробности указаны на [http://money.yandex.ru/prepaid.xml этой страничке]. Всё что нужно знать - номер счёта, указанный выше.
+
+
+
+bitcoin
