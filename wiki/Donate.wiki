@@ -16,6 +16,10 @@ Your donation will support the development of Awesome Password Generator and kee
 <table border="0" cellpadding="0">
 <tr>
 <td>
+WMZ:
+</td>
+<td>
+Z868836627664 (equivalent to USD)
 </td>
 </tr>
 </table>
