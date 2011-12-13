@@ -13,7 +13,7 @@ Your donation will support the development of Awesome Password Generator and kee
 </td>
 <td width="20"></td>
 <td>
-<table border="0" cellpadding="0">
+<table border="0" cellpadding="5">
 <tr>
 <td>
 WMZ:
