@@ -2,7 +2,7 @@
 
 Your donation will support the development of Awesome Password Generator and keep the project running. Thank you in advance!
 
-= !WebMoney =
+== !WebMoney ==
 
 <table border="0" cellpadding="0">
 <tr>
@@ -58,7 +58,7 @@ WMR:
 
 There is a number of options that you can use to add funds to the !WebMoney purses, including prepaid cards. See [http://www.wmtransfer.com/ wmtransfer.com] for more information.
 
-= Yandex.Money =
+== Yandex.Money ==
 
 <table border="0" cellpadding="0">
 <tr>
