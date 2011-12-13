@@ -2,6 +2,7 @@
 
 Your donation will support the development of Awesome Password Generator and keep the project running. Thank you in advance!
 
+
 == !WebMoney ==
 
 <table border="0" cellpadding="0">
