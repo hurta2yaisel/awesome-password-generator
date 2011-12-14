@@ -4,7 +4,11 @@
         xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
         Title="Awesome Password Generator" Width="384" SizeToContent="Height" ResizeMode="CanMinimize" Closed="Window_Closed" Height="710.52"
         FontFamily="Segoe UI,Microsoft Sans Serif" FontSize="12">
-
+    
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo />
+    </Window.TaskbarItemInfo>
+    
     <Window.Resources>
         <Style x:Key="hlStyle1" TargetType="{x:Type Hyperlink}">
             <Style.Triggers>
