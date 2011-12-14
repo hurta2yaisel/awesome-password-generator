@@ -19,6 +19,7 @@ using Password_Generator;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
+using System.Windows.Shell;
 
 
 namespace Awesome_Password_Generator
@@ -1045,6 +1046,9 @@ namespace Awesome_Password_Generator
             pbBulkProgressBar.Value = 0;
             pbBulkProgressBar.Visibility = Visibility.Visible;
 
+            TaskbarItemInfo.ProgressValue = 0;
+            TaskbarItemInfo.ProgressState = TaskbarItemProgressState.Normal;
+
             bgworker.RunWorkerAsync(pgo);  // generate passwords in background
         }
 
@@ -1110,6 +1114,7 @@ namespace Awesome_Password_Generator
         private void bgworker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             pbBulkProgressBar.Value = e.ProgressPercentage;
+            TaskbarItemInfo.ProgressValue = (double)e.ProgressPercentage / 100;
         }
 
         //--------------------------------------------------
@@ -1121,6 +1126,8 @@ namespace Awesome_Password_Generator
             }
             else if (e.Error != null)
             {
+                TaskbarItemInfo.ProgressState = TaskbarItemProgressState.Error;
+
                 System.Windows.MessageBox.Show(string.Format("ERROR: Can't save generated passwords to file!\n\n{0}",
                     e.Error.Message), System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
                     MessageBoxButton.OK, MessageBoxImage.Error);
@@ -1131,6 +1138,7 @@ namespace Awesome_Password_Generator
             }
 
             pbBulkProgressBar.Visibility = Visibility.Hidden;
+            TaskbarItemInfo.ProgressState = TaskbarItemProgressState.None;
 
             txtBulkFile.IsEnabled = true;
             cmdBulkBrowse.IsEnabled = true;
