@@ -47,6 +47,9 @@ namespace Awesome_Password_Generator
         string[] bulkPasswords;
         BackgroundWorker bgworker = new BackgroundWorker();
 
+        string appPath, cfgFileName;
+        bool portableMode;
+
         private int monospaceFontSizeBig = 40, monospaceFontSizeMedium = 30, monospaceFontSizeSmall = 20;
 
         //--------------------------------------------------
@@ -74,6 +77,24 @@ namespace Awesome_Password_Generator
                 monospaceFontSizeBig = 40; monospaceFontSizeMedium = 29; monospaceFontSizeSmall = 18;
             }
 
+            // check if applicaton runs in portable mode and fill some global variables
+            appPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            portableMode = System.IO.File.Exists(appPath + "\\portable");
+            if (portableMode)
+            {
+                cfgFileName = appPath + "\\config.xml";
+                txtBulkFile.Text = appPath + "\\passwords.txt";
+            }
+            else
+            {
+                string appdataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Awesome Password Generator";
+                cfgFileName = appdataDir + "\\config.xml";
+                if (!System.IO.Directory.Exists(appdataDir))
+                    System.IO.Directory.CreateDirectory(appdataDir);
+                txtBulkFile.Text = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\passwords.txt";
+            }
+
+            // load configuration and prepare GUI
             LoadConfig();
             cmdRegenerate_Click(null, null);    // generate password
             GenerateCommandLines();
@@ -85,10 +106,15 @@ namespace Awesome_Password_Generator
             bgworker.ProgressChanged += bgworker_ProgressChanged;
             bgworker.RunWorkerCompleted += bgworker_RunWorkerCompleted;
 
+            string s;
+            s = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision.ToString();
             // show version info
             this.Title = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + " " +
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            lblAbout1.Content = this.Title;
+                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major.ToString() + "." +
+                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString() + "." +
+                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
+            lblAbout1.Content = this.Title + " build " +
+                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision.ToString();
         }
 
         //--------------------------------------------------
@@ -146,8 +172,7 @@ namespace Awesome_Password_Generator
         {
             try
             {
-                string appPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                using (XmlReader reader = XmlReader.Create(appPath + "\\config.xml", new XmlReaderSettings { IgnoreComments = true, IgnoreWhitespace = true }))
+                using (XmlReader reader = XmlReader.Create(cfgFileName, new XmlReaderSettings { IgnoreComments = true, IgnoreWhitespace = true }))
                 {
                     reader.Read();  // skip declatation
 
@@ -218,84 +243,93 @@ namespace Awesome_Password_Generator
 
         private void SaveConfig()
         {
-            // do not save the state of this contols in config file
-            string[] controlsExclusions = new string[] { "txtResult", "txtCmdlineLong", "txtCmdlineShort" };
-
-            string appPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            using (XmlWriter writer = XmlWriter.Create(appPath + "\\config.xml", new XmlWriterSettings { Encoding = Encoding.UTF8, Indent = true }))
+            try
             {
-                writer.WriteStartElement("Config");
-                writer.WriteAttributeString("Version", "1.0");
+                // do not save the state of this contols in config file
+                string[] controlsExclusions = new string[] { "txtResult", "txtCmdlineLong", "txtCmdlineShort" };
 
-                // save main window position
-                writer.WriteStartElement("MainWindowPosition");
-                writer.WriteAttributeString("Top", this.Top.ToString());
-                writer.WriteAttributeString("Left", this.Left.ToString());
-                writer.WriteEndElement();
-
-                // save controls state
-                writer.WriteStartElement("Controls");
-
-                foreach (object exp in FindAllChildren(this))
+                using (XmlWriter writer = XmlWriter.Create(cfgFileName, new XmlWriterSettings { Encoding = Encoding.UTF8, Indent = true }))
                 {
-                    if (exp.GetType().GetProperty("Name") != null)
-                        if (exp is Expander && !controlsExclusions.Contains(((FrameworkElement)exp).Name))
-                        {
-                            writer.WriteStartElement("Expander");
-                            writer.WriteAttributeString("Name", ((FrameworkElement)exp).Name);
-                            writer.WriteAttributeString("IsExpanded", ((Expander)exp).IsExpanded.ToString());
+                    writer.WriteStartElement("Config");
+                    writer.WriteAttributeString("Version", "1.0");
 
-                            foreach (object ctrl in FindAllChildren((Expander)exp))
-                                if (!controlsExclusions.Contains(((FrameworkElement)ctrl).Name))
-                                    switch (ctrl.GetType().Name)
-                                    {
-                                        case "IntegerUpDown":
-                                            writer.WriteStartElement("Control");
-                                            writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
-                                            writer.WriteAttributeString("Value", ((IntegerUpDown)ctrl).Value.ToString());
-                                            writer.WriteEndElement();
-                                            break;
-                                        case "CheckBox":
-                                            writer.WriteStartElement("Control");
-                                            writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
-                                            writer.WriteAttributeString("IsChecked", ((CheckBox)ctrl).IsChecked.ToString());
-                                            writer.WriteEndElement();
-                                            break;
-                                        case "TextBox":
-                                            writer.WriteStartElement("Control");
-                                            writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
-                                            writer.WriteAttributeString("Text", ((TextBox)ctrl).Text);
-                                            writer.WriteEndElement();
-                                            break;
-                                        case "WatermarkTextBox":
-                                            writer.WriteStartElement("Control");
-                                            writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
-                                            writer.WriteAttributeString("Text", ((WatermarkTextBox)ctrl).Text);
-                                            writer.WriteEndElement();
-                                            break;
-                                        case "RadioButton":
-                                            writer.WriteStartElement("Control");
-                                            writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
-                                            writer.WriteAttributeString("IsChecked", ((RadioButton)ctrl).IsChecked.ToString());
-                                            writer.WriteEndElement();
-                                            break;
-                                        case "Slider":
-                                            writer.WriteStartElement("Control");
-                                            writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
-                                            writer.WriteAttributeString("Value", ((Slider)ctrl).Value.ToString());
-                                            writer.WriteEndElement();
-                                            break;
-                                    }
+                    // save main window position
+                    writer.WriteStartElement("MainWindowPosition");
+                    writer.WriteAttributeString("Top", this.Top.ToString());
+                    writer.WriteAttributeString("Left", this.Left.ToString());
+                    writer.WriteEndElement();
 
-                            writer.WriteEndElement();   // </Expander>
-                        }
+                    // save controls state
+                    writer.WriteStartElement("Controls");
+
+                    foreach (object exp in FindAllChildren(this))
+                    {
+                        if (exp.GetType().GetProperty("Name") != null)
+                            if (exp is Expander && !controlsExclusions.Contains(((FrameworkElement)exp).Name))
+                            {
+                                writer.WriteStartElement("Expander");
+                                writer.WriteAttributeString("Name", ((FrameworkElement)exp).Name);
+                                writer.WriteAttributeString("IsExpanded", ((Expander)exp).IsExpanded.ToString());
+
+                                foreach (object ctrl in FindAllChildren((Expander)exp))
+                                    if (!controlsExclusions.Contains(((FrameworkElement)ctrl).Name))
+                                        switch (ctrl.GetType().Name)
+                                        {
+                                            case "IntegerUpDown":
+                                                writer.WriteStartElement("Control");
+                                                writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
+                                                writer.WriteAttributeString("Value", ((IntegerUpDown)ctrl).Value.ToString());
+                                                writer.WriteEndElement();
+                                                break;
+                                            case "CheckBox":
+                                                writer.WriteStartElement("Control");
+                                                writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
+                                                writer.WriteAttributeString("IsChecked", ((CheckBox)ctrl).IsChecked.ToString());
+                                                writer.WriteEndElement();
+                                                break;
+                                            case "TextBox":
+                                                writer.WriteStartElement("Control");
+                                                writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
+                                                writer.WriteAttributeString("Text", ((TextBox)ctrl).Text);
+                                                writer.WriteEndElement();
+                                                break;
+                                            case "WatermarkTextBox":
+                                                writer.WriteStartElement("Control");
+                                                writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
+                                                writer.WriteAttributeString("Text", ((WatermarkTextBox)ctrl).Text);
+                                                writer.WriteEndElement();
+                                                break;
+                                            case "RadioButton":
+                                                writer.WriteStartElement("Control");
+                                                writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
+                                                writer.WriteAttributeString("IsChecked", ((RadioButton)ctrl).IsChecked.ToString());
+                                                writer.WriteEndElement();
+                                                break;
+                                            case "Slider":
+                                                writer.WriteStartElement("Control");
+                                                writer.WriteAttributeString("Name", ((FrameworkElement)ctrl).Name);
+                                                writer.WriteAttributeString("Value", ((Slider)ctrl).Value.ToString());
+                                                writer.WriteEndElement();
+                                                break;
+                                        }
+
+                                writer.WriteEndElement();   // </Expander>
+                            }
+                    }
+
+                    writer.WriteEndElement();   // </Controls>
+
+                    writer.WriteEndElement();   // </Config>
+                    writer.WriteEndDocument();
+                    writer.Flush();
                 }
+            }
+            catch (Exception e)
+            {
+                System.Windows.MessageBox.Show("ERROR: Can't save configuration!\n\n" + e.Message.ToString(),
+                    System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
+                    MessageBoxButton.OK, MessageBoxImage.Error);
 
-                writer.WriteEndElement();   // </Controls>
-
-                writer.WriteEndElement();   // </Config>
-                writer.WriteEndDocument();
-                writer.Flush();
             }
         }
 
@@ -402,7 +436,7 @@ namespace Awesome_Password_Generator
             txtResult.Text = pswFormatted;
             if ((bool)chkCopyToClipboardAutomatically.IsChecked && expSingleGeneration.IsExpanded)
                 Clipboard.SetText(psw);
-            //`Brush b = new SolidColorBrush(Color.FromArgb(255, 200, 255, 200));
+            
             // display password strength
             Brush[] brushes = new Brush[] { Brushes.LightPink, new SolidColorBrush(Color.FromArgb(255, 255, 255, 128)), new SolidColorBrush(Color.FromArgb(255, 200, 255, 200)), Brushes.LawnGreen };
             if (pswgen.isReady)
@@ -1278,7 +1312,6 @@ namespace Awesome_Password_Generator
             {
                 // open a file
 
-                string appPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
                 string eula = appPath + "\\" + e.Uri.OriginalString;
                 if (!File.Exists(eula))
                 {
