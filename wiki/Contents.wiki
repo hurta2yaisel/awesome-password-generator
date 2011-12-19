@@ -1,6 +1,7 @@
 #labels Featured
 
 = Contents =
+  === [Changes What's new?] ===
   === [Strength Password strength] ===
   === [Options] ===
   === [ConsoleVersion Console version (apg-cl.exe)] ===
