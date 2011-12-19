@@ -17,13 +17,14 @@
 <table border="0" width="100%">
 <tr>
 <td valign="top">
+= News =
+Version 1.1.0 released! See [Changes changes] and [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe download] it!
 = Description =
 *Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!
   * Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;
   * Wi-Fi (WPA) passphrases for your wireless devices;
   * Easy-to-type passwords like `p-zuus2Dzx`, not `c]57%/z&Q9`;
   * Passwords without confusing characters like 0 (zero) and O (oh);
-  * Windows Installer and Portable versions;
   * This is a free software.
 
 For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with console version for using from scripts (examples in batch and !PowerShell included :).
