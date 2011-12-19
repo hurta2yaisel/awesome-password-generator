@@ -1,4 +1,4 @@
-<h5> Awesome Password Generator </h5>
+<font size=30> Awesome Password Generator </font>
 
 *Version 1.1.0 released! [Changes What's new?]*
 
