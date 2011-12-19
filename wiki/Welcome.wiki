@@ -9,7 +9,7 @@
 <td width="33%" align="right">
 [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/pics/download.png]
 
-*Version 1.1.0 [Changes What's new?]*
+*Version 1.1.0 has been released! [Changes What's new?]*
 </td>
 </tr>
 </table>
