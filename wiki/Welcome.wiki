@@ -12,6 +12,9 @@
 </td>
 <td width="33%" align="right">
 [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/pics/download.png]
+</td>
+</tr>
+</table>
 
 ----
 
