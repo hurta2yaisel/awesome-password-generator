@@ -8,11 +8,31 @@
 </td>
 <td width="33%" align="right">
 [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/pics/download.png]
+<br>
+Version 1.1.0 [Changes What's new?]
+<br>
+
+<table border="0" cellpadding="0">
+<tr>
+<td>
+Version 1.1.0
+</td>
+<td align="center" valign="middle">
+</td>
+<td align="right">
+[Changes What's new?]
+</td>
+</tr>
+</table>
+
 </td>
 </tr>
 </table>
 
 ----
+
+= News =
+Version 1.1.0 released! See [Changes changes] and [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe download] it!
 
 <table border="0" width="100%">
 <tr>
@@ -23,6 +43,7 @@
   * Wi-Fi (WPA) passphrases for your wireless devices;
   * Easy-to-type passwords like `p-zuus2Dzx`, not `c]57%/z&Q9`;
   * Passwords without confusing characters like 0 (zero) and O (oh);
+  * Windows Installer and Portable versions;
   * This is a free software.
 
 For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with console version for using from scripts (examples in batch and !PowerShell included :).
@@ -45,10 +66,10 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </table>
 
 = Download =
-You can [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe download latest version] or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions].
+You can [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe download latest version] or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions]. See [Changes changes (history)] for details.
 
 = Also =
-  * See [Contents Wiki] page for project documentation;
+  * View [Contents project documentation (Wiki)];
   * Chat in [http://groups.google.com/group/awesome-password-generator forum];
   * [http://code.google.com/p/awesome-password-generator/issues/list Report a bug or write your suggestions] about how to improve the program;
   * [Donate]
