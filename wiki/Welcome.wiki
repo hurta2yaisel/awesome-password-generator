@@ -16,9 +16,6 @@ Version 1.1.0 [Changes What's new?]
 
 ----
 
-= News =
-Version 1.1.0 released! See [Changes changes] and [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.0.0-setup.exe download] it!
-
 <table border="0" width="100%">
 <tr>
 <td valign="top">
