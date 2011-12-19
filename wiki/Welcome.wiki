@@ -37,7 +37,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
   * [ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options – just run GUI, set up password length, quantity, charsets and other options as you wish, and click *Command line builder*. Run <tt>apg-cl.exe</tt> with generated command line parameters;
   * Open Source (GNU GPLv3).
 
-= System requirements =
+== System requirements ==
   * Windows XP / Vista / 7 / 8
   * [http://www.microsoft.com/download/en/details.aspx?id=17113 .NET Framework 4.0]
 </td>
