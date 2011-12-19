@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 3.1.1.50 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>__alex</Company_Name>
+		<Address_1 />
+		<Address_2 />
+		<City_Town />
+		<State_Province />
+		<Zip_Postal_Code />
+		<Country />
+		<Company_WebSite_URL>http://code.google.com/p/awesome-password-generator/</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>__alex</Author_First_Name>
+			<Author_Last_Name />
+			<Author_Email>athome.alex@gmail.com</Author_Email>
+			<Contact_First_Name>Alexander</Contact_First_Name>
+			<Contact_Last_Name>Ivanov</Contact_Last_Name>
+			<Contact_Email>athome.alex@gmail.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email />
+			<Support_Email>athome.alex@gmail.com</Support_Email>
+			<General_Email>athome.alex@gmail.com</General_Email>
+			<Sales_Phone />
+			<Support_Phone />
+			<General_Phone />
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>Awesome Password Generator</Program_Name>
+		<Program_Version>1.1.0</Program_Version>
+		<Program_Release_Month>12</Program_Release_Month>
+		<Program_Release_Day>16</Program_Release_Day>
+		<Program_Release_Year>2011</Program_Release_Year>
+		<Program_Cost_Dollars />
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other />
+		<Program_Type>Freeware</Program_Type>
+		<Program_Release_Status>Minor Update</Program_Release_Status>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>Win7 x32,Win7 x64,WinVista,WinVista x64,WinXP</Program_OS_Support>
+		<Program_Language>English</Program_Language>
+		<Program_Change_Info>* Windows taskbar progress indicator (in the bulk generation mode); * Now application is available in two versions: Windows Installer and Portable; * Bugs fixed.</Program_Change_Info>
+		<Program_Specific_Category>Utilities</Program_Specific_Category>
+		<Program_Category_Class>Security &amp; Privacy::Password Managers</Program_Category_Class>
+		<Program_System_Requirements />
+		<File_Info>
+			<File_Size_Bytes>827242</File_Size_Bytes>
+			<File_Size_K>807</File_Size_K>
+			<File_Size_MB>0.79</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count />
+			<Expire_Based_On />
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>password generator, password, generator, security, random</Keywords>
+			<Char_Desc_45 />
+			<Char_Desc_80>The best password generator in known Universe!</Char_Desc_80>
+			<Char_Desc_250>Awesome Password Generator is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases.</Char_Desc_250>
+			<Char_Desc_450>Awesome Password Generator is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!</Char_Desc_450>
+			<Char_Desc_2000>Awesome Password Generator is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!
+
+    * Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;
+    * Wi-Fi (WPA) passphrases for your wireless devices;
+    * Easy-to-type passwords like p-zuus2Dzx, not c]57%/z&amp;Q9;
+    * Passwords without confusing characters like 0 (zero) and O (oh);
+    * This is a free software. 
+
+For system administrators/IT-professionals is is also a powerfull tool for single or bulk password generation, with console version for using from scripts (examples in batch and PowerShell included :).
+
+    * GUI single/bulk password/wi-fi passphrase generation;
+    * Easy-to-type and Exclude confusing characters options;
+    * Quick and secure: Copy to clipboard automatically and Clear clipboard on exit options;
+    * Console version: apg-cl.exe has same functionality as GUI version. Do not mess with command line options - just run GUI, set up password length, quantity, charsets and other options as you wish, and click Command line builder. Run apg-cl.exe with generated command line parameters;
+    * Open Source (GNU GPLv3). </Char_Desc_2000>
+		</English>
+		<Russian>
+			<Keywords>генератор паролей,генератор,пароль,безопасность</Keywords>
+			<Char_Desc_45 />
+			<Char_Desc_80>Лучший генератор паролей в известной части Вселенной!</Char_Desc_80>
+			<Char_Desc_250>Awesome Password Generator - это простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA).</Char_Desc_250>
+			<Char_Desc_450>Awesome Password Generator - это простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA). Просто откройте генератор, и новый пароль будет скопирован в буфер автоматически!</Char_Desc_450>
+			<Char_Desc_2000>Awesome Password Generator - это простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA). Просто откройте генератор, и новый пароль будет скопирован в буфер автоматически!
+
+    * Обычные, "общего назначения" пароли для e-mail, онлайн-аккаунтов и любых настольных приложений;
+    * Wi-Fi (WPA) ключи для ваших беспроводных устройств;
+    * Легко набираемые пароли вроде p-zuus2Dzx вместо c]57%/z&amp;Q9;
+    * Пароли без спорных символов вроде 0 (ноль) и О (буква);
+    * Это бесплатная программа. 
+
+Для ИТ-профессионалов и системных администраторов это еще и мощный инструмент для генерации одного или множества паролей, плюс консольная версия для использования в скриптах (есть примеры на batch и PowerShell :)
+
+    * GUI-интерфейс для генерации одиночных или множества паролей и WPA-ключей;
+    * Опции Легко набираемые пароли и Исключить спорные символы;
+    * Быстрота и безопасность: опции Копировать в буфер автоматически и Очищать буфер при выходе;
+    * Консольная версия apg-cl.exe с тем же функционалом, что и GUI-версия. И не надо изучать мануалы - просто откройте GUI, выберите длину пароля, количество, используемые наборы символов и другие опции, затем кликните Command line builder. Запустите apg-cl.exe, используя сгенерированные параметры;
+    * Открытые исходники (GNU GPLv3). </Char_Desc_2000>
+		</Russian>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>http://code.google.com/p/awesome-password-generator/</Application_Info_URL>
+			<Application_Order_URL />
+			<Application_Screenshot_URL>http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png</Application_Screenshot_URL>
+			<Application_Icon_URL>http://awesome-password-generator.googlecode.com/svn/wiki/pics/icon.png</Application_Icon_URL>
+			<Application_XML_File_URL>http://awesome-password-generator.googlecode.com/svn/wiki/PAD/agp1.1.0.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>http://awesome-password-generator.googlecode.com/files/agp1.1.0-setup.exe</Primary_Download_URL>
+			<Secondary_Download_URL />
+			<Additional_Download_URL_1 />
+			<Additional_Download_URL_2 />
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions />
+		<EULA />
+	</Permissions>
+</XML_DIZ_INFO>
