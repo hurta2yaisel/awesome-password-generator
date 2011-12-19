@@ -38,7 +38,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
   * Windows XP / Vista / 7 / 8
   * [http://www.microsoft.com/download/en/details.aspx?id=17113 .NET Framework 4.0]
 </td>
-<td valign="top">
+<td align="middle" valign="top">
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 
 [Screenshots More screenshots]
