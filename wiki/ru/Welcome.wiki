@@ -17,6 +17,8 @@
 <table border="0" width="100%">
 <tr>
 <td valign="top">
+= Новости =
+Вышла версия *1.1.0*! Смотрите [Changes изменения] и качайте!
 = Описание =
 *Awesome Password Generator* - это простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA). Просто откройте генератор, и новый пароль будет скопирован в буфер автоматически!
   * Обычные, "общего назначения" пароли для e-mail, онлайн-аккаунтов и любых настольных приложений;
@@ -46,7 +48,7 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </table>
 
 = Скачать =
-Вы можете [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe скачать последнюю версию] или выбрать из списка [http://code.google.com/p/awesome-password-generator/downloads/list всех версий].
+Вы можете [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe скачать последнюю версию] или выбрать из списка [http://code.google.com/p/awesome-password-generator/downloads/list всех версий]. Детали - в разделе [Changes Изменения].
 
 = А также =
   * Читайте документацию в [Contents Wiki]-разделе;
