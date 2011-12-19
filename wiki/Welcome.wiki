@@ -12,18 +12,6 @@
 Version 1.1.0 [Changes What's new?]
 <br>
 
-<table border="0" cellpadding="0">
-<tr>
-<td>
-Version 1.1.0
-</td>
-<td align="center" valign="middle">
-</td>
-<td align="right">
-[Changes What's new?]
-</td>
-</tr>
-</table>
 
 </td>
 </tr>
