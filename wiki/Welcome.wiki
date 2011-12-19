@@ -1,13 +1,4 @@
-<table border="0" width="100%" cellpadding="0">
-<tr>
-<td align="left">
-<font size=6>*Awesome Password Generator*</font>
-</td>
-<td align="right" valign="bottom">
 *Version 1.1.0 released! See [Changes what's new]*
-</td>
-</tr>
-</table>
 
 ----
 
