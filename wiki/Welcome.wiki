@@ -30,7 +30,7 @@
 <table border="0" width="100%">
 <tr>
 <td valign="top">
-== Description ==
+= Description =
 *Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!
   * Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;
   * Wi-Fi (WPA) passphrases for your wireless devices;
@@ -46,7 +46,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
   * [ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options – just run GUI, set up password length, quantity, charsets and other options as you wish, and click *Command line builder*. Run <tt>apg-cl.exe</tt> with generated command line parameters;
   * Open Source (GNU GPLv3).
 
-== System requirements ==
+= System requirements =
   * Windows XP / Vista / 7 / 8
   * [http://www.microsoft.com/download/en/details.aspx?id=17113 .NET Framework 4.0]
 </td>
@@ -58,10 +58,10 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </tr>   
 </table>
 
-== Download ==
+= Download =
 You can [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe download latest version] or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions]. See [Changes changes (history)] for details.
 
-== Also ==
+= Also =
   * View [Contents project documentation (Wiki)];
   * Chat in [http://groups.google.com/group/awesome-password-generator forum];
   * [http://code.google.com/p/awesome-password-generator/issues/list Report a bug or write your suggestions] about how to improve the program;
