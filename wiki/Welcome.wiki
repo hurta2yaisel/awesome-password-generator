@@ -21,7 +21,7 @@
 <table border="0" width="100%">
 <tr>
 <td valign="top">
-= Description =
+== Description ==
 *Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!
   * Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;
   * Wi-Fi (WPA) passphrases for your wireless devices;
@@ -49,10 +49,10 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </tr>   
 </table>
 
-= Download =
+== Download ==
 You can [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe download latest version] or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions]. See [Changes changes (history)] for details.
 
-= Also =
+== Also ==
   * View [Contents project documentation (Wiki)];
   * Chat in [http://groups.google.com/group/awesome-password-generator forum];
   * [http://code.google.com/p/awesome-password-generator/issues/list Report a bug or write your suggestions] about how to improve the program;
