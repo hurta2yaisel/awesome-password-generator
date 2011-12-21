@@ -18,7 +18,7 @@
 <tr>
 <td valign="top">
 = News =
-Version *1.1.0* released! See [Changes what's new] and download [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe Windows Installer] (recommended) or [http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.1.0-portable.zip Portable version]!
+Version *1.1.0* released! See [Changes what's new] and download [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe Windows Installer] (recommended) or a [http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.1.0-portable.zip Portable version]!
 = Description =
 *Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!
   * Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;
