@@ -10,7 +10,7 @@
 </td>
 <td align="right">
 [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadWindowsInstaller.png]
-[http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.1.0-portable.zip http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadPortableVersion3.png]
+[http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.1.0-portable.zip http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadPortableVersion4.png]
 </td>
 </tr>
 </table>
@@ -51,6 +51,9 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 
 = Download =
 You can [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe download latest version] or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions]. See [Changes changes (history)] for details.
+Use those big buttons on the top to download the latest version or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions]! See [Changes changes (history)] for details.
+Use those big buttons on the top to obtain the latest version or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions]! See [Changes changes (history)] for details.
+Use those big buttons on the top! Latest version is always there. Or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions]. See [Changes changes (history)] for details.
 
 = Also =
   * View [Contents project documentation (Wiki)];
