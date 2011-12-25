@@ -2,7 +2,7 @@
 
 <table border="0" width="100%" cellpadding="0">
 <tr>
-<td width="23%">
+<td>
 <g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
 </td>
 <td align="center" valign="middle">
