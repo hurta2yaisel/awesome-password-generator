@@ -1,13 +1,14 @@
 <table border="0" width="100%" cellpadding="0">
 <tr>
-<td width="33%">
+<td>
 <g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
 </td>
-<td align="center" valign="middle">
+<td valign="middle">
 [http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [http://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
 </td>
-<td width="33%" align="right">
-[http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/ru/pics/download.png]
+<td width="560">
+[http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/ru/pics/DownloadWindowsInstaller.png]
+[http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.1.0-portable.zip http://awesome-password-generator.googlecode.com/svn/wiki/ru/pics/DownloadPortableVersion.png]
 </td>
 </tr>
 </table>
@@ -48,7 +49,7 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png
 </table>
 
 = Скачать =
-Вы можете [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe скачать последнюю версию] или выбрать из списка [http://code.google.com/p/awesome-password-generator/downloads/list всех версий]. Детали - в разделе [Changes Изменения].
+Используйте те большие кнопки наверху! Там всегда самая последняя версия. Или смотрите список [http://code.google.com/p/awesome-password-generator/downloads/list всех версий]. Детали - в разделе [Changes Изменения].
 
 = А также =
   * Читайте документацию в [Contents Wiki]-разделе;
