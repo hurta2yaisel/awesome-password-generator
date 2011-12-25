@@ -2,13 +2,13 @@
 
 <table border="0" width="100%" cellpadding="0">
 <tr>
-<td width="33%">
+<td width="23%">
 <g:plusone size="medium" href="http://code.google.com/p/awesome-password-generator/"></g:plusone>
 </td>
 <td align="center" valign="middle">
 [http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [http://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
 </td>
-<td width="33%" align="right">
+<td align="right">
 [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadWindowsInstaller.png]
 [http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.1.0-portable.zip http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadPortableVersion.png]
 </td>
