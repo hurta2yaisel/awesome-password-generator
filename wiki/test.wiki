@@ -8,7 +8,7 @@
 <td align="right" valign="middle">
 [http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [http://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
 </td>
-<td align="right">
+<td width="560">
 [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadWindowsInstaller.png]
 [http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.1.0-portable.zip http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadPortableVersion.png]
 </td>
