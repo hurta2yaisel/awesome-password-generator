@@ -63,7 +63,7 @@ namespace apg_cl
                     argName = match.Groups["argname"].Value;
                     argValue = match.Groups["argvalue"].Value;
                 }
-                else  // argument without value, like "--argname"
+                else  // argument without value, like "-argname"
                 {
                     argName = arg;
                     argValue = "";
