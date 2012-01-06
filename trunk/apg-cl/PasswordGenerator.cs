@@ -8,7 +8,7 @@ using System.Collections;
 
 namespace Password_Generator
 {
-    class PasswordGenerator
+    public class PasswordGenerator
     {
         public Hashtable charsets = new Hashtable();
         public struct charset
