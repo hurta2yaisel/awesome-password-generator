@@ -212,7 +212,7 @@
                     <Separator Width="4" Visibility="Hidden" />
                     <StackPanel Orientation="Vertical">
                         <Label Name="lblAbout1" FontWeight="Normal">About...</Label>
-                        <Label Name="lblAbout2" xml:space="preserve" FontWeight="Normal">Copyright (c) 2011  ____alex</Label>
+                        <Label Name="lblAbout2" xml:space="preserve" FontWeight="Normal">Copyright (c) 2011-2012  ____alex</Label>
                     </StackPanel>
                 </StackPanel>
                 <Separator />

@@ -29,9 +29,9 @@ namespace Awesome_Password_Generator
     /// </summary>
     public partial class MainWindow : Window
     {
-        Mutex m = new Mutex(false, "Awesome Password Generator");   // for inno setup (see AppMutex)
+        //`Mutex m = new Mutex(false, "Awesome Password Generator");   // for inno setup (see AppMutex)
 
-        private PasswordGenerator pswgen = null;
+        public PasswordGenerator pswgen = null;
 
         private bool initializeComponentIsCompleted = false;   // will be TRUE after InitializeComponent()
 
