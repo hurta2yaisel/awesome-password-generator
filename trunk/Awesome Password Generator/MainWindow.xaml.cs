@@ -37,8 +37,8 @@ namespace Awesome_Password_Generator
 
         private bool disableExpandersEvents = false;
         private bool lockExpanders = false;
-        enum pswType { Password, WPA };
-        enum genType { Single, Bulk };
+        public enum pswType { Password, WPA };
+        public enum genType { Single, Bulk };
         private pswType lastExpanded_PswType;
         private genType lastExpanded_GenType;
 
@@ -335,12 +335,12 @@ namespace Awesome_Password_Generator
 
         //--------------------------------------------------
 
-        private void PrepareToGeneration()
+        public void PrepareToGeneration(genType gt, pswType pt, ref PasswordGenerator pg)
         {
             PasswordGenerator.PasswordGenerationOptions pgo = new PasswordGenerator.PasswordGenerationOptions();
 
             // options
-            switch (lastExpanded_GenType)
+            switch (gt)
             {
                 case genType.Single:
                     pgo.easyToType = (bool)chkSingle_EasyToType.IsChecked;
@@ -362,7 +362,7 @@ namespace Awesome_Password_Generator
             // fill the pgo.charsets array
             pgo.charsets = new string[0];
 
-            switch (lastExpanded_PswType)
+            switch (pt)
             {
                 case pswType.Password:
                     pgo.pswLength = udPswLength.Value ?? 0;
@@ -411,7 +411,7 @@ namespace Awesome_Password_Generator
                     return; // some error
             }
             
-            pswgen = new PasswordGenerator(pgo);    // create and initialize the password generator class
+            pg = new PasswordGenerator(pgo);    // create and initialize the password generator class
         }
 
         //--------------------------------------------------
@@ -420,7 +420,7 @@ namespace Awesome_Password_Generator
         {
             if (!initializeComponentIsCompleted) return;
 
-            PrepareToGeneration();
+            PrepareToGeneration(lastExpanded_GenType, lastExpanded_PswType, ref pswgen);
             string psw = pswgen.GeneratePassword();
 
             // split long passwords
@@ -1018,7 +1018,7 @@ namespace Awesome_Password_Generator
 
         private void cmdBulkStart_Click(object sender, RoutedEventArgs e)
         {
-            PrepareToGeneration();
+            PrepareToGeneration(lastExpanded_GenType, lastExpanded_PswType, ref pswgen);
             PasswordGenerator.PasswordGenerationOptions pgo = pswgen.PGO;
             string[] workCharsets = pswgen.WorkCharsets;
 
