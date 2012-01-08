@@ -232,10 +232,23 @@ namespace Awesome_Password_Generator
             {
                 //todo
                 //ReportErrorAndExit(string.Format("Unknown argument: {0}", arg), ExitCodes.cmdlineArgError);
+                System.Media.SystemSounds.Hand.Play();
             }
+            else
+            {
+                string psw = pswgen.GeneratePassword();
+                Clipboard.SetText(psw);
 
-            string psw = pswgen.GeneratePassword();
-            MessageBox.Show("QuickGen result: " + psw);   //`
+                if (true)
+                {
+                    QuickGenInfo quickgenInfoWindow = new QuickGenInfo();
+                    quickgenInfoWindow.ShowDialog();    //`
+                }
+                else
+                {
+                    System.Media.SystemSounds.Asterisk.Play();
+                }
+            }
         }
         
         //--------------------------------------------------
@@ -263,9 +276,12 @@ namespace Awesome_Password_Generator
             }
             catch (CommunicationException ce)
             {
+                // it's a little bit annoying to receive this message every time second copy of the app is launching
+                /*
                 MessageBox.Show(String.Format("Can't create WCF server!\n\n{0}", ce.Message),
                     System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                */
                 host.Abort();
             }
         }
