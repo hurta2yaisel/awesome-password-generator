@@ -1,0 +1,34 @@
+﻿<Window x:Class="Awesome_Password_Generator.QuickGenInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="QuickGen - Awesome Password Generator" Width="535" SizeToContent="Height" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        FontFamily="Segoe UI,Microsoft Sans Serif" FontSize="12">
+    <StackPanel Margin="6,4">
+        <DockPanel>
+            <Image Source="res\info2_x48.ico" Stretch="None" VerticalAlignment="Top" />
+            <StackPanel>
+                <Grid>
+                    <RichTextBox BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Bold>A new password has been successfully generated and copied to the clipboard!</Bold>
+                            </Paragraph>
+                            <Paragraph>
+                                To alter password length and other properties just open the application normally, go to <Bold>Single password generation</Bold> and modify whatever you want. Changes will be saved on exit.
+                            </Paragraph>
+                            <Paragraph>
+                                Security warning: Since <Bold>Clear clipboard on exit</Bold> option is ignored in QuickGen mode, generated password will remain in the clipboard till something else will be copied in there. It's recommended to rewrite clipboard after using password (just copy something else in it!).
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <Border Background="Transparent"/>
+                </Grid>
+            </StackPanel>
+        </DockPanel>
+        <Separator Margin="0,5" />
+        <DockPanel LastChildFill="False" Margin="0,4">
+            <CheckBox Name="cbDontShowThisDialogAgain" VerticalAlignment="Center">Don't show this dialog again</CheckBox>
+            <Button Name="cmdOK" DockPanel.Dock="Right" Width="100" Click="cmdOK_Click" IsCancel="True" IsDefault="True">OK</Button>
+        </DockPanel>
+    </StackPanel>
+</Window>
