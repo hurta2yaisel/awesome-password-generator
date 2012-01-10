@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Runtime.Serialization;
+using System.Windows.Shell;
 using Password_Generator;
 
 
@@ -34,8 +35,19 @@ namespace Awesome_Password_Generator
             if (App.appInQuickGenMode) return;
 
             App.appInQuickGenMode = true;
+            App.ExecuteAction(new Action(() => App.mainWindow.IsEnabled = false));
+            
             App.PerformQuickGenLocally(quickgenMode);
+
+            // show a visual indicator of successfull password generation - green taskbar button
+            App.ExecuteAction(new Action(() => App.mainWindow.TaskbarItemInfo.ProgressValue = 1));
+            App.ExecuteAction(new Action(() => App.mainWindow.TaskbarItemInfo.ProgressState = TaskbarItemProgressState.Normal));
+            // show green taskbar button for a while
+            Thread.Sleep(1000);
+            App.ExecuteAction(new Action(() => App.mainWindow.TaskbarItemInfo.ProgressState = TaskbarItemProgressState.None));
+
             App.appInQuickGenMode = false;
+            App.ExecuteAction(new Action(() => App.mainWindow.IsEnabled = true));
         }
     }
 
@@ -83,10 +95,23 @@ namespace Awesome_Password_Generator
                 {
                     // do QuickGen locally and exit
                     mainWindow = new MainWindow();
-                    if(!PerformQuickGenLocally(quickGenMode))   // do QuickGen in the current process
+                    if (!PerformQuickGenLocally(quickGenMode))   // do QuickGen in the current process
                         Shutdown((int)ExitCodes.invalidGenerationSettings);
                     else
-                        Shutdown((int)ExitCodes.ok);
+                    {
+                        // show a visual indicator of successfull password generation - green taskbar button
+                        mainWindow.WindowState = WindowState.Minimized;
+                        mainWindow.IsEnabled = false;
+                        mainWindow.TaskbarItemInfo.ProgressValue = 1;
+                        mainWindow.TaskbarItemInfo.ProgressState = TaskbarItemProgressState.Normal;
+                        mainWindow.Show();
+                        Task.Factory.StartNew(() => {
+                            // show green taskbar button for a while
+                            Thread.Sleep(1000);
+                            // close app gracefully (via Shutdown(), not via Enviropment.Exit()) because MainWindow must execute SaveConfig before exit
+                            mainWindow.Dispatcher.Invoke(new Action(() => Shutdown((int)ExitCodes.ok)));
+                        });
+                    }
                     return;
                 }
             }
