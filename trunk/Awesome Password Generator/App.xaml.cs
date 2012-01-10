@@ -7,6 +7,7 @@ using System.Windows;
 using System.Text.RegularExpressions;
 using System.Collections;
 using System.Threading;
+using System.Threading.Tasks;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Runtime.Serialization;
@@ -30,7 +31,11 @@ namespace Awesome_Password_Generator
     {
         public void DoQuickGen(QuickGenMode quickgenMode)
         {
+            if (App.appInQuickGenMode) return;
+
+            App.appInQuickGenMode = true;
             App.PerformQuickGenLocally(quickgenMode);
+            App.appInQuickGenMode = false;
         }
     }
 
@@ -42,7 +47,7 @@ namespace Awesome_Password_Generator
     public partial class App : Application
     {
         public static MainWindow mainWindow;
-        public static bool appInQuickGenMode;
+        public static bool appInQuickGenMode = false;
 
         //---
 
@@ -92,8 +97,7 @@ namespace Awesome_Password_Generator
                 mainWindow.Show();
             }
 
-            //new Thread(CreateWCFServer).Start();    // for receiving QuickGen commands
-            System.Threading.Tasks.Task.Factory.StartNew(() => CreateWCFServer());
+            Task.Factory.StartNew(() => CreateWCFServer());  // for receiving QuickGen commands
 
             // create jumplist in code (just example)
             /*
