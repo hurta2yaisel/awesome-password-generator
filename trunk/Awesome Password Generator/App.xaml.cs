@@ -41,15 +41,22 @@ namespace Awesome_Password_Generator
     /// </summary>
     public partial class App : Application
     {
+        public static MainWindow mainWindow;
+        public static bool appInQuickGenMode;
+
+        //---
+
         bool appIsAlreadyRunning;
         Mutex mutexApp;
-        enum ExitCodes { ok, cmdlineArgError, memAllocError, cantSavePasswordsToFile };
+        enum ExitCodes { ok, cmdlineArgError, invalidGenerationSettings };
         Hashtable CommandLineArgs = new Hashtable();    // Indexed command line args
         private QuickGenMode quickGenMode;
-        public static MainWindow mainWindow;
+
+        //---
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            // create/open existing mutex to check if app is already running and also for inno setup (see AppMutex)
             mutexApp = new Mutex(false, "Awesome Password Generator", out appIsAlreadyRunning);
             appIsAlreadyRunning = !appIsAlreadyRunning;
 
@@ -58,6 +65,8 @@ namespace Awesome_Password_Generator
                 ParseCmdline(e.Args);
                 ProcessCmdline();
 
+                // QuickGen mode
+                appInQuickGenMode = true;
                 // perform QuickGen in current process or send a signal to the already running copy?
                 if (appIsAlreadyRunning)
                 {
@@ -69,8 +78,11 @@ namespace Awesome_Password_Generator
                 {
                     // do QuickGen locally and exit
                     mainWindow = new MainWindow();
-                    PerformQuickGenLocally(quickGenMode);   // do QuickGen in the current process
-                    Environment.Exit((int)ExitCodes.ok);
+                    if(!PerformQuickGenLocally(quickGenMode))   // do QuickGen in the current process
+                        Shutdown((int)ExitCodes.invalidGenerationSettings);
+                    else
+                        Shutdown((int)ExitCodes.ok);
+                    return;
                 }
             }
             else
@@ -80,9 +92,10 @@ namespace Awesome_Password_Generator
                 mainWindow.Show();
             }
 
-            //todo: do this in the another thread!!!
-            CreateWCFServer();  // for receiving QuickGen commands
+            //new Thread(CreateWCFServer).Start();    // for receiving QuickGen commands
+            System.Threading.Tasks.Task.Factory.StartNew(() => CreateWCFServer());
 
+            // create jumplist in code (just example)
             /*
             JumpTask task = new JumpTask
             {
@@ -194,19 +207,28 @@ namespace Awesome_Password_Generator
         /// </summary>
         private void PerformQuickGenRemotely()
         {
-            ChannelFactory<IQuickGen> pipeFactory =
-              new ChannelFactory<IQuickGen>(
-                new NetNamedPipeBinding(),
-                new EndpointAddress(
-                  "net.pipe://localhost/AwesomePasswordGenerator/QuickGen"));
+            try
+            {
+                ChannelFactory<IQuickGen> pipeFactory =
+                  new ChannelFactory<IQuickGen>(
+                    new NetNamedPipeBinding(),
+                    new EndpointAddress(
+                      "net.pipe://localhost/AwesomePasswordGenerator/QuickGen"));
 
-            IQuickGen pipeProxy =
-              pipeFactory.CreateChannel();
-
-            pipeProxy.DoQuickGen(quickGenMode);
-
-            // despite IsOneWay = true property, Close() method will wait for server to complete all queued DoQuickGen() methods
-            //pipeFactory.Close();
+                IQuickGen pipeProxy =
+                  pipeFactory.CreateChannel();
+                pipeProxy.DoQuickGen(quickGenMode);
+            }
+            catch (Exception e)
+            {
+                // can be if remote server is not available. for example, if another instance of app is running in the QuickGen mode 
+                // and busy in this very moment (showing QuickGenInfo window or in the middle of password generation process)
+            }
+            finally
+            {
+                // despite IsOneWay = true property, Close() method will wait for server to complete all queued DoQuickGen() methods
+                //pipeFactory.Close();
+            }
         }
 
         //--------------------------------------------------
@@ -214,41 +236,43 @@ namespace Awesome_Password_Generator
         /// <summary>
         /// do QuickGen in the current process
         /// </summary>
-        public static void PerformQuickGenLocally(QuickGenMode quickgenMode)
+        public static bool PerformQuickGenLocally(QuickGenMode quickgenMode)
         {
             PasswordGenerator pswgen = null;
-
+            
             switch (quickgenMode)
             {
                 case QuickGenMode.password:
-                    mainWindow.PrepareToGeneration(Awesome_Password_Generator.MainWindow.genType.Single, Awesome_Password_Generator.MainWindow.pswType.Password, ref pswgen);
+                    ExecuteAction(new Action(() => mainWindow.PrepareToGeneration(Awesome_Password_Generator.MainWindow.genType.Single, Awesome_Password_Generator.MainWindow.pswType.Password, ref pswgen)));
                     break;
                 case QuickGenMode.wpa:
-                    mainWindow.PrepareToGeneration(Awesome_Password_Generator.MainWindow.genType.Single, Awesome_Password_Generator.MainWindow.pswType.WPA, ref pswgen);
+                    ExecuteAction(new Action(() => mainWindow.PrepareToGeneration(Awesome_Password_Generator.MainWindow.genType.Single, Awesome_Password_Generator.MainWindow.pswType.WPA, ref pswgen)));
                     break;
             }
 
             if (!pswgen.isReady)
             {
-                //todo
-                //ReportErrorAndExit(string.Format("Unknown argument: {0}", arg), ExitCodes.cmdlineArgError);
-                System.Media.SystemSounds.Hand.Play();
+                MessageBox.Show(String.Format("Can't generate a password!\n\nRun app normally and check generation settings."),
+                    "QuickGen - Awesome Password Generator",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;   // error
             }
             else
             {
                 string psw = pswgen.GeneratePassword();
-                Clipboard.SetText(psw);
+                ExecuteAction(new Action(() => Clipboard.SetText(psw)));
 
-                if (true)
+                if (mainWindow.showQuickGenInfoWindow)
                 {
-                    QuickGenInfo quickgenInfoWindow = new QuickGenInfo();
-                    quickgenInfoWindow.ShowDialog();    //`
+                    ExecuteAction(new Action(() => new QuickGenInfo().ShowDialog())); 
                 }
                 else
                 {
                     System.Media.SystemSounds.Asterisk.Play();
                 }
             }
+
+            return true;    // ok
         }
         
         //--------------------------------------------------
@@ -258,7 +282,7 @@ namespace Awesome_Password_Generator
             ServiceHost host = new ServiceHost(
               typeof(QuickGen),
               new Uri("net.pipe://localhost/AwesomePasswordGenerator"));
-
+            
             try
             {
                 host.AddServiceEndpoint(typeof(IQuickGen),
@@ -294,6 +318,16 @@ namespace Awesome_Password_Generator
                 System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
                 MessageBoxButton.OK, MessageBoxImage.Error);
             Environment.Exit((int)exitcode);
+        }
+
+        //--------------------------------------------------
+
+        public static void ExecuteAction(Action a)
+        {
+            if (mainWindow.Dispatcher.CheckAccess())
+                a.Invoke();
+            else
+                mainWindow.Dispatcher.Invoke(a);
         }
     }
 }

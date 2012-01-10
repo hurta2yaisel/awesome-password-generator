@@ -29,5 +29,10 @@ namespace Awesome_Password_Generator
         {
             this.Close();
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            App.mainWindow.showQuickGenInfoWindow = !(bool)cbDontShowThisDialogAgain.IsChecked;
+        }
     }
 }

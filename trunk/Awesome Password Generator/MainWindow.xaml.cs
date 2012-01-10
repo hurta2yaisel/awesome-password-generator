@@ -29,16 +29,20 @@ namespace Awesome_Password_Generator
     /// </summary>
     public partial class MainWindow : Window
     {
-        //`Mutex m = new Mutex(false, "Awesome Password Generator");   // for inno setup (see AppMutex)
-
         public PasswordGenerator pswgen = null;
+        public enum pswType { Password, WPA };
+        public enum genType { Single, Bulk };
+
+        //---
+
+        public bool showQuickGenInfoWindow = true;
+
+        //---
 
         private bool initializeComponentIsCompleted = false;   // will be TRUE after InitializeComponent()
 
         private bool disableExpandersEvents = false;
         private bool lockExpanders = false;
-        public enum pswType { Password, WPA };
-        public enum genType { Single, Bulk };
         private pswType lastExpanded_PswType;
         private genType lastExpanded_GenType;
 
@@ -179,56 +183,71 @@ namespace Awesome_Password_Generator
                     // check configuration file version
                     reader.Read();
                     string cfgVer = reader.GetAttribute("Version");
-                    string cfgVerCorrect = "1.0";
-                    if (cfgVer != cfgVerCorrect)
+                    string cfgVerCorrect = "2.0";
+                    // accept config files with same major version (different minor versions are allowed though)
+                    if (cfgVer.Split('.')[0] != cfgVerCorrect.Split('.')[0])
                     {
-                        //todo: accept config files with same major version (but different minor)
-                        throw new Exception(String.Format("WARNING: Configuration file version is invalid (must be {0}, not {1})\n\nIt will be rewrited with default settings.", cfgVerCorrect, cfgVer));
+                        throw new Exception(String.Format("WARNING: Configuration file version is invalid (must be {0}, not {1}), and all settings will be reset to defaults!", cfgVerCorrect, cfgVer));
                     }
 
-                    // restore main window position
-                    reader.Read();
-                    this.Top = Double.Parse(reader.GetAttribute("Top"));
-                    this.Left = Double.Parse(reader.GetAttribute("Left"));
-
-                    // restore controls status
-                    reader.Read();  // skip Controls element
                     while (true)
                     {
                         reader.Read();
-                        if (reader.Name == "Controls" && reader.NodeType == XmlNodeType.EndElement) break;  // end of controls
+                        if (reader.Name == "Config" && reader.NodeType == XmlNodeType.EndElement) break;  // end of config
 
-                        if (reader.NodeType == XmlNodeType.Element)
+                        switch (reader.Name)
                         {
-                            object o = FindChild(this, reader.GetAttribute("Name"));
-                            if (o != null)  // skip unknown controls
-                            {
-                                string s = o.GetType().ToString();
-                                switch (o.GetType().Name)
+                            case "MainWindowPosition":
+                                // restore main window position
+                                this.Top = Double.Parse(reader.GetAttribute("Top"));
+                                this.Left = Double.Parse(reader.GetAttribute("Left"));
+                                break;
+                            case "QuickGen":
+                                showQuickGenInfoWindow = bool.Parse(reader.GetAttribute("ShowQuickGenInfoWindow"));
+                                break;
+                            case "Controls":
+                                // restore controls status
+                                while (true)
                                 {
-                                    case "Expander":
-                                        ((Expander)o).IsExpanded = bool.Parse(reader.GetAttribute("IsExpanded"));
-                                        break;
-                                    case "IntegerUpDown":
-                                        ((IntegerUpDown)o).Value = int.Parse(reader.GetAttribute("Value"));
-                                        break;
-                                    case "CheckBox":
-                                        ((CheckBox)o).IsChecked = bool.Parse(reader.GetAttribute("IsChecked"));
-                                        break;
-                                    case "TextBox":
-                                        ((TextBox)o).Text = reader.GetAttribute("Text");
-                                        break;
-                                    case "WatermarkTextBox":
-                                        ((WatermarkTextBox)o).Text = reader.GetAttribute("Text");
-                                        break;
-                                    case "RadioButton":
-                                        ((RadioButton)o).IsChecked = bool.Parse(reader.GetAttribute("IsChecked"));
-                                        break;
-                                    case "Slider":
-                                        ((Slider)o).Value = int.Parse(reader.GetAttribute("Value"));
-                                        break;
+                                    reader.Read();
+                                    if (reader.Name == "Controls" && reader.NodeType == XmlNodeType.EndElement) break;  // end of controls
+
+                                    if (reader.NodeType == XmlNodeType.Element)
+                                    {
+                                        object o = FindChild(this, reader.GetAttribute("Name"));
+                                        if (o != null)  // skip unknown controls
+                                        {
+                                            string s = o.GetType().ToString();
+                                            switch (o.GetType().Name)
+                                            {
+                                                case "Expander":
+                                                    ((Expander)o).IsExpanded = bool.Parse(reader.GetAttribute("IsExpanded"));
+                                                    break;
+                                                case "IntegerUpDown":
+                                                    ((IntegerUpDown)o).Value = int.Parse(reader.GetAttribute("Value"));
+                                                    break;
+                                                case "CheckBox":
+                                                    ((CheckBox)o).IsChecked = bool.Parse(reader.GetAttribute("IsChecked"));
+                                                    break;
+                                                case "TextBox":
+                                                    ((TextBox)o).Text = reader.GetAttribute("Text");
+                                                    break;
+                                                case "WatermarkTextBox":
+                                                    ((WatermarkTextBox)o).Text = reader.GetAttribute("Text");
+                                                    break;
+                                                case "RadioButton":
+                                                    ((RadioButton)o).IsChecked = bool.Parse(reader.GetAttribute("IsChecked"));
+                                                    break;
+                                                case "Slider":
+                                                    ((Slider)o).Value = int.Parse(reader.GetAttribute("Value"));
+                                                    break;
+                                            }
+                                        }
+                                    }
                                 }
-                            }
+                                break;
+                            default:
+                                throw new Exception(String.Format("WARNING: Configuration file is invalid or damaged! Check your settings - they can be reset to defaults!"));
                         }
                     }
                 }
@@ -251,12 +270,17 @@ namespace Awesome_Password_Generator
                 using (XmlWriter writer = XmlWriter.Create(cfgFileName, new XmlWriterSettings { Encoding = Encoding.UTF8, Indent = true }))
                 {
                     writer.WriteStartElement("Config");
-                    writer.WriteAttributeString("Version", "1.0");
+                    writer.WriteAttributeString("Version", "2.0");
 
                     // save main window position
                     writer.WriteStartElement("MainWindowPosition");
                     writer.WriteAttributeString("Top", this.Top.ToString());
                     writer.WriteAttributeString("Left", this.Left.ToString());
+                    writer.WriteEndElement();
+
+                    // save QuickGen settings
+                    writer.WriteStartElement("QuickGen");
+                    writer.WriteAttributeString("ShowQuickGenInfoWindow", showQuickGenInfoWindow.ToString());
                     writer.WriteEndElement();
 
                     // save controls state
@@ -434,7 +458,7 @@ namespace Awesome_Password_Generator
             }
 
             txtResult.Text = pswFormatted;
-            if ((bool)chkCopyToClipboardAutomatically.IsChecked && expSingleGeneration.IsExpanded)
+            if (expSingleGeneration.IsExpanded && (bool)chkCopyToClipboardAutomatically.IsChecked && !App.appInQuickGenMode)
                 Clipboard.SetText(psw);
             
             // display password strength
@@ -475,7 +499,7 @@ namespace Awesome_Password_Generator
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            if ((bool)chkClearClipboardOnExit.IsChecked)
+            if ((bool)chkClearClipboardOnExit.IsChecked && !App.appInQuickGenMode)
                 // clear clipboard only if it contains a password
                 if (Clipboard.GetText() == txtResult.Text.Replace("\n", ""))
                     Clipboard.SetText("");
@@ -1188,7 +1212,7 @@ namespace Awesome_Password_Generator
             expWPA.IsEnabled = true;
             lockExpanders = false;
 
-            //System.Media.SystemSounds.Beep.Play();  //`
+            //System.Media.SystemSounds.Beep.Play();
         }
 
         #endregion  // bgworker
