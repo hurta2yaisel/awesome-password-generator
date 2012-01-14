@@ -65,7 +65,7 @@ namespace Password_Generator
 
             charsets.Add("ruU", new charset("А..Я", "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ", 70));
             charsets.Add("ruL", new charset("а..я", "абвгдеёжзийклмнопрстуфхцчшщъыьэюя", 80));
-            charsets.Add("ru-", new charset("", "оО", -1));
+            charsets.Add("ru-", new charset("", "обОВЗ", -1));
         }
 
         //--------------------------------------------------

@@ -20,6 +20,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Windows.Shell;
+using System.Reflection;
 
 
 namespace Awesome_Password_Generator
@@ -32,6 +33,7 @@ namespace Awesome_Password_Generator
         public PasswordGenerator pswgen = null;
         public enum pswType { Password, WPA };
         public enum genType { Single, Bulk };
+        public string appPath;
 
         //---
 
@@ -51,7 +53,7 @@ namespace Awesome_Password_Generator
         string[] bulkPasswords;
         BackgroundWorker bgworker = new BackgroundWorker();
 
-        string appPath, cfgFileName;
+        string cfgFileName;
         bool portableMode;
 
         private int monospaceFontSizeBig = 40, monospaceFontSizeMedium = 30, monospaceFontSizeSmall = 20;
@@ -110,15 +112,16 @@ namespace Awesome_Password_Generator
             bgworker.ProgressChanged += bgworker_ProgressChanged;
             bgworker.RunWorkerCompleted += bgworker_RunWorkerCompleted;
 
-            string s;
-            s = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision.ToString();
             // show version info
-            this.Title = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + " " +
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major.ToString() + "." +
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString() + "." +
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
-            lblAbout1.Content = this.Title + " build " +
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision.ToString();
+            this.Title = Assembly.GetExecutingAssembly().GetName().Name + " " +
+                Assembly.GetExecutingAssembly().GetName().Version.Major.ToString() + "." +
+                Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString() + "." +
+                Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
+            lblAboutVersion.Content = this.Title + " build " +
+                Assembly.GetExecutingAssembly().GetName().Version.MinorRevision.ToString();
+            // Get all Copyright attributes on this assembly
+            object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+            lblAboutCopyright.Content = "Copyright " + ((AssemblyCopyrightAttribute)attributes[0]).Copyright.Replace(" __alex", " ____alex");
         }
 
         //--------------------------------------------------
@@ -1324,7 +1327,7 @@ namespace Awesome_Password_Generator
 
         //--------------------------------------------------
 
-        private void hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        public void hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
             if (e.Uri.IsAbsoluteUri)
             {

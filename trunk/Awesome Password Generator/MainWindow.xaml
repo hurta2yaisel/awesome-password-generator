@@ -95,7 +95,14 @@
                             <CheckBox Name="chkWpaLowercase" Tag="enL" Margin="4" FontWeight="Normal" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">a..z</CheckBox>
                             <CheckBox Name="chkWpaUppercase" Tag="enU" Margin="4" FontWeight="Normal" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">A..Z</CheckBox>
                             <CheckBox Name="chkWpaDigits" Tag="digits" Margin="4" FontWeight="Normal" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">0..9</CheckBox>
-                            <CheckBox Name="chkWpaSpecial" Tag="special" Margin="4" FontWeight="Normal" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">!@#...</CheckBox>
+                            <CheckBox Name="chkWpaSpecial" Tag="special" Margin="4" FontWeight="Normal" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click" Content="!@#...">
+                                <CheckBox.ToolTip>
+                                    <TextBlock>
+                                    ! @ # $ % ^ &amp; * ( ) ~ - _ = + \ | / [ ] { } ; : ` &apos; &quot; , . &lt; &gt; ?<LineBreak/>
+                                    Space is not included! Use User-defined charset for it.
+                                    </TextBlock>
+                                </CheckBox.ToolTip>
+                            </CheckBox>
                         </DockPanel>
                         <DockPanel Margin="12,0,0,0">
                             <CheckBox Name="chkWpaUserDefinedCharacters" Tag="userDefined" Margin="4,8" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click"></CheckBox>
@@ -129,7 +136,15 @@
                     <Separator DockPanel.Dock="Right" Width="10" Visibility="Hidden"></Separator>
                     <CheckBox Name="chkSingle_EasyToType" DockPanel.Dock="Top" FontWeight="Normal" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">Easy to type password</CheckBox>
                     <Separator Tag="NotSegoeUIFontCompensator" Visibility="Collapsed" Height="2" Margin="0" DockPanel.Dock="Top" />
-                    <CheckBox Name="chkSingle_ExcludeConfusingChars" DockPanel.Dock="Top" FontWeight="Normal" IsChecked="True" Unchecked="cmdRegenerate_Click" Checked="cmdRegenerate_Click">Exclude confusing characters</CheckBox>
+                    <CheckBox Name="chkSingle_ExcludeConfusingChars" DockPanel.Dock="Top" FontWeight="Normal" IsChecked="True" Unchecked="cmdRegenerate_Click" Checked="cmdRegenerate_Click" Content="Exclude confusing characters">
+                        <CheckBox.ToolTip>
+                            <TextBlock>
+                                Digits:  0 1 8<LineBreak/>
+                                Letters: i l j o B J I O Q<LineBreak/>
+                                Special: Space | ` &apos;
+                            </TextBlock>
+                        </CheckBox.ToolTip>
+                    </CheckBox>
                     <Separator Tag="NotSegoeUIFontCompensator" Visibility="Collapsed" Height="2" Margin="0" DockPanel.Dock="Top" />
                     <Separator Height="2" Visibility="Hidden" DockPanel.Dock="Top"></Separator>
                     <CheckBox Name="chkCopyToClipboardAutomatically" DockPanel.Dock="Top" FontWeight="Normal" IsChecked="True">Copy to clipboard automatically</CheckBox>
@@ -170,7 +185,15 @@
                 </StackPanel>
                 <CheckBox Name="chkBulkEasyToType" Margin="5,4,0,0" DockPanel.Dock="Top" FontWeight="Normal" IsChecked="True">Easy to type passwords</CheckBox>
                 <Separator Tag="NotSegoeUIFontCompensator" Visibility="Collapsed" Height="2" Margin="0" DockPanel.Dock="Top" />
-                <CheckBox Name="chkBulkExcludeConfusingChars" Margin="5,0" DockPanel.Dock="Top" FontWeight="Normal" IsChecked="True">Exclude confusing characters</CheckBox>
+                <CheckBox Name="chkBulkExcludeConfusingChars" Margin="5,0" DockPanel.Dock="Top" FontWeight="Normal" IsChecked="True" Content="Exclude confusing characters">
+                    <CheckBox.ToolTip>
+                        <TextBlock>
+                            Digits:  0 1 8<LineBreak/>
+                            Letters: i l j o B J I O Q<LineBreak/>
+                            Special: Space | ` &apos;
+                        </TextBlock>
+                    </CheckBox.ToolTip>
+                </CheckBox>
             </DockPanel>
         </Expander>
         
@@ -223,8 +246,8 @@
                     <Image Source="res\logoff_x48.ico" VerticalAlignment="Top" />
                     <Separator Width="4" Visibility="Hidden" />
                     <StackPanel Orientation="Vertical">
-                        <Label Name="lblAbout1" FontWeight="Normal">About...</Label>
-                        <Label Name="lblAbout2" xml:space="preserve" FontWeight="Normal">Copyright (c) 2011-2012  ____alex</Label>
+                        <Label Name="lblAboutVersion" FontWeight="Normal">(version)</Label>
+                        <Label Name="lblAboutCopyright" FontWeight="Normal">(copyright)</Label>
                     </StackPanel>
                 </StackPanel>
                 <Separator />

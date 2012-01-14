@@ -10,6 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Diagnostics;
+
 
 namespace Awesome_Password_Generator
 {
@@ -33,6 +35,14 @@ namespace Awesome_Password_Generator
         private void Window_Closed(object sender, EventArgs e)
         {
             App.mainWindow.showQuickGenInfoWindow = !(bool)cbDontShowThisDialogAgain.IsChecked;
+        }
+
+        private void hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            // open a webpage
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+
+            e.Handled = true;
         }
     }
 }

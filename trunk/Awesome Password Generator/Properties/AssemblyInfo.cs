@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Awesome Password Generator")]
-[assembly: AssemblyCopyright("(c) 2011-2012  __alex")]
+[assembly: AssemblyCopyright("� 2011-2012  __alex")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.0.1102")]
+[assembly: AssemblyVersion("1.2.0.1153")]
 [assembly: AssemblyFileVersion("1.2.0.0")]
