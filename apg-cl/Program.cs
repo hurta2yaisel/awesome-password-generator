@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Collections;
 using Password_Generator;
 using System.Threading;
+using System.Reflection;
 
 
 namespace apg_cl
@@ -271,9 +272,11 @@ namespace apg_cl
         {
             Console.WriteLine();
             Console.WriteLine("Awesome Password Generator " +
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() +
+                Assembly.GetExecutingAssembly().GetName().Version.ToString() +
                 " (console version)");
-            Console.WriteLine("Copyright (c) 2011  __alex");
+            // Get all Copyright attributes on this assembly
+            object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+            Console.WriteLine("Copyright " + ((AssemblyCopyrightAttribute)attributes[0]).Copyright);
             Console.WriteLine("Licensed under GNU General Public License v3");
             Console.WriteLine("Homepage: http://code.google.com/p/awesome-password-generator/");
             Console.WriteLine("Forum:    http://groups.google.com/group/awesome-password-generator");
