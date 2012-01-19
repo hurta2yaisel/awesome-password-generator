@@ -1,4 +1,4 @@
-= QuickGen =
+= !QuickGen =
 
 
 1. Install and run the application
