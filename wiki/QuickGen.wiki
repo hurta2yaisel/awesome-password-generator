@@ -2,7 +2,7 @@
 
 == Purpose ==
 
-On Windows 7 / 8 you can quickly generate a single password or Wi-Fi WPA passphrase via application taskbar button. You don't even need to open the application!
+On Windows 7 / 8 you can quickly generate a single password or Wi-Fi WPA passphrase via taskbar button's menu. You don't even need to open the application!
 
 == Usage ==
 
