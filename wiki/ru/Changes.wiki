@@ -1,7 +1,7 @@
 = Изменения =
 
 === 20.01.2012 Version 1.2.0 ===
-  * QuickGen: Генерируйте пароли из меню кнопки на панели задач в Windows 7/8!
+  * QuickGen: Теперь вы можете генерировать пароли из меню кнопки на панели задач в Windows 7/8!
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/QuickGenFeature.png
 

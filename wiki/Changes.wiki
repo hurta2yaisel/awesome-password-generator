@@ -1,7 +1,7 @@
 = Changes (what's new) =
 
 === 20.01.2012 Version 1.2.0 ===
-  * QuickGen feature: Generate passwords via taskbar button's menu on Windows 7/8!
+  * QuickGen feature: Now you can generate passwords via taskbar button's menu on Windows 7/8!
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/QuickGenFeature.png
 
