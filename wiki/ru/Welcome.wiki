@@ -7,8 +7,8 @@
 [http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [http://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
 </td>
 <td width="546">
-[http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.1.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/ru/pics/DownloadWindowsInstaller.png]
-[http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.1.0-portable.zip http://awesome-password-generator.googlecode.com/svn/wiki/ru/pics/DownloadPortableVersion.png]
+[http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.2.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/ru/pics/DownloadWindowsInstaller.png]
+[http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.2.0-portable.zip http://awesome-password-generator.googlecode.com/svn/wiki/ru/pics/DownloadPortableVersion.png]
 </td>
 </tr>
 </table>
@@ -19,21 +19,21 @@
 <tr>
 <td valign="top">
 = Новости =
-Вышла версия *1.1.0*! Смотрите [Changes изменения] и качайте!
+Вышла версия *1.2.0*! Смотрите [Changes изменения] и качайте!
 = Описание =
-*Awesome Password Generator* - это простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA). Просто откройте генератор, и новый пароль будет скопирован в буфер автоматически!
+*Awesome Password Generator* - это бесплатная, простая и удобная в использовании программа для быстрой генерации обычных паролей или ключей Wi-Fi (WPA). Просто откройте генератор, и новый пароль будет скопирован в буфер автоматически!
   * Обычные, "общего назначения" пароли для e-mail, онлайн-аккаунтов и любых настольных приложений;
   * Wi-Fi (WPA) ключи для ваших беспроводных устройств;
   * Легко набираемые пароли вроде `p-zuus2Dzx` вместо `c]57%/z&Q9`;
   * Пароли без спорных символов вроде 0 (ноль) и О (буква);
-  * Это бесплатная программа.
+  * QuickGen: под Windows 7/8 пароли можно генерировать с помощью кнопки на панели задач.
 
 Для ИТ-профессионалов и системных администраторов это еще и мощный инструмент для генерации одного или множества паролей, плюс консольная версия для использования в скриптах (есть примеры на batch и !PowerShell :)
   * GUI-интерфейс для генерации одиночных или множества паролей и WPA-ключей;
   * [Options Опции] *Легко набираемые пароли* и *Исключить спорные символы*;
   * Быстрота и безопасность: опции *Копировать в буфер автоматически* и *Очищать буфер при выходе*;
   * [ConsoleVersion Консольная версия] `apg-cl.exe` с тем же функционалом, что и GUI-версия. И не надо изучать мануалы - просто откройте GUI, выберите длину пароля, количество, используемые наборы символов и другие опции, затем кликните *Command line builder*. Запустите `apg-cl.exe`, используя сгенерированные параметры;
-  * Открытые исходники (GNU GPLv3).
+  * Это бесплатная программа с открытыми исходниками (GNU GPLv3).
 
 = Системные требования =
   * Windows XP / Vista / 7 / 8
