@@ -19,16 +19,17 @@ To alter password length and other properties just open the application normally
 Security warning: Since *Clear clipboard on exit* option is ignored in !QuickGen mode, generated password will remain in the clipboard till something else will be copied in there. It's recommended to rewrite clipboard after using password (just copy something else in it).
 
 
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/QuickGenUsage.png
+
+  # Install and run the application
+  # Right-click the app's taskbar button and then click *Pin to the taskbar*
+  # From now on you can generate password via taskbar button!
 
 <table border="0" cellpadding="0">
 <tr>
 <td>
-1. Install and run the application
-2. Right-click the app's taskbar button and then click *Pin to the taskbar*
-3. From now on you can generate password via taskbar button!
 </td>
 <td>
-[http://awesome-password-generator.googlecode.com/svn/wiki/pics/QuickGenUsage.png]
 </td>
 </tr>
 </table>
