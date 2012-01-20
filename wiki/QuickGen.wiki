@@ -9,7 +9,7 @@ On Windows 7 / 8 you can quickly generate a single password or Wi-Fi WPA passphr
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/QuickGenUsage.png
 
   # Install and run the application
-  # Right-click the app's taskbar button and then click *Pin to the taskbar*
+  # Right-click the app's taskbar button and then click *Pin this program to taskbar*
   # From now on you can generate passwords via taskbar button, even when app is closed!
 
 To alter password length and other properties just open the application normally, go to *Single password generation* and modify whatever you want. Changes will be saved on exit.
