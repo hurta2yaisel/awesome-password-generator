@@ -14,23 +14,21 @@ In order to generate password on Windows 7/8 you don't even need to run applicat
 Just pin app to the taskbar, and 
 It is not nessecary even to run an application 
 
-To alter password length and other properties just open the application normally, go to *Single password generation* and modify whatever you want. Changes will be saved on exit.
 
-Security warning: Since *Clear clipboard on exit* option is ignored in !QuickGen mode, generated password will remain in the clipboard till something else will be copied in there. It's recommended to rewrite clipboard after using password (just copy something else in it).
+== Purpose ==
 
+...
+
+== Usage ==
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/QuickGenUsage.png
 
   # Install and run the application
   # Right-click the app's taskbar button and then click *Pin to the taskbar*
-  # From now on you can generate password via taskbar button!
+  # From now on you can generate passwords via taskbar button, even when app is closed!
 
-<table border="0" cellpadding="0">
-<tr>
-<td>
-</td>
-<td>
-</td>
-</tr>
-</table>
+To alter password length and other properties just open the application normally, go to *Single password generation* and modify whatever you want. Changes will be saved on exit.
 
+== Security warning ==
+
+Since *Clear clipboard on exit* option is ignored in !QuickGen mode, generated password will remain in the clipboard till something else will be copied in there. It's recommended to rewrite clipboard after using password (just copy something else in it).
