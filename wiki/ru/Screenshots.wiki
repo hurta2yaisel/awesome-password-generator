@@ -31,6 +31,13 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/wpa-bulk.png
 
 ----
 
+= !QuickGen =
+Подробнее о !QuickGen - [QuickGen здесь].
+
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/QuickGenFeature.png
+
+----
+
 = Построитель параметров для консольной версии =
 Подробнее о консольной версии генератора (`apg-cl.exe`) - [ConsoleVersion здесь].
 
