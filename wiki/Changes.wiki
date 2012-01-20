@@ -8,11 +8,11 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/QuickGenFeature.p
   * Minor changes.
 
 === 16.12.2011 Version 1.1.0 ===
+  * New feature: Now application is available in two versions: Windows Installer and Portable. You can use Portable version without administrative rights;
   * New feature: Windows taskbar progress indicator (in the bulk generation mode);
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/TaskbarProgressBar.png
 
-  * New feature: Now application is available in two versions: Windows Installer and Portable (see [http://code.google.com/p/awesome-password-generator/downloads/list downloads] section). You can use Portable version without administrative rights;
   * Bug fixed: User without administrative rights can't save passwords in the default "c:\passwords.txt" file. Now default locations of this file has changed;
   * Bug fixed: App crash on exit if user don't have administrator rights;
   * Minor changes.
