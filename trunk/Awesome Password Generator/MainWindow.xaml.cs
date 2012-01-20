@@ -185,12 +185,13 @@ namespace Awesome_Password_Generator
 
                     // check configuration file version
                     reader.Read();
-                    string cfgVer = reader.GetAttribute("Version");
+                    string cfgVerOfCurrentFile = reader.GetAttribute("Version");
                     string cfgVerCorrect = "2.0";
-                    // accept config files with same major version (different minor versions are allowed though)
-                    if (cfgVer.Split('.')[0] != cfgVerCorrect.Split('.')[0])
+                    string[] cfgVerSupported = new string[] { "1.0" };  // try to read such cfgfiles anyway
+                    // accept configuration file only with correct major version (different minor versions are allowed though)
+                    if ((cfgVerOfCurrentFile.Split('.')[0] != cfgVerCorrect.Split('.')[0]) && !cfgVerSupported.Contains(cfgVerOfCurrentFile))
                     {
-                        throw new Exception(String.Format("WARNING: Configuration file version is invalid (must be {0}, not {1}), and all settings will be reset to defaults!", cfgVerCorrect, cfgVer));
+                        throw new Exception(String.Format("WARNING: Configuration file version is invalid (must be {0}, not {1}), and all settings will be reset to defaults!", cfgVerCorrect, cfgVerOfCurrentFile));
                     }
 
                     while (true)
