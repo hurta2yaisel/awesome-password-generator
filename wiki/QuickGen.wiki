@@ -1,23 +1,8 @@
 = !QuickGen =
 
-
-1. Install and run the application
-2. Right-click the app's taskbar button and then click *Pin to the taskbar*
-3. Right-click taskbar button and 
-3. From now on you can quickly generate passwords just by right-clicking the taskbar button and 
-Do generate password on Windows 7/8 you don't even need to run application!
-
-3. From now on you can generate passwords via taskbar button! 
-
-To generate a password on Windows 7/8 is easy then ever:
-In order to generate password on Windows 7/8 you don't even need to run application!
-Just pin app to the taskbar, and 
-It is not nessecary even to run an application 
-
-
 == Purpose ==
 
-...
+On Windows 7 / 8 you can quickly generate a single password or Wi-Fi WPA passphrase via application taskbar button. You don't even need to open the application!
 
 == Usage ==
 
@@ -31,4 +16,4 @@ To alter password length and other properties just open the application normally
 
 == Security warning ==
 
-Since *Copy to clipboard automatically* and *Clear clipboard on exit* options are ignored in the !QuickGen mode, the generated password will always be copied to the clipboard and stay there until something else replaces it. It's recommended to rewrite clipboard after using password (just copy something else in it).
+Since *Copy to clipboard automatically* and *Clear clipboard on exit* options are ignored in the !QuickGen mode, the generated password will always be copied to the clipboard and stay there until something else replaces it. It's recommended to rewrite clipboard after using password (just copy something else to it).
