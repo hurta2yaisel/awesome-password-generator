@@ -3,6 +3,7 @@
 = Contents =
   === [Strength Password strength] ===
   === [Options] ===
+  === [QuickGen] ===
   === [ConsoleVersion Console version (apg-cl.exe)] ===
   === [Changes What's new?] ===
   === [Donate] ===
