@@ -49,7 +49,7 @@
 		<Program_Change_Info>* QuickGen feature: Now you can generate passwords via taskbar button's menu on Windows 7/8!   * Minor changes.</Program_Change_Info>
 		<Program_Specific_Category>Utilities</Program_Specific_Category>
 		<Program_Category_Class>Security &amp; Privacy::Password Managers</Program_Category_Class>
-		<Program_System_Requirements />
+		<Program_System_Requirements>.NET Framework 4.0</Program_System_Requirements>
 		<File_Info>
 			<File_Size_Bytes>833449</File_Size_Bytes>
 			<File_Size_K>813</File_Size_K>
