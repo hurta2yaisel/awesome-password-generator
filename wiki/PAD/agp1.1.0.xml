@@ -117,7 +117,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 			<Application_Order_URL />
 			<Application_Screenshot_URL>http://awesome-password-generator.googlecode.com/svn/wiki/pics/common-single.png</Application_Screenshot_URL>
 			<Application_Icon_URL>http://awesome-password-generator.googlecode.com/svn/wiki/pics/icon.png</Application_Icon_URL>
-			<Application_XML_File_URL>http://awesome-password-generator.googlecode.com/svn/wiki/PAD/agp1.1.0.xml</Application_XML_File_URL>
+			<Application_XML_File_URL>http://awesome-password-generator.googlecode.com/svn/wiki/PAD/apg1.1.0.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
 			<Primary_Download_URL>http://awesome-password-generator.googlecode.com/files/agp1.1.0-setup.exe</Primary_Download_URL>
