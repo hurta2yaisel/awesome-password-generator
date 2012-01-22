@@ -354,10 +354,10 @@ namespace Awesome_Password_Generator
             }
             catch (Exception e)
             {
-                System.Windows.MessageBox.Show("ERROR: Can't save configuration!\n\n" + e.Message.ToString(),
-                    System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
-                    MessageBoxButton.OK, MessageBoxImage.Error);
-
+                if (!portableMode)
+                    System.Windows.MessageBox.Show("ERROR: Can't save configuration!\n\n" + e.Message.ToString(),
+                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
+                        MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
