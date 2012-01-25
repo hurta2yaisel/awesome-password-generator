@@ -1378,5 +1378,43 @@ namespace Awesome_Password_Generator
         }
 
         //--------------------------------------------------
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // regenerate password on F5 or Ctrl+R
+            // copy password to clipboard on Ctrl+C or Ctrl+Ins
+            // close window on Esc
+            if (expSingleGeneration.IsExpanded)
+            {
+                switch (Keyboard.Modifiers)
+                {
+                    case ModifierKeys.None:
+                        switch (e.Key)
+                        {
+                            case Key.F5:
+                                cmdRegenerate_Click(null, null);
+                                break;
+                            case Key.Escape:
+                                Close();
+                                break;
+                        }
+                        break;
+                    case ModifierKeys.Control:
+                        switch (e.Key)
+                        {
+                            case Key.R:
+                                cmdRegenerate_Click(null, null);
+                                break;
+                            case Key.C:
+                            case Key.Insert:
+                                cmdCopyToClipboard_Click(null, null);
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
+
+        //--------------------------------------------------
     }
 }
