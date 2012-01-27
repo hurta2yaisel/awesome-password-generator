@@ -462,7 +462,7 @@ namespace Awesome_Password_Generator
             }
 
             txtResult.Text = pswFormatted;
-            if (expSingleGeneration.IsExpanded && (bool)chkCopyToClipboardAutomatically.IsChecked && !App.appInQuickGenMode)
+            if (expSingleGeneration.IsExpanded && (bool)chkCopyToClipboardAutomatically.IsChecked && (App.appMode == App.AppMode.normal))
                 Clipboard.SetText(psw);
             
             // display password strength
@@ -503,7 +503,7 @@ namespace Awesome_Password_Generator
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            if ((bool)chkClearClipboardOnExit.IsChecked && !App.appInQuickGenMode)
+            if ((bool)chkClearClipboardOnExit.IsChecked && (App.appMode == App.AppMode.normal))
                 // clear clipboard only if it contains a password
                 if (Clipboard.GetText() == txtResult.Text.Replace("\n", ""))
                     Clipboard.SetText("");
