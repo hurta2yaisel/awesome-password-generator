@@ -1250,6 +1250,8 @@ namespace Awesome_Password_Generator
             catch { }   // ignore any exceprions
             dlg.DefaultExt = ".txt"; // Default file extension
             dlg.Filter = "Text documents|*.txt|All Files|*"; // Filter files by extension
+            dlg.FileName = System.IO.Path.GetFileName(txtBulkFile.Text);
+            
 
             // Show save file dialog box
             bool? result = dlg.ShowDialog();
