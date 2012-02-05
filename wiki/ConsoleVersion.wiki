@@ -14,7 +14,7 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/cmdlineBuilderUsa
 
   # Run GUI version (`Awesome Password Generator.exe`), set up password length, quantity, charsets and other options as you wish;
   # Click *Command line builder*, choise destination: console or file (file name from the *Bulk password generation* section will be used);
-  # Run apg-cl.exe with generated parameters. For example, command
+  # Run `apg-cl.exe` with generated parameters. For example, command
 {{{
 apg-cl.exe -q:5 -l:10 "-c:enL,digits" -d:c
 }}}
@@ -27,13 +27,13 @@ apg-cl.exe -q:5 -l:10 "-c:enL,digits" -d:c
 || 2 || Can't allocate memory ||
 || 3 || Can't save passwords in the file ||
 
-<font color="red">Warning:</font> if apg-cl.exe execution fails, the error message will be printed to console. Keep it in mind when generating passwords to the console – it is possible to get an error message instead of passwords! Check the `errorlevel`!
+<font color="red">Warning:</font> if `apg-cl.exe` execution fails, the error message will be printed to console. Keep it in mind when generating passwords to the console – it is possible to get an error message instead of passwords! Check the `errorlevel`!
 
 == Usage examples in batch, !PowerShell and C# ==
 
 === Command line and batch-script ===
 
-Let's generate 5 passwords into the file c:\passwords.txt:
+Let's generate 5 passwords into the file `c:\passwords.txt`:
 {{{
 @echo off
 
