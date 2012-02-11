@@ -53,8 +53,8 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/MainScreenshot.pn
 
 [Screenshots More screenshots]
 
-<br>
-<br>
+
+----
 
 == Awards ==
 [http://www.softoxi.com/awesome-password-generator.html http://www.softoxi.com/images/public/awards/award_star.png]
