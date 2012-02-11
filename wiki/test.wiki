@@ -44,9 +44,11 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/MainScreenshot.pn
 
 [Screenshots More screenshots]
 
-=== Awards ===
-[http://www.izone.ru/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/award203.gif]
+
+
+== Awards ==
 [http://www.softoxi.com/awesome-password-generator.html http://www.softoxi.com/images/public/awards/award_star.png]
+[http://www.izone.ru/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/award203.gif]
 </td>
 </tr>   
 </table>
