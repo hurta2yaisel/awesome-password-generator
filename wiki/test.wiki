@@ -38,20 +38,6 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 = System requirements =
   * Windows XP / Vista / 7 / 8
   * [http://www.microsoft.com/download/en/details.aspx?id=17113 .NET Framework 4.0]
-</td>
-<td align="middle" valign="top">
-http://awesome-password-generator.googlecode.com/svn/wiki/pics/MainScreenshot.png
-
-[Screenshots More screenshots]
-
-<br><br>
-
-== Awards ==
-[http://www.softoxi.com/awesome-password-generator.html http://www.softoxi.com/images/public/awards/award_star.png]
-[http://www.izone.ru/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/award203.gif]
-</td>
-</tr>   
-</table>
 
 = Download =
 Use those big buttons at the top! Latest version is always there. Or browse [http://code.google.com/p/awesome-password-generator/downloads/list all versions]. See [Changes changes (history)] for details.
@@ -61,3 +47,19 @@ Use those big buttons at the top! Latest version is always there. Or browse [htt
   * Chat in [http://groups.google.com/group/awesome-password-generator forum];
   * [http://code.google.com/p/awesome-password-generator/issues/list Report a bug or write your suggestions] about how to improve the program;
   * [Donate]
+</td>
+<td align="middle" valign="top">
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/MainScreenshot.png
+
+[Screenshots More screenshots]
+
+<br>
+<br>
+
+== Awards ==
+[http://www.softoxi.com/awesome-password-generator.html http://www.softoxi.com/images/public/awards/award_star.png]
+[http://www.izone.ru/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/award203.gif]
+</td>
+</tr>   
+</table>
+
