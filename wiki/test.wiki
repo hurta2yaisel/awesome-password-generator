@@ -32,7 +32,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
   * GUI single/bulk password/wi-fi passphrase generation;
   * *Easy-to-type* and *Exclude confusing characters* [Options options];
   * Quick and secure: *Copy to clipboard automatically* and *Clear clipboard on exit* options;
-  * [ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options – just run GUI, set up password length, quantity, charsets and other options as you wish, and click *Command line builder*. Run <tt>apg-cl.exe</tt> with generated command line parameters;
+  * [ConsoleVersion Console version]: `apg-cl.exe` has same functionality as GUI version. Do not mess with command line options вЂ“ just run GUI, set up password length, quantity, charsets and other options as you wish, and click *Command line builder*. Run <tt>apg-cl.exe</tt> with generated command line parameters;
   * This is a free software with open sources (GNU GPLv3).
 
 = System requirements =
@@ -44,11 +44,9 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/MainScreenshot.pn
 
 [Screenshots More screenshots]
 
-
-
-== Awards ==
-<a target="_blank" href="http://www.izone.ru/"><img border="0" src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/award203.gif" width="106" height="59" alt="Софт-каталог IZone.ru" />
-<a target="_blank" href="http://www.softoxi.com/awesome-password-generator.html"><img src="http://www.softoxi.com/images/public/awards/award_star.png" border="0" alt="Awesome Password Generator video tutorial at softoxi.com" />
+=== Awards ===
+[http://www.izone.ru/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/award203.gif]
+[http://www.softoxi.com/awesome-password-generator.html http://www.softoxi.com/images/public/awards/award_star.png]
 </td>
 </tr>   
 </table>
