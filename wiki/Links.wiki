@@ -4,4 +4,4 @@
 
 <a target="_blank" href="http://www.izone.ru/"><img border="0" src="http://awesome-password-generator.googlecode.com/svn/wiki/pics/award203.gif" width="106" height="59" alt="Софт-каталог IZone.ru" />
 
-<a target="_blank" href="http://www.softoxi.com/awesome-password-generator.html"><img src="http://www.softoxi.com/images/public/awards/award.png" border="0" alt="Awesome Password Generator video tutorial at softoxi.com" />
+<a target="_blank" href="http://www.softoxi.com/awesome-password-generator.html"><img src="http://www.softoxi.com/images/public/awards/award_star.png" border="0" alt="Awesome Password Generator video tutorial at softoxi.com" />
