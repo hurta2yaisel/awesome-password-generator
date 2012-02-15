@@ -30,6 +30,17 @@ namespace Awesome_Password_Generator
     /// </summary>
     public partial class MainWindow : Window
     {
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern IntPtr GetOpenClipboardWindow();
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern int GetWindowText(int hwnd, StringBuilder text, int count);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern int GetWindowThreadProcessId(IntPtr hWnd, out int lpdwProcessId);
+
+        //---
+
         public PasswordGenerator pswgen = null;
         public enum pswType { Password, WPA };
         public enum genType { Single, Bulk };
@@ -463,7 +474,7 @@ namespace Awesome_Password_Generator
 
             txtResult.Text = pswFormatted;
             if (expSingleGeneration.IsExpanded && (bool)chkCopyToClipboardAutomatically.IsChecked && (App.appMode == App.AppMode.normal))
-                Clipboard.SetText(psw);
+                SetClipboardText(psw);
             
             // display password strength
             Brush[] brushes = new Brush[] { Brushes.LightPink, new SolidColorBrush(Color.FromArgb(255, 255, 255, 128)), new SolidColorBrush(Color.FromArgb(255, 200, 255, 200)), Brushes.LawnGreen };
@@ -496,7 +507,7 @@ namespace Awesome_Password_Generator
 
         private void cmdCopyToClipboard_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(txtResult.Text.Replace("\n", ""));
+            SetClipboardText(txtResult.Text.Replace("\n", ""));
         }
 
         //--------------------------------------------------
@@ -506,7 +517,7 @@ namespace Awesome_Password_Generator
             if ((bool)chkClearClipboardOnExit.IsChecked && (App.appMode == App.AppMode.normal))
                 // clear clipboard only if it contains a password
                 if (Clipboard.GetText() == txtResult.Text.Replace("\n", ""))
-                    Clipboard.SetText("");
+                    SetClipboardText("");
 
             SaveConfig();
         }
@@ -1297,14 +1308,14 @@ namespace Awesome_Password_Generator
 
         private void cmdCmdlineCopyLong_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(txtCmdlineLong.Text);
+            SetClipboardText(txtCmdlineLong.Text);
         }
 
         //--------------------------------------------------
 
         private void cmdCmdlineCopyShort_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(txtCmdlineShort.Text);
+            SetClipboardText(txtCmdlineShort.Text);
         }
 
         //--------------------------------------------------
@@ -1418,5 +1429,51 @@ namespace Awesome_Password_Generator
         }
 
         //--------------------------------------------------
+
+        /// <summary>
+        /// Clipboard.SetText() function fails sometimes when TeamViewer is running with exception CLIPBRD_E_CANT_OPEN (0x800401D0)
+        /// so here is safe version :)
+        /// </summary>
+        private void SetClipboardText(string text)
+        {
+            try
+            {
+                Clipboard.SetText(text);
+                return; // exit function on success
+            }
+            catch (Exception e)
+            {
+                string pinfo = GetOpenClipboardProcessInfo();
+                if(pinfo.Length==0)
+                    System.Windows.MessageBox.Show(
+                        "Can't copy password to clipboard!\n\n" +
+                        e.Message.ToString(),
+                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                else
+                    System.Windows.MessageBox.Show(
+                        "Can't copy password to clipboard because another application holds it:\n\n" +
+                        pinfo,
+                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+        }
+
+        //--------------------------------------------------
+
+        private string GetOpenClipboardProcessInfo()
+        {
+            IntPtr hwnd = GetOpenClipboardWindow();
+            if (hwnd.ToInt32() == 0) return "";
+
+            StringBuilder sb = new StringBuilder(1024+1);
+            GetWindowText(hwnd.ToInt32(), sb, 1024);
+            int pid;
+            GetWindowThreadProcessId(hwnd, out pid);
+
+            return "Process: " + Process.GetProcessById(pid).ProcessName + " (PID: " + pid.ToString() + ")\n" +
+                "Window: " + sb.ToString() + " (HWND: " + hwnd.ToString() + ")";
+        }
     }
 }
