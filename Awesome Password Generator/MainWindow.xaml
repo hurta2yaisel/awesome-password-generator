@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
         Title="Awesome Password Generator" Width="384" SizeToContent="Height" ResizeMode="CanMinimize" Closed="Window_Closed" Height="710.52"
-        FontFamily="Segoe UI,Microsoft Sans Serif" FontSize="12">
+        FontFamily="Segoe UI,Microsoft Sans Serif" FontSize="12" KeyDown="Window_KeyDown">
     
     <Window.TaskbarItemInfo>
         <TaskbarItemInfo />
@@ -44,7 +44,7 @@
     
     <StackPanel>
         <Expander Name="expPassword" Header="Password" IsExpanded="True" FontWeight="Bold" Expanded="expPassword_Expanded" Collapsed="expPassword_Collapsed">
-            <StackPanel Margin="4" Orientation="Horizontal">
+            <StackPanel Name="spPassword" Focusable="True" Margin="4" Orientation="Horizontal">
                 <Image Source="res\key2x48.ico" VerticalAlignment="Top"/>
                 <Separator Width="10" Visibility="Hidden" />
                 <StackPanel Orientation="Vertical">
@@ -59,7 +59,7 @@
                         <CheckBox Name="chkPswSpecial" Tag="special" Margin="4" FontWeight="Normal" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click" Content="!@#...">
                             <CheckBox.ToolTip>
                                 <TextBlock>
-                                    ! @ # $ % ^ &amp; * ( ) ~ - _ = + \ | / [ ] { } ; : ` &apos; &quot; , . &lt; &gt; ?<LineBreak/>
+                                    <Bold>! @ # $ % ^ &amp; * ( ) ~ - _ = + \ | / [ ] { } ; : ` &apos; &quot; , . &lt; &gt; ?</Bold><LineBreak/>
                                     Space is not included! Use User-defined charset for it.
                                 </TextBlock>
                             </CheckBox.ToolTip>
@@ -98,7 +98,7 @@
                             <CheckBox Name="chkWpaSpecial" Tag="special" Margin="4" FontWeight="Normal" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click" Content="!@#...">
                                 <CheckBox.ToolTip>
                                     <TextBlock>
-                                    ! @ # $ % ^ &amp; * ( ) ~ - _ = + \ | / [ ] { } ; : ` &apos; &quot; , . &lt; &gt; ?<LineBreak/>
+                                    <Bold>! @ # $ % ^ &amp; * ( ) ~ - _ = + \ | / [ ] { } ; : ` &apos; &quot; , . &lt; &gt; ?</Bold><LineBreak/>
                                     Space is not included! Use User-defined charset for it.
                                     </TextBlock>
                                 </CheckBox.ToolTip>
@@ -126,11 +126,17 @@
                     <Label Name="lblStrength" DockPanel.Dock="Top" HorizontalContentAlignment="Center" Background="PaleGreen" FontWeight="Normal">Strength: GOOD</Label>
                     <Separator DockPanel.Dock="Top" Height="0" Visibility="Hidden" />
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
-                        <Button Name="cmdRegenerate" Click="cmdRegenerate_Click" VerticalAlignment="Center">
+                        <Button Name="cmdRegenerate" Click="cmdRegenerate_Click" VerticalAlignment="Center" xml:space="preserve">
                             <Image Source="res\refresh4_x48.ico" />
+                            <Button.ToolTip>
+                                <TextBlock>Re-generate password   <Bold>F5, Ctrl+R</Bold></TextBlock>
+                            </Button.ToolTip>
                         </Button>
-                        <Button Name="cmdCopyToClipboard" VerticalAlignment="Center" Click="cmdCopyToClipboard_Click">
+                        <Button Name="cmdCopyToClipboard" VerticalAlignment="Center" Click="cmdCopyToClipboard_Click" xml:space="preserve">
                             <Image Source="res\copy2_x48.ico" />
+                            <Button.ToolTip>
+                                <TextBlock>Copy password to clipboard   <Bold>Ctrl+C, Ctrl+Ins</Bold></TextBlock>
+                            </Button.ToolTip>
                         </Button>
                     </StackPanel>
                     <Separator DockPanel.Dock="Right" Width="10" Visibility="Hidden"></Separator>
@@ -139,9 +145,9 @@
                     <CheckBox Name="chkSingle_ExcludeConfusingChars" DockPanel.Dock="Top" FontWeight="Normal" IsChecked="True" Unchecked="cmdRegenerate_Click" Checked="cmdRegenerate_Click" Content="Exclude confusing characters">
                         <CheckBox.ToolTip>
                             <TextBlock>
-                                Digits:  0 1 8<LineBreak/>
-                                Letters: i l j o B J I O Q<LineBreak/>
-                                Special: Space | ` &apos;
+                                Digits:  <Bold>0 1 8</Bold><LineBreak/>
+                                Letters: <Bold>i l j o B J I O Q</Bold><LineBreak/>
+                                Special: <Bold>Space | ` &apos;</Bold>
                             </TextBlock>
                         </CheckBox.ToolTip>
                     </CheckBox>
@@ -188,9 +194,9 @@
                 <CheckBox Name="chkBulkExcludeConfusingChars" Margin="5,0" DockPanel.Dock="Top" FontWeight="Normal" IsChecked="True" Content="Exclude confusing characters">
                     <CheckBox.ToolTip>
                         <TextBlock>
-                            Digits:  0 1 8<LineBreak/>
-                            Letters: i l j o B J I O Q<LineBreak/>
-                            Special: Space | ` &apos;
+                            Digits:  <Bold>0 1 8</Bold><LineBreak/>
+                            Letters: <Bold>i l j o B J I O Q</Bold><LineBreak/>
+                            Special: <Bold>Space | ` &apos;</Bold>
                         </TextBlock>
                     </CheckBox.ToolTip>
                 </CheckBox>
