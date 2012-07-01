@@ -46,7 +46,7 @@
 		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
 		<Program_OS_Support>Win7 x32,Win7 x64,WinVista,WinVista x64,WinXP</Program_OS_Support>
 		<Program_Language>English</Program_Language>
-		<Program_Change_Info>* Bugs fixed</Program_Change_Info>
+		<Program_Change_Info>* Bugs fixed.</Program_Change_Info>
 		<Program_Specific_Category>Utilities</Program_Specific_Category>
 		<Program_Category_Class>Security &amp; Privacy::Password Managers</Program_Category_Class>
 		<Program_System_Requirements>.NET Framework 4.0</Program_System_Requirements>
@@ -119,7 +119,7 @@ For system administrators/IT-professionals is is also a powerfull tool for singl
 			<Application_Order_URL />
 			<Application_Screenshot_URL>http://awesome-password-generator.googlecode.com/svn/wiki/pics/MainScreenshot.png</Application_Screenshot_URL>
 			<Application_Icon_URL>http://awesome-password-generator.googlecode.com/svn/wiki/pics/icon.png</Application_Icon_URL>
-			<Application_XML_File_URL>http://awesome-password-generator.googlecode.com/svn/wiki/PAD/apg.xml</Application_XML_File_URL>
+			<Application_XML_File_URL>http://awesome-password-generator.googlecode.com/svn/wiki/PAD/apg1.3.1.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
 			<Primary_Download_URL>http://awesome-password-generator.googlecode.com/files/agp1.3.1-setup.exe</Primary_Download_URL>
