@@ -194,8 +194,12 @@ namespace Password_Generator
             }
 
             int i, j;
-            byte[] b = new byte[1];
-            byte[] b4 = new byte[4];
+
+            // initialize Random class
+            byte[] dwSeed = new byte[4];
+            rng.GetBytes(dwSeed);
+            int iSeed = BitConverter.ToInt32(dwSeed, 0);
+            Random rnd = new Random(iSeed);
 
             // make password's layout
             int[] pswLayout = new int[pgo.pswLength];
@@ -216,12 +220,11 @@ namespace Password_Generator
                     if (spaceForSecondaryChars == 0) break;  // there is no room in the layout for the new chars from non-easiest charsets
 
                     // secondaryCharsCnt symbols will be added from workCharsets[j] charset into the password layout;
-                    // if password is short, add only 1 char; but if password is big enough, additional character can be added (50% probability)
+                    // if password is short, add only 1 char; but if password is big enough, additional character can be added (with 50% probability)
                     int secondaryCharsCnt = 1;
                     if (pgo.pswLength > 10)
                     {
-                        rng.GetBytes(b);
-                        secondaryCharsCnt += (int)Math.Round((double)b[0] * 1 / (double)255, MidpointRounding.AwayFromZero);
+                        secondaryCharsCnt += rnd.Next(0, 2); // generate [0..1]
                     }
 
                     for (i = 0; i < secondaryCharsCnt; i++)
@@ -231,8 +234,7 @@ namespace Password_Generator
                         // search for a place in the layout. we must replace any easiest letter in the layout with non-easiest one
                         do
                         {
-                            rng.GetBytes(b4);
-                            pos = (int)Math.Round((double)Math.Abs(BitConverter.ToInt32(b4, 0)) * (double)(pgo.pswLength - 1) / (double)Int32.MaxValue, MidpointRounding.AwayFromZero);
+                            pos = rnd.Next(0, pgo.pswLength); // generate [0 .. pgo.pswLength-1]
                         } while (pswLayout[pos] != 0);
 
                         pswLayout[pos] = j; // j is workChasets array index
@@ -249,8 +251,7 @@ namespace Password_Generator
                     // make password's layout
                     for (i = 0; i < pgo.pswLength; i++)
                     {
-                        rng.GetBytes(b);
-                        pswLayout[i] = (int)Math.Round((double)b[0] * (double)(workCharsets.Length - 1) / (double)255, MidpointRounding.AwayFromZero);
+                        pswLayout[i] = rnd.Next(0, workCharsets.Length); // generate [0 .. workCharsets.Length-1]
                     }
 
                     // count used chargroups. all selected chargroups must be used, or, if pgo.pswLength is too small to include even one char 
@@ -267,8 +268,7 @@ namespace Password_Generator
             string psw = "";
             for (i = 0; i < pgo.pswLength; i++)
             {
-                rng.GetBytes(b);
-                psw += workCharsets[pswLayout[i]][(int)Math.Round((double)b[0] * (double)(workCharsets[pswLayout[i]].Length - 1) / (double)255, MidpointRounding.AwayFromZero)];
+                psw += workCharsets[pswLayout[i]][rnd.Next(0, workCharsets[pswLayout[i]].Length)];  // generate [0 .. workCharsets[pswLayout[i]].Length)-1]
             }
 
             return psw; // successfully generated
