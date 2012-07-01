@@ -2,6 +2,8 @@
 
 If you want to express your gratitude in the form of money, don't let me stop you :)
 
+<br>
+
 == !WebMoney ==
 
 <table border="0" cellpadding="0">
@@ -58,6 +60,8 @@ WMR:
 
 There is a number of options that you can use to add funds to the !WebMoney purses, including prepaid cards. See [http://www.wmtransfer.com/ wmtransfer.com] for more information.
 
+<br>
+
 == Bitcoin ==
 
 <table border="0" cellpadding="0">
@@ -72,6 +76,8 @@ There is a number of options that you can use to add funds to the !WebMoney purs
 </tr>
 </table>
 
+<br>
+
 == Yandex.Money ==
 
 <table border="0" cellpadding="0">
@@ -82,6 +88,22 @@ There is a number of options that you can use to add funds to the !WebMoney purs
 <td width="20"></td>
 <td>
 RUR purse: <b>410011190316396</b>
+</td>
+</tr>
+</table>
+
+<br>
+
+== QIWI purse ==
+
+<table border="0" cellpadding="0">
+<tr>
+<td>
+[http://awesome-password-generator.googlecode.com/svn/wiki/pics/qiwi.png]
+</td>
+<td width="20"></td>
+<td>
+*9277070022*
 </td>
 </tr>
 </table>
