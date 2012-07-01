@@ -16,7 +16,30 @@
 </tr>
 </table>
 
-Пополнить QIWI-кошелек можно со множества [https://w.qiwi.ru/fill.action терминалов и банкоматов]
+Пополнить QIWI-кошелек можно со множества [https://w.qiwi.ru/fill.action терминалов и банкоматов].
+
+
+
+
+
+
+
+
+== Яндекс.Деньги ==
+
+<table border="0" cellpadding="0">
+<tr>
+<td>
+[http://awesome-password-generator.googlecode.com/svn/wiki/pics/YandexMoney.png]
+</td>
+<td width="20"></td>
+<td>
+Номер счёта: <b>410011190316396</b>
+</td>
+</tr>
+</table>
+
+С помощью системы Яндекс.Деньги можно осуществить пожертвование через банковский перевод, через огромное число [http://money.yandex.ru/doc.xml?id=522781 терминалов], через ряд [http://money.yandex.ru/doc.xml?id=522870 банкоматов]. Подробности указаны на [http://money.yandex.ru/prepaid.xml этой страничке]. Всё что нужно знать - номер счёта, указанный выше.
 
 == !WebMoney ==
 
@@ -88,18 +111,3 @@ WMR:
 </tr>
 </table>
 
-== Яндекс.Деньги ==
-
-<table border="0" cellpadding="0">
-<tr>
-<td>
-[http://awesome-password-generator.googlecode.com/svn/wiki/pics/YandexMoney.png]
-</td>
-<td width="20"></td>
-<td>
-Номер счёта: <b>410011190316396</b>
-</td>
-</tr>
-</table>
-
-С помощью системы Яндекс.Деньги можно осуществить пожертвование через банковский перевод, через огромное число [http://money.yandex.ru/doc.xml?id=522781 терминалов], через ряд [http://money.yandex.ru/doc.xml?id=522870 банкоматов]. Подробности указаны на [http://money.yandex.ru/prepaid.xml этой страничке]. Всё что нужно знать - номер счёта, указанный выше.
