@@ -1,0 +1,9 @@
+While this file is located in the directory with the Awesome Password 
+Generator's executables, app configuration will be in the same folder.
+Without this file app will not be portable any more, and the configuration 
+will be located in the current user's profile dir.
+
+Пока этот файл находится в каталоге с исполняемыми файлами Awesome Password 
+Generator'а, конфигурация программы будет в этой же папке.
+Без этого файла программа перестанет быть портабельной, и конфигурация 
+будет находиться в профиле текущего пользователя.

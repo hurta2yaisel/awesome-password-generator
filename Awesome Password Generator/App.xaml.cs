@@ -19,22 +19,25 @@ namespace Awesome_Password_Generator
 {
     [ServiceContract]
     [ServiceKnownType(typeof(QuickGenMode))]
-    public interface IQuickGen
+    public interface IRemoteControl
     {
         [OperationContract(IsOneWay = true)]
         void DoQuickGen(QuickGenMode quickgenMode);
+
+        [OperationContract(IsOneWay = true)]
+        void BringToForeground();   // restore (if minimized) main window and bring it to foreground
     }
 
     [DataContract]
     public enum QuickGenMode { [EnumMember] password, [EnumMember] wpa };
 
-    public class QuickGen : IQuickGen
+    public class RemoteControl : IRemoteControl
     {
         public void DoQuickGen(QuickGenMode quickgenMode)
         {
-            if (App.appInQuickGenMode) return;
+            if (App.appMode == App.AppMode.quickgen) return;
 
-            App.appInQuickGenMode = true;
+            App.appMode = App.AppMode.quickgen;
             App.ExecuteAction(new Action(() => App.mainWindow.IsEnabled = false));
             
             App.PerformQuickGenLocally(quickgenMode);
@@ -46,12 +49,20 @@ namespace Awesome_Password_Generator
             Thread.Sleep(1000);
             App.ExecuteAction(new Action(() => App.mainWindow.TaskbarItemInfo.ProgressState = TaskbarItemProgressState.None));
 
-            App.appInQuickGenMode = false;
+            App.appMode = App.AppMode.normal;
             App.ExecuteAction(new Action(() => App.mainWindow.IsEnabled = true));
+        }
+
+        //-------------
+
+        public void BringToForeground()
+        {
+            App.ExecuteAction(new Action(() => App.mainWindow.WindowState = WindowState.Normal));
+            App.ExecuteAction(new Action(() => App.mainWindow.Activate()));
         }
     }
 
-    //---
+    //========================================================================
 
     /// <summary>
     /// Interaction logic for App.xaml
@@ -59,7 +70,9 @@ namespace Awesome_Password_Generator
     public partial class App : Application
     {
         public static MainWindow mainWindow;
-        public static bool appInQuickGenMode = false;
+        public enum AppMode { normal, quickgen };
+        public static AppMode appMode = AppMode.normal;
+        //public static bool appInQuickGenMode = false;
 
         //---
 
@@ -81,45 +94,56 @@ namespace Awesome_Password_Generator
             {
                 ParseCmdline(e.Args);
                 ProcessCmdline();
+            }
 
-                // QuickGen mode
-                appInQuickGenMode = true;
-                // perform QuickGen in current process or send a signal to the already running copy?
-                if (appIsAlreadyRunning)
-                {
-                    // send command to perform a QuickGen to the remote app and exit
-                    PerformQuickGenRemotely();
-                    Environment.Exit((int)ExitCodes.ok);
-                }
-                else
-                {
-                    // do QuickGen locally and exit
-                    mainWindow = new MainWindow();
-                    if (!PerformQuickGenLocally(quickGenMode))   // do QuickGen in the current process
-                        Shutdown((int)ExitCodes.invalidGenerationSettings);
+            switch(appMode)
+            {
+                case AppMode.normal:
+                    if (!appIsAlreadyRunning)
+                    {
+                        // show main window
+                        mainWindow = new MainWindow();
+                        mainWindow.Show();
+                    }
                     else
                     {
-                        // show a visual indicator of successfull password generation - green taskbar button
-                        mainWindow.WindowState = WindowState.Minimized;
-                        mainWindow.IsEnabled = false;
-                        mainWindow.TaskbarItemInfo.ProgressValue = 1;
-                        mainWindow.TaskbarItemInfo.ProgressState = TaskbarItemProgressState.Normal;
-                        mainWindow.Show();
-                        Task.Factory.StartNew(() => {
-                            // show green taskbar button for a while
-                            Thread.Sleep(1000);
-                            // close app gracefully (via Shutdown(), not via Enviropment.Exit()) because MainWindow must execute SaveConfig before exit
-                            mainWindow.Dispatcher.Invoke(new Action(() => Shutdown((int)ExitCodes.ok)));
-                        });
+                        // do not start second copy of app! send command to bring main window to front to the currently running app instead
+                        SendBringToForegroundCommand();
+                        Environment.Exit((int)ExitCodes.ok);
                     }
-                    return;
-                }
-            }
-            else
-            {
-                // show main window
-                mainWindow = new MainWindow();
-                mainWindow.Show();
+                    break;
+                case AppMode.quickgen:
+                    // perform QuickGen in current process or send a signal to the already running copy?
+                    if (appIsAlreadyRunning)
+                    {
+                        // send command to perform a QuickGen to the remote app and exit
+                        PerformQuickGenRemotely();
+                        Environment.Exit((int)ExitCodes.ok);
+                    }
+                    else
+                    {
+                        // do QuickGen locally and exit
+                        mainWindow = new MainWindow();
+                        if (!PerformQuickGenLocally(quickGenMode))   // do QuickGen in the current process
+                            Shutdown((int)ExitCodes.invalidGenerationSettings);
+                        else
+                        {
+                            // show a visual indicator of successfull password generation - green taskbar button
+                            mainWindow.WindowState = WindowState.Minimized;
+                            mainWindow.IsEnabled = false;
+                            mainWindow.TaskbarItemInfo.ProgressValue = 1;
+                            mainWindow.TaskbarItemInfo.ProgressState = TaskbarItemProgressState.Normal;
+                            mainWindow.Show();
+                            Task.Factory.StartNew(() => {
+                                // show green taskbar button for a while
+                                Thread.Sleep(1000);
+                                // close app gracefully (via Shutdown(), not via Enviropment.Exit()) because MainWindow must execute SaveConfig before exit
+                                mainWindow.Dispatcher.Invoke(new Action(() => Shutdown((int)ExitCodes.ok)));
+                            });
+                        }
+                        return;
+                    }
+                    break;
             }
 
             Task.Factory.StartNew(() => CreateWCFServer());  // for receiving QuickGen commands
@@ -191,25 +215,30 @@ namespace Awesome_Password_Generator
         // fill the pgo struct and initialize PasswordGenerator class with it
         void ProcessCmdline()
         {
-            string quickGen = CommandLineArgs["--quickgen"].ToString();
-            if (quickGen.Length == 0)
+            // quickgen
+            if (CommandLineArgs.ContainsKey("--quickgen"))
             {
-                ReportErrorAndExit("Required argument value is empty: --quickgen", ExitCodes.cmdlineArgError);
-            }
+                App.appMode = App.AppMode.quickgen;
 
-            switch (GetLongArgOrValueName(quickGen.Split(':')[0]))
-            {
-                case "password":
-                    quickGenMode = QuickGenMode.password;
-                    break;
-                case "wpa":
-                    quickGenMode = QuickGenMode.wpa;
-                    break;
-                default:
-                    ReportErrorAndExit("Unknown QuickGen mode: --quickgen:" + quickGen.Split(':')[0], ExitCodes.cmdlineArgError);
-                    break;
-            }
+                string quickGen = CommandLineArgs["--quickgen"].ToString();
+                if (quickGen.Length == 0)
+                {
+                    ReportErrorAndExit("Required argument value is empty: --quickgen", ExitCodes.cmdlineArgError);
+                }
 
+                switch (GetLongArgOrValueName(quickGen.Split(':')[0]))
+                {
+                    case "password":
+                        quickGenMode = QuickGenMode.password;
+                        break;
+                    case "wpa":
+                        quickGenMode = QuickGenMode.wpa;
+                        break;
+                    default:
+                        ReportErrorAndExit("Unknown QuickGen mode: --quickgen:" + quickGen.Split(':')[0], ExitCodes.cmdlineArgError);
+                        break;
+                }
+            }
         }
 
         //--------------------------------------------------
@@ -238,13 +267,13 @@ namespace Awesome_Password_Generator
         {
             try
             {
-                ChannelFactory<IQuickGen> pipeFactory =
-                  new ChannelFactory<IQuickGen>(
+                ChannelFactory<IRemoteControl> pipeFactory =
+                  new ChannelFactory<IRemoteControl>(
                     new NetNamedPipeBinding(),
                     new EndpointAddress(
-                      "net.pipe://localhost/AwesomePasswordGenerator/QuickGen"));
+                      "net.pipe://localhost/AwesomePasswordGenerator/RemoteControl"));
 
-                IQuickGen pipeProxy =
+                IRemoteControl pipeProxy =
                   pipeFactory.CreateChannel();
                 pipeProxy.DoQuickGen(quickGenMode);
             }
@@ -309,14 +338,14 @@ namespace Awesome_Password_Generator
         private void CreateWCFServer()
         {
             ServiceHost host = new ServiceHost(
-              typeof(QuickGen),
+              typeof(RemoteControl),
               new Uri("net.pipe://localhost/AwesomePasswordGenerator"));
             
             try
             {
-                host.AddServiceEndpoint(typeof(IQuickGen),
+                host.AddServiceEndpoint(typeof(IRemoteControl),
                     new NetNamedPipeBinding(),
-                    "QuickGen");
+                    "RemoteControl");
 
                 /*
                 // Step 4 of the hosting procedure: Enable metadata exchange.
@@ -358,5 +387,34 @@ namespace Awesome_Password_Generator
             else
                 mainWindow.Dispatcher.Invoke(a);
         }
+
+        //--------------------------------------------------
+
+        private void SendBringToForegroundCommand()
+        {
+            try
+            {
+                ChannelFactory<IRemoteControl> pipeFactory =
+                  new ChannelFactory<IRemoteControl>(
+                    new NetNamedPipeBinding(),
+                    new EndpointAddress(
+                      "net.pipe://localhost/AwesomePasswordGenerator/RemoteControl"));
+
+                IRemoteControl pipeProxy =
+                  pipeFactory.CreateChannel();
+                pipeProxy.BringToForeground();
+            }
+            catch (Exception e)
+            {
+                // can be if remote server is not available. for example, if another instance of app is running in the QuickGen mode 
+                // and busy in this very moment (showing QuickGenInfo window or in the middle of password generation process)
+            }
+            finally
+            {
+                // despite IsOneWay = true property, Close() method will wait for server to complete all queued BringToForeground() methods
+                //pipeFactory.Close();
+            }
+        }
+
     }
 }
