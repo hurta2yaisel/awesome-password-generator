@@ -325,7 +325,7 @@ namespace Password_Generator
             // count of all possible passwords with this alphabet size and up to this password's length
             combinations = Math.Pow(combinations, pgo.pswLength);
 
-            double days = combinations / pps / 3600;
+            double days = combinations / pps / 3600 / 24;
             for(int i=timeBorders.Length-1;i>=0;i--)
                 if (days >= timeBorders[i])
                 {
