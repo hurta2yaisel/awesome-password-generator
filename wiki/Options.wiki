@@ -13,5 +13,5 @@ Some symbols like 0 (zero) and O (letter) are very similar (difficult to disting
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/excludeConfusingCharacters.png
 
-While hacker does not know you have generated password with this option, we can assume that the strength is not reduced.
+As long as hacker does not know you have generated password with this option, we can assume that the strength is not reduced.
 
