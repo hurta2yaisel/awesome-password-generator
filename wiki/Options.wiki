@@ -2,7 +2,7 @@
 == Easy to type password ==
 Strong passwords are usually long and contains symbols from different charsets: lowercase and uppercase letters, digits and special symbols. Such passwords are hard to type and even more hard to remember.
 
-Solution is to generate password from lowercase letters (which are easiest to type – you don't even need to press Shift) with 1-2 symbols from each of another charsets. Such password is easier to type and to remember.
+Solution is to generate password from lowercase letters (which are easiest to type – you don't even need to press Shift) with 1-2 symbols from each of another charsets:
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/easytotype.png
 
