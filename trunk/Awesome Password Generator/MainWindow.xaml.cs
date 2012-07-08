@@ -1228,6 +1228,7 @@ namespace Awesome_Password_Generator
             lockExpanders = false;
 
             //System.Media.SystemSounds.Beep.Play();
+            App.mainWindow.FlashWindow(2);
         }
 
         #endregion  // bgworker
