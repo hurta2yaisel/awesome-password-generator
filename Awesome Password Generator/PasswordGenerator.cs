@@ -61,11 +61,11 @@ namespace Password_Generator
 
             charsets.Add("enU", new charset("A..Z", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 90));
             charsets.Add("enL", new charset("a..z", "abcdefghijklmnopqrstuvwxyz", 100));
-            charsets.Add("en-", new charset("", "iljoBJIOQ", -1)); // confusing characters
+            charsets.Add("en-", new charset("", "iljoBJIO", -1)); // confusing characters
 
             charsets.Add("ruU", new charset("А..Я", "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ", 70));
             charsets.Add("ruL", new charset("а..я", "абвгдеёжзийклмнопрстуфхцчшщъыьэюя", 80));
-            charsets.Add("ru-", new charset("", "обОВЗ", -1));
+            charsets.Add("ru-", new charset("", "обзэОВЗЭ", -1));
         }
 
         //--------------------------------------------------
@@ -213,18 +213,35 @@ namespace Password_Generator
 
                 int spaceForSecondaryChars = pgo.pswLength - 1; // "secondary chars" means chars from non-easiest charsets
 
-                // add chars form non-easiest charsets into the password layout
+                // if password is long enough, some EXTRA chars from non-easiest charsets can be added, but not more then extraSecondaryCharsLimit:
+                // pgo.pswLength    extraSecondaryCharsLimit
+                // 1..12            0
+                // 13               1
+                // 16               2
+                // >=19             3
+                // 
+                // for example, if you generate password from charsets az,AZ,09,#% and password length is:
+                // 1..12   - your password will contain up to 3 chars from non-easiest charsets (which are AZ,09,#% in this case)
+                // 13..15  - 3..4 (3 + [0..1]) chars from non easiest charsets
+                // 16..18  - 3..5 (3 + [0..2]) chars from non easiest charsets
+                // >=19    - 3..6 (3 + [0..3]) chars from non easiest charsets
+                // (other symbols of the password will be from easiest charset - az)
+                int extraSecondaryCharsLimit = Math.Max(Math.Min((int)((pgo.pswLength-10)/3), 3), 0);
+
+                // add chars from non-easiest charsets into the password layout
                 int pos;
                 for (j = 1; j < workCharsets.Length; j++)
                 {
                     if (spaceForSecondaryChars == 0) break;  // there is no room in the layout for the new chars from non-easiest charsets
 
                     // secondaryCharsCnt symbols will be added from workCharsets[j] charset into the password layout;
-                    // if password is short, add only 1 char; but if password is big enough, additional character can be added (with 50% probability)
+                    // if password is short, add only 1 char; but if password is big enough, additional extra character CAN be added (or not)
                     int secondaryCharsCnt = 1;
-                    if (pgo.pswLength > 10)
+                    if (extraSecondaryCharsLimit > 0)
                     {
-                        secondaryCharsCnt += rnd.Next(0, 2); // generate [0..1]
+                        int extraSecondaryCharsCnt = rnd.Next(0, 2); // generate [0..1]
+                        secondaryCharsCnt += extraSecondaryCharsCnt;
+                        extraSecondaryCharsLimit -= extraSecondaryCharsCnt;
                     }
 
                     for (i = 0; i < secondaryCharsCnt; i++)
