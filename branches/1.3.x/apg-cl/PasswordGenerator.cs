@@ -185,17 +185,6 @@ namespace Password_Generator
 
         //--------------------------------------------------
 
-        private int GetRandomWithinLimits(int maxValue)
-        {
-            byte[] arRnd = new byte[4];
-            rng.GetBytes(arRnd);
-            UInt32 uiRnd = BitConverter.ToUInt32(arRnd, 0);
-
-            return (int)Math.Round((double)uiRnd * (double)maxValue / (double)UInt32.MaxValue, MidpointRounding.AwayFromZero);
-        }
-
-        //--------------------------------------------------
-
         /// <summary>
         /// Generates true (well, sort of) random number within range [0..maxValue]
         /// </summary>
