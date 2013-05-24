@@ -185,6 +185,58 @@ namespace Password_Generator
 
         //--------------------------------------------------
 
+        private int GetRandomWithinLimits(int maxValue)
+        {
+            byte[] arRnd = new byte[4];
+            rng.GetBytes(arRnd);
+            UInt32 uiRnd = BitConverter.ToUInt32(arRnd, 0);
+
+            return (int)Math.Round((double)uiRnd * (double)maxValue / (double)UInt32.MaxValue, MidpointRounding.AwayFromZero);
+        }
+
+        //--------------------------------------------------
+
+        /// <summary>
+        /// Generates true (well, sort of) random number within range [0..maxValue]
+        /// </summary>
+        /// <param name="maxValue"></param>
+        /// <returns></returns>
+        private UInt32 GetRandomWithinRange(UInt32 maxValue)
+        {
+            if (maxValue == 0)
+                throw new ArgumentOutOfRangeException("maxValue must be greater than 0");
+
+            byte[] arRnd = new byte[4];
+            rng.GetBytes(arRnd);
+            UInt32 uiRnd, uiRndLimited;
+
+            // how much bits maxValue is using?
+            UInt32 usedBits = 1;
+            UInt32 maxval = maxValue;
+            while (maxval >= 1)
+            {
+                usedBits++;
+                maxval = maxval / 2;
+            }
+
+            UInt32 mask = (UInt32)Math.Pow(2, usedBits) - 1;
+
+            while (true)    // yes, it's theoretically infinite cycle :)  we must have some luck to break through!
+            {
+                // generate a random value
+                rng.GetBytes(arRnd);
+                uiRnd = BitConverter.ToUInt32(arRnd, 0);
+                // and limit this value
+                uiRndLimited = uiRnd & mask;
+
+                // check if it's not exceed maxValue...
+                if (uiRndLimited <= maxValue)
+                    return uiRndLimited;    // and done! :)
+            }
+        }
+
+        //--------------------------------------------------
+
         public string GeneratePassword()
         {
             if (pgo.pswLength == 0)
@@ -194,12 +246,6 @@ namespace Password_Generator
             }
 
             int i, j;
-
-            // initialize Random class
-            byte[] dwSeed = new byte[4];
-            rng.GetBytes(dwSeed);
-            int iSeed = BitConverter.ToInt32(dwSeed, 0);
-            Random rnd = new Random(iSeed);
 
             // make password's layout
             int[] pswLayout = new int[pgo.pswLength];
@@ -216,8 +262,8 @@ namespace Password_Generator
                 // if password is long enough, some EXTRA chars from non-easiest charsets can be added, but not more then extraSecondaryCharsLimit:
                 // pgo.pswLength    extraSecondaryCharsLimit
                 // 1..12            0
-                // 13               1
-                // 16               2
+                // 13..15           1
+                // 16..18           2
                 // >=19             3
                 // 
                 // for example, if you generate password from charsets az,AZ,09,#% and password length is:
@@ -239,7 +285,7 @@ namespace Password_Generator
                     int secondaryCharsCnt = 1;
                     if (extraSecondaryCharsLimit > 0)
                     {
-                        int extraSecondaryCharsCnt = rnd.Next(0, 2); // generate [0..1]
+                        int extraSecondaryCharsCnt = (int)GetRandomWithinRange(1); // generate random number [0..1]
                         secondaryCharsCnt += extraSecondaryCharsCnt;
                         extraSecondaryCharsLimit -= extraSecondaryCharsCnt;
                     }
@@ -251,7 +297,7 @@ namespace Password_Generator
                         // search for a place in the layout. we must replace any easiest letter in the layout with non-easiest one
                         do
                         {
-                            pos = rnd.Next(0, pgo.pswLength); // generate [0 .. pgo.pswLength-1]
+                            pos = (int)GetRandomWithinRange((UInt32)pgo.pswLength-1); // generate random number [0 .. pgo.pswLength-1]
                         } while (pswLayout[pos] != 0);
 
                         pswLayout[pos] = j; // j is workChasets array index
@@ -261,17 +307,18 @@ namespace Password_Generator
             }
             else
             {
-                // generate common password (not an easy-to-type; chars from any charsets are included with same probability)
+                // generate common password (not an easy-to-type; in such password charsets will be selected with the same probability)
 
                 while (true)
                 {
                     // make password's layout
                     for (i = 0; i < pgo.pswLength; i++)
                     {
-                        pswLayout[i] = rnd.Next(0, workCharsets.Length); // generate [0 .. workCharsets.Length-1]
+                        pswLayout[i] = (int)GetRandomWithinRange((UInt32)workCharsets.Length-1); // generate random number [0 .. workCharsets.Length-1]
                     }
 
-                    // count used chargroups. all selected chargroups must be used, or, if pgo.pswLength is too small to include even one char 
+                    // count used chargroups in the generated layout.
+                    // all selected chargroups must be used, or, if pgo.pswLength is too small to include even one char 
                     // from each charset, usedCharGroupsCnt must be equal to pgo.pswLength
                     int usedCharGroupsCnt = 0;
                     for (i = 0; i < pgo.pswLength; i++)
@@ -285,7 +332,7 @@ namespace Password_Generator
             string psw = "";
             for (i = 0; i < pgo.pswLength; i++)
             {
-                psw += workCharsets[pswLayout[i]][rnd.Next(0, workCharsets[pswLayout[i]].Length)];  // generate [0 .. workCharsets[pswLayout[i]].Length)-1]
+                psw += workCharsets[pswLayout[i]][(int)GetRandomWithinRange((UInt32)workCharsets[pswLayout[i]].Length-1)];  // generate [0 .. workCharsets[pswLayout[i]].Length)-1]
             }
 
             return psw; // successfully generated
