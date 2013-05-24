@@ -321,7 +321,7 @@ namespace Password_Generator
             string psw = "";
             for (i = 0; i < pgo.pswLength; i++)
             {
-                psw += workCharsets[pswLayout[i]][(int)GetRandomWithinRange((UInt32)workCharsets[pswLayout[i]].Length-1)];  // generate [0 .. workCharsets[pswLayout[i]].Length)-1]
+                psw += workCharsets[pswLayout[i]][(int)GetRandomWithinRange((UInt32)workCharsets[pswLayout[i]].Length-1)];  // generate random number [0 .. workCharsets[pswLayout[i]].Length)-1]
             }
 
             return psw; // successfully generated
