@@ -227,7 +227,7 @@ namespace Password_Generator
 
         //--------------------------------------------------
 
-        public string GeneratePassword()
+        public string GeneratePassword(bool bulkMode = false)
         {
             if (pgo.pswLength == 0)
             {
@@ -339,7 +339,8 @@ namespace Password_Generator
             }
 
             // password is successfully generated
-            CalculatePasswordStrength(psw);
+            if(!bulkMode)   // don't spend time on calculation password strength when in bulk mode
+                CalculatePasswordStrength(psw);
             return psw;
         }
 

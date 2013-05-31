@@ -1154,7 +1154,7 @@ namespace Awesome_Password_Generator
                     break;
                 }
 
-                psw = pswgen.GeneratePassword();
+                psw = pswgen.GeneratePassword(true);
                 bulkPasswords[i - 1] = psw;
 
                 // update progress bar (if needed)
