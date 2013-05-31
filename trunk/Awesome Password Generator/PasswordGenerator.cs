@@ -41,7 +41,8 @@ namespace Password_Generator
 
         public bool isReady = false;    // true if class is ready to generate passwords
 
-        private string[] workCharsets;
+        // from which password will be generated. doesn't include confused characters if user has selected appropriate checkbox
+        private string[] workCharsets;  
 
         public enum enumPasswordStrength { weak, normal, good, excellent };
         private enumPasswordStrength passwordStrength;
@@ -65,7 +66,7 @@ namespace Password_Generator
 
             charsets.Add("ruU", new charset("А..Я", "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ", 70));
             charsets.Add("ruL", new charset("а..я", "абвгдеёжзийклмнопрстуфхцчшщъыьэюя", 80));
-            charsets.Add("ru-", new charset("", "обзэОВЗЭ", -1));
+            charsets.Add("ru-", new charset("", "обзэОВЗЭ", -1)); // confusing characters
         }
 
         //--------------------------------------------------
@@ -180,7 +181,7 @@ namespace Password_Generator
             else
                 isReady = true; // class is ready to generate passwords
 
-            CalculatePasswordStrength();
+            //`CalculatePasswordStrength();
         }
 
         //--------------------------------------------------
@@ -234,6 +235,7 @@ namespace Password_Generator
                 return "";  // structure is invalid
             }
 
+            string psw = "";
             int i, j;
 
             // make password's layout
@@ -295,13 +297,10 @@ namespace Password_Generator
                 }
 
                 // generate password from layout
-                string psw = "";
                 for (i = 0; i < pgo.pswLength; i++)
                 {
                     psw += workCharsets[pswLayout[i]][(int)GetRandomWithinRange((UInt32)workCharsets[pswLayout[i]].Length - 1)];  // generate random number [0 .. workCharsets[pswLayout[i]].Length)-1]
                 }
-
-                return psw; // successfully generated
             }
             else
             {
@@ -311,8 +310,6 @@ namespace Password_Generator
                 string allCharsets = "";
                 foreach (string s in workCharsets)
                     allCharsets += s;
-
-                string psw;
 
                 while (true)
                 {
@@ -326,19 +323,24 @@ namespace Password_Generator
                     // count used charsers in the generated password.
                     // all selected charsets must be used, or, if pgo.pswLength is too small to include even a single char 
                     // from each charset, usedCharGroupsCnt must be equal to pgo.pswLength
-                    int usedCharGroupsCnt = 0;
+                    int usedCharsetsCnt = 0;
                     for (i = 0; i < workCharsets.Length; i++)
                         for (j = 0; j < pgo.pswLength; j++)
                             if (workCharsets[i].Contains(psw[j]))
                             {
-                                usedCharGroupsCnt++;
+                                usedCharsetsCnt++;
                                 break;
                             }
 
-                    if (usedCharGroupsCnt == Math.Min(workCharsets.Length, pgo.pswLength))
-                        return psw; // successfully generated
+                    // if pgo.pswLength is too small to include even a single char from each charset, usedCharGroupsCnt must be equal to pgo.pswLength
+                    if (usedCharsetsCnt == Math.Min(workCharsets.Length, pgo.pswLength))
+                        break; // successfully generated
                 }
             }
+
+            // password is successfully generated
+            CalculatePasswordStrength(psw);
+            return psw;
         }
 
         //--------------------------------------------------
@@ -364,7 +366,140 @@ namespace Password_Generator
 
         //--------------------------------------------------
 
-        private void CalculatePasswordStrength()
+        static IEnumerable<int[]> GetAllPossibleItemsCombinations(int allItems, int selectedItems)
+        {
+            if (allItems < selectedItems)
+                throw new ArgumentOutOfRangeException("allItems must be greater than selectedItems");
+
+            int[] result = new int[selectedItems];
+            bool[] items = new bool[allItems];
+            int i, j;
+
+            for (i = 0; i < allItems; i++) // initialize array - select first selectedItems items of items[] array
+                items[i] = (i < selectedItems);
+
+            // return the first combination
+            j = 0;
+            for (i = 0; i < allItems; i++)
+                if (items[i])
+                {
+                    result[j] = i;
+                    j++;
+                }
+            yield return result;
+
+            while (true)
+            {
+                // check if we reached the end of items[] array
+                int selectedItemsAtTheEndOfTheArray = 0;
+                for (i = allItems - 1; i >= 0; i--)
+                    if (items[i])
+                        selectedItemsAtTheEndOfTheArray++;
+                    else
+                        break;
+                if (selectedItemsAtTheEndOfTheArray == selectedItems)
+                    break;  // all possible combinations are found; exit
+
+                // searching item closest to the end of the items[] array
+                int lastSelectedItem = 0;
+                for (i = allItems - 1; i >= 0; i--)
+                    if (items[i])
+                    {
+                        lastSelectedItem = i;
+                        break;
+                    }
+
+                if (lastSelectedItem != allItems - 1)  // if it's not the last item of the items[] array...
+                {
+                    // move selection closer to the end of the items[] array
+                    items[lastSelectedItem] = false;
+                    items[lastSelectedItem + 1] = true;
+                }
+                else    // it's the last item of the items[] array. 
+                {
+                    // how many consecutive selected items at the end of the items[] array?
+                    for (i = allItems - 1; i >= 0; i--)
+                        if (!items[i])
+                            break;
+                    if (i == -1) break;    // in case of allItems==selectedItems
+                    int groupStart = i + 1;
+                    int groupEnd = allItems - 1;
+                    int groupSize = groupEnd - groupStart + 1;
+
+                    // move found group "left" to closest selected item
+                    for (; i >= 0; i--)
+                        if (items[i])
+                            break;  // first selected item ouside the group found
+
+                    // increase size of the group by 1 and set new borders
+                    groupStart = i;
+                    groupSize++;
+                    groupEnd = groupStart + groupSize - 1;
+
+                    for (i = groupStart; i <= groupEnd; i++)
+                        items[i] = true;    // move group
+                    for (i = groupEnd + 1; i < allItems; i++)
+                        items[i] = false;   // mark rest of the items as unselected
+
+                    // and move this whole larger group [groupStart..lastSelectedItem] to the right by 1 item
+                    items[groupStart] = false;
+                    items[groupEnd + 1] = true;
+                }
+
+                // return next combination
+                j = 0;
+                for (i = 0; i < allItems; i++)
+                    if (items[i])
+                    {
+                        result[j] = i;
+                        j++;
+                    }
+                yield return result;
+            }
+        }
+
+        //--------------------------------------------------
+
+        /// <summary>
+        /// Calculates number of combinations for password pgo.pswLength symbols long.
+        /// </summary>
+        /// <param name="charsetsAr"></param>
+        /// <returns></returns>
+        private double CalculateCombinationsNumber(string[] charsetsAr)
+        {
+            int allCharsetsLength = 0;
+            foreach (string s in charsetsAr)
+                allCharsetsLength += s.Length;  // Search Space Depth (Alphabet) size
+            
+            double combinations = Math.Pow(allCharsetsLength, pgo.pswLength);
+
+            switch (charsetsAr.Length)
+            {
+                case 1:
+                    break;
+                default:    // 2 or more
+                    // creating copy of charsetsAr without i-item
+                    for (int arLength = charsetsAr.Length - 1; arLength > 0; arLength--)
+                    {
+                        foreach (int[] ar in GetAllPossibleItemsCombinations(charsetsAr.Length, arLength))
+                        {
+                            // creating copy of charsetsAr without charsetsAr[arLength] item
+                            string[] reducedCharsetsAr = new string[arLength];
+                            for (int i = 0; i < arLength; i++)
+                                reducedCharsetsAr[i] = charsetsAr[ar[i]];
+
+                            combinations -= CalculateCombinationsNumber(reducedCharsetsAr);
+                        }
+                    }
+                    break;
+            }
+
+            return combinations;
+        }
+
+        //--------------------------------------------------
+
+        private void CalculatePasswordStrength(string psw)
         {
             double[] ppsArray = new double[]
             {
@@ -375,25 +510,82 @@ namespace Password_Generator
                 100e9,  // Offline Fast Attack Scenario (Assuming one hundred billion guesses per second)
                 100e12  // Massive Cracking Array Scenario (Assuming one hundred trillion guesses per second)
             };
-            double pps = ppsArray[2];
+            double pps = ppsArray[2];   // assume cracking speed (passwords per second)
             double[] timeBorders = new double[] { 0, 14, 90, 365 }; // in days; according to enumPasswordStrength elements: weak, normal...
 
-            double combinations = 0;
+            int allCharsetsLength = 0;
+            int i, j;
+
+
+            // filling actualCharsets[] array
+         
+            string[] actualCharsets;    // actually used in currently generated password
+
+            // count used charsers in the generated password.
+            // all selected charsets must be used, or, if pgo.pswLength is too small to include even a single char 
+            // from each charset, usedCharGroupsCnt must be equal to pgo.pswLength
+            int usedCharsetsCnt = 0;
+            for (i = 0; i < workCharsets.Length; i++)
+                for (j = 0; j < pgo.pswLength; j++)
+                    if (workCharsets[i].Contains(psw[j]))
+                    {
+                        usedCharsetsCnt++;
+                        break;
+                    }
+                    
+            // if password length is lesser then selected charsets number, not all charsets will be used, so we need to find
+            // what actual charsets are used in this paticual password.
+            actualCharsets = new string[usedCharsetsCnt];
+            int index = 0;
+            for (i = 0; i < workCharsets.Length; i++)
+                for (j = 0; j < pgo.pswLength; j++)
+                    if (workCharsets[i].Contains(psw[j]))
+                    {
+                        actualCharsets[index] = workCharsets[i];
+                        index++;
+                        break;
+                    }
+
 
             // do not narrow search space depth if "exclude confusing characters" option is checked
             // hacker does not know about this option :)
-            foreach (string cs in pgo.charsets)
-                combinations += ((charset)charsets[cs]).symbols.Length; // Search Space Depth (Alphabet)
+            //foreach (string cs in pgo.charsets)
+            //    combinations += ((charset)charsets[cs]).symbols.Length; // Search Space Depth (Alphabet)
             // OR
             // calculate true search space depth when "exclude confusing characters" option is checked
-            //foreach (string cs in workCharsets)
-            //    combinations += cs.Length;  // Search Space Depth (Alphabet)
+            foreach (string s in actualCharsets)
+                allCharsetsLength += s.Length;  // Search Space Depth (Alphabet) size
 
-            // count of all possible passwords with this alphabet size and up to this password's length
-            combinations = Math.Pow(combinations, pgo.pswLength);
+            //// count of all possible passwords with this alphabet size and up to this password's length
+            //double combinationsAll = Math.Pow(allCharsetsLength, pgo.pswLength);
+            
+            // wrong method above. Since application only accepts passwords with all selected charsets included, this also means
+            // it rejects some weak passwords, and final search space depth will be fewer.
+            double combinations = CalculateCombinationsNumber(actualCharsets);
+
+            //// aproximate calculation - another wrong method. sometimes result is below zero :)
+            //double combinationsApproximate = combinationsAll;
+            //for (int i = 0; i < actualCharsets.Length; i++)
+            //{
+            //    // creating copy of charsetsAr without i-item
+            //    string[] reducedCharsetsAr = new string[actualCharsets.Length - 1];
+            //    int index = 0;
+            //    for (int j = 0; j < actualCharsets.Length; j++)
+            //        if (j != i)
+            //        {
+            //            reducedCharsetsAr[index] = actualCharsets[j];
+            //            index++;
+            //        }
+
+            //    int charsetsLength = 0;
+            //    foreach (string s in reducedCharsetsAr)
+            //        charsetsLength += s.Length;  // Search Space Depth (Alphabet) size
+
+            //    combinationsApproximate -= Math.Pow(charsetsLength, pgo.pswLength);
+            //}
 
             double days = combinations / pps / 3600 / 24;
-            for(int i=timeBorders.Length-1;i>=0;i--)
+            for (i = timeBorders.Length - 1; i >= 0; i--)
                 if (days >= timeBorders[i])
                 {
                     passwordStrength = (enumPasswordStrength)i;
