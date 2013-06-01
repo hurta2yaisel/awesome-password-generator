@@ -1,1 +1,1 @@
-Anyway, using passwords with <font color="green">EXCELLENT</font> strength is recommended.
+Anyway, using passwords with <font style="BACKGROUND-COLOR: yellow">EXCELLENT</font> strength is recommended.
