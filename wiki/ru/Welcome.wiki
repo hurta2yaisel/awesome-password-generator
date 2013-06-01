@@ -4,7 +4,7 @@
 <g:plusone size="medium" href="https://code.google.com/p/awesome-password-generator/"></g:plusone>
 </td>
 <td valign="middle">
-[http://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [http://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
+[https://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [https://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
 </td>
 <td width="546">
 [http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.3.2-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/ru/pics/DownloadWindowsInstaller.png]
