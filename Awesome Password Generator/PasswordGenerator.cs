@@ -44,9 +44,17 @@ namespace Password_Generator
         // from which password will be generated. doesn't include confused characters if user has selected appropriate checkbox
         private string[] workCharsets;  
 
-        public enum enumPasswordStrength { weak, normal, good, excellent };
-        private enumPasswordStrength passwordStrength;
-        
+        public enum enumPasswordStrengthClass { weak, normal, good, excellent };
+
+        public struct PasswordStrengthInfo
+        {
+            public enumPasswordStrengthClass strengthClass;
+            public double combinations;
+            public string crackTime;    // e.g. "6 days" or "1 hour"
+            public double assumedSpeed;  // speed used in calculations, in passwords per second
+        }
+
+        private PasswordStrengthInfo passwordStrength;
 
         //--------------------------------------------------
         //--------------------------------------------------
@@ -180,8 +188,6 @@ namespace Password_Generator
             }
             else
                 isReady = true; // class is ready to generate passwords
-
-            //`CalculatePasswordStrength();
         }
 
         //--------------------------------------------------
@@ -512,7 +518,7 @@ namespace Password_Generator
                 100e12  // Massive Cracking Array Scenario (Assuming one hundred trillion guesses per second)
             };
             double pps = ppsArray[2];   // assume cracking speed (passwords per second)
-            double[] timeBorders = new double[] { 0, 14, 90, 365 }; // in days; according to enumPasswordStrength elements: weak, normal...
+            double[] timeBorders = new double[] { 0, 7, 60, 365 }; // in days; according to enumPasswordStrength elements: weak, normal...
 
             int allCharsetsLength = 0;
             int i, j;
@@ -557,8 +563,8 @@ namespace Password_Generator
             foreach (string s in actualCharsets)
                 allCharsetsLength += s.Length;  // Search Space Depth (Alphabet) size
 
-            //// count of all possible passwords with this alphabet size and up to this password's length
-            //double combinationsAll = Math.Pow(allCharsetsLength, pgo.pswLength);
+            // count of all possible passwords with this alphabet size and up to this password's length
+            double combinationsAll = Math.Pow(allCharsetsLength, pgo.pswLength);
             
             // wrong method above. Since application only accepts passwords with all selected charsets included, this also means
             // it rejects some weak passwords, and final search space depth will be fewer.
@@ -585,18 +591,26 @@ namespace Password_Generator
             //    combinationsApproximate -= Math.Pow(charsetsLength, pgo.pswLength);
             //}
 
+            passwordStrength.assumedSpeed = pps;
+            passwordStrength.combinations = combinations;
             double days = combinations / pps / 3600 / 24;
+            double years = days / 365;
+            if (years >= 1)
+                passwordStrength.crackTime = ((UInt32)years != 0 ? ((UInt32)years).ToString() : years.ToString("g3")) + 
+                    " year" + (years > 1 ? "s" : "");
+            else
+                passwordStrength.crackTime = ((int)days).ToString() + " day" + ((int)days != 1 ? "s" : "");
             for (i = timeBorders.Length - 1; i >= 0; i--)
                 if (days >= timeBorders[i])
                 {
-                    passwordStrength = (enumPasswordStrength)i;
+                    passwordStrength.strengthClass = (enumPasswordStrengthClass)i;
                     return;
                 }
         }
 
         //--------------------------------------------------
 
-        public enumPasswordStrength PasswordStrength
+        public PasswordStrengthInfo PasswordStrength
         {
             get { return passwordStrength; }
         }

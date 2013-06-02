@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
-        Title="Awesome Password Generator" Width="384" SizeToContent="Height" ResizeMode="CanMinimize" Closed="Window_Closed" Height="710.52"
+        Title="Awesome Password Generator" Width="400" SizeToContent="Height" ResizeMode="CanMinimize" Closed="Window_Closed" Height="710.52"
         FontFamily="Segoe UI,Microsoft Sans Serif" FontSize="12" KeyDown="Window_KeyDown">
     
     <Window.TaskbarItemInfo>
@@ -123,7 +123,14 @@
             <StackPanel Margin="4" Orientation="Vertical">
                 <TextBox Name="txtResult" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Consolas,Courier New" FontSize="20" VerticalContentAlignment="Center" TextChanged="txtResult_TextChanged" FontWeight="Bold" IsReadOnly="True" Height="54">B775621A80539A7D9032889FD4BD964CC38419449E24F4C27883E1CE52060D59</TextBox>
                 <DockPanel LastChildFill="False">
-                    <Label Name="lblStrength" DockPanel.Dock="Top" HorizontalContentAlignment="Center" Background="PaleGreen" FontWeight="Normal">Strength: GOOD</Label>
+                    <Label Name="lblStrength" DockPanel.Dock="Top" HorizontalContentAlignment="Center" Background="PaleGreen" FontWeight="Normal" Content="Strength: GOOD">
+                        <Label.ToolTip>
+                            <TextBlock>
+                                Max crack time:  <Bold><Run Name="runMaxCrackTime" /></Bold> (assumed crack speed: <Run Name="runAssumedCrackSpeed" /> pps)<LineBreak/>
+                                Combinations: <Bold><Run Name="runCombinations" /></Bold>
+                            </TextBlock>
+                        </Label.ToolTip>
+                    </Label>
                     <Separator DockPanel.Dock="Top" Height="0" Visibility="Hidden" />
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
                         <Button Name="cmdRegenerate" Click="cmdRegenerate_Click" VerticalAlignment="Center" xml:space="preserve">
