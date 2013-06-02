@@ -488,14 +488,12 @@ namespace Awesome_Password_Generator
                 lblStrength.Content = "Strength: n/a";
                 lblStrength.Background = Brushes.Gray;
             }
+
             // update tooltip
-            //tbStrengthMeterTooltip.Inlines.Clear();
-            ////tbStrengthMeterTooltip.Inlines.Add(new Run(pswgen.));
-            //tbStrengthMeterTooltip.Inlines.Add(new LineBreak());
-            //tbStrengthMeterTooltip.Inlines.Add(new Run("line2"));
             runMaxCrackTime.Text = pswgen.PasswordStrength.crackTime;
             runAssumedCrackSpeed.Text = pswgen.PasswordStrength.assumedSpeed.ToString("g3");
             runCombinations.Text = pswgen.PasswordStrength.combinations.ToString("g3");
+            runBits.Text = ((int)Math.Log(pswgen.PasswordStrength.combinations, 2)).ToString();
         }
 
         //--------------------------------------------------

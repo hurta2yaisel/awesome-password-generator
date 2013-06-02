@@ -127,7 +127,7 @@
                         <Label.ToolTip>
                             <TextBlock>
                                 Max crack time:  <Bold><Run Name="runMaxCrackTime" /></Bold> (assumed crack speed: <Run Name="runAssumedCrackSpeed" /> pps)<LineBreak/>
-                                Combinations: <Bold><Run Name="runCombinations" /></Bold>
+                                Combinations: <Bold><Run Name="runCombinations" /></Bold> (<Run Name="runBits" /> bits)
                             </TextBlock>
                         </Label.ToolTip>
                     </Label>
