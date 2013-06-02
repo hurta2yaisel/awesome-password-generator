@@ -476,18 +476,26 @@ namespace Awesome_Password_Generator
             if (expSingleGeneration.IsExpanded && (bool)chkCopyToClipboardAutomatically.IsChecked && (App.appMode == App.AppMode.normal))
                 SetClipboardText(psw);
             
-            // display password strength
+            // update password strength meter
             Brush[] brushes = new Brush[] { Brushes.LightPink, new SolidColorBrush(Color.FromArgb(255, 255, 255, 128)), new SolidColorBrush(Color.FromArgb(255, 200, 255, 200)), Brushes.LawnGreen };
             if (pswgen.isReady)
             {
-                lblStrength.Content = "Strength: " + pswgen.PasswordStrength.ToString().ToUpper();
-                lblStrength.Background = brushes[(int)pswgen.PasswordStrength];
+                lblStrength.Content = "Strength: " + pswgen.PasswordStrength.strengthClass.ToString().ToUpper();
+                lblStrength.Background = brushes[(int)pswgen.PasswordStrength.strengthClass];
             }
             else
             {
                 lblStrength.Content = "Strength: n/a";
                 lblStrength.Background = Brushes.Gray;
             }
+            // update tooltip
+            //tbStrengthMeterTooltip.Inlines.Clear();
+            ////tbStrengthMeterTooltip.Inlines.Add(new Run(pswgen.));
+            //tbStrengthMeterTooltip.Inlines.Add(new LineBreak());
+            //tbStrengthMeterTooltip.Inlines.Add(new Run("line2"));
+            runMaxCrackTime.Text = pswgen.PasswordStrength.crackTime;
+            runAssumedCrackSpeed.Text = pswgen.PasswordStrength.assumedSpeed.ToString("g3");
+            runCombinations.Text = pswgen.PasswordStrength.combinations.ToString("g3");
         }
 
         //--------------------------------------------------
