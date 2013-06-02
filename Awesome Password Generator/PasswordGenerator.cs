@@ -568,7 +568,9 @@ namespace Password_Generator
             
             // wrong method above. Since application only accepts passwords with all selected charsets included, this also means
             // it rejects some weak passwords, and final search space depth will be fewer.
-            double combinations = CalculateCombinationsNumber(actualCharsets);
+            double combinationsStrong = CalculateCombinationsNumber(actualCharsets);
+
+            double bits = Math.Log(combinationsStrong, 2);
 
             //// aproximate calculation - another wrong method. sometimes result is below zero :)
             //double combinationsApproximate = combinationsAll;
@@ -592,8 +594,8 @@ namespace Password_Generator
             //}
 
             passwordStrength.assumedSpeed = pps;
-            passwordStrength.combinations = combinations;
-            double days = combinations / pps / 3600 / 24;
+            passwordStrength.combinations = combinationsStrong;
+            double days = combinationsStrong / pps / 3600 / 24;
             double years = days / 365;
             if (years >= 1)
                 passwordStrength.crackTime = ((UInt32)years != 0 ? ((UInt32)years).ToString() : years.ToString("g3")) + 
