@@ -53,6 +53,7 @@ namespace Awesome_Password_Generator
         //---
 
         private bool initializeComponentIsCompleted = false;   // will be TRUE after InitializeComponent()
+        private bool configIsLoaded = false;    // will be TRUE after LoadConfig()
 
         private bool disableExpandersEvents = false;
         private bool lockExpanders = false;
@@ -113,6 +114,7 @@ namespace Awesome_Password_Generator
 
             // load configuration and prepare GUI
             LoadConfig();
+            configIsLoaded = true;
             cmdRegenerate_Click(null, null);    // generate password
             GenerateCommandLines();
 
@@ -458,6 +460,7 @@ namespace Awesome_Password_Generator
         private void cmdRegenerate_Click(object sender, RoutedEventArgs e)
         {
             if (!initializeComponentIsCompleted) return;
+            if (!configIsLoaded) return;
 
             PrepareToGeneration(lastExpanded_GenType, lastExpanded_PswType, ref pswgen);
             string psw = pswgen.GeneratePassword();
