@@ -20,3 +20,5 @@ Anyway, using passwords with EXCELLENT strength is recommended.
 
 == Strength meter ==
 That thing under password called the Strength meter :)    Mouse over it and you will see a tooltip with combinations number, password length in bits and maximum crack time for the currently selected password options.
+
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/StrengthMeterTooltip.png
