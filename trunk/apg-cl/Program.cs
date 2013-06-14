@@ -296,7 +296,7 @@ namespace apg_cl
             {
                 case DestinationType.console:
                     for (int i = 0; i < pgo.quantity; i++)
-                        Console.WriteLine(pswgen.GeneratePassword());
+                        Console.WriteLine(pswgen.GeneratePassword(true));   // do not spend time on unnecessary password strength calculations
                     break;
 
                 case DestinationType.file:
@@ -317,7 +317,7 @@ namespace apg_cl
                     string psw;
                     for (int i = 1; i <= pgo.quantity; i++)
                     {
-                        psw = pswgen.GeneratePassword();
+                        psw = pswgen.GeneratePassword(true);    // do not spend time on unnecessary password strength calculations
                         bulkPasswords[i - 1] = psw;
 
                         /*
