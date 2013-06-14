@@ -17,6 +17,8 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/easytotype.png
 
 == Common password (not an easy-to-type) ==
 (That is *Easy to type password* options is not checked)
-In this case you will get a common password without preference to any specific charset. 
+
+In this case you will get a common password without preference to any specific charset.
 Common passwords are more secure than easy-to-type passwords of the same length and charsets.
+
 It is one special feature however. Imagine you was selected 0..9 and a..z charsets for you password. Most password generators will generate either "strong" passwords with both numbers and letters and "weak" passwords with only digits or letters included. Assuming you have checked both charsets for a reason, Awesome Password Generator will not generate "weak" passwords. It reduces total combinations number (strength, in other words) of course, but on the other hand you will only get strong passwords.
