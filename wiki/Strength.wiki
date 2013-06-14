@@ -4,9 +4,9 @@
 Here`s how the program evaluates strength of generated passwords:
 
 || *Password strength* || *Crack time, days* ||
-|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/weak.png || 0 – 14 ||
-|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/normal.png || 14 – 90 ||
-|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/good.png || 90 – 365 ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/weak.png || 0 – 7 ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/normal.png || 7 – 60 ||
+|| http://awesome-password-generator.googlecode.com/svn/wiki/pics/good.png || 60 – 365 ||
 || http://awesome-password-generator.googlecode.com/svn/wiki/pics/excellent.png || >365 ||
 
 Crack speed: assuming 1.33 billion guesses per second (or passwords per second – pps). NVIDIA !GeForce GTX 295 can try up to 1.33 billion Vista NTLM passwords per second, so it's just a speed of a single home PC.
@@ -17,3 +17,6 @@ Professional cracking speed can be 100 billion pps and higher, but:
   * Previously mentioned professional cracking is expensive; hacker will not waste such resources and time without a good reason.
 
 Anyway, using passwords with EXCELLENT strength is recommended.
+
+== Strength meter ==
+That thing under password called the Strength meter :)    Mouse over it and you will see a tooltip with combinations number, password length in bits and maximum crack time for the currently selected password options.

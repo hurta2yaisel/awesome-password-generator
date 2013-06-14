@@ -1,5 +1,15 @@
 = Changes (what's new) =
 
+=== 14.06.2013 Version 1.4.0 ===
+  * Password strength meter now has a tooltip with combinations number, password length in bits and maximum crack time for the currently selected password options.
+
+http://awesome-password-generator.googlecode.com/svn/wiki/pics/StrengthMeterTooltip.png
+
+  * Borders of password strength "classes" are changed.
+  * Bug fixed: Password strength meter now shows a correct reduced strength when "Exclude confused characters" or "Easy-to-type passwords" options are selected.
+  * Bug fixed: Bias problem in common passwords (some passwords are generated more often then others).
+  * Bug fixed: Bias problem in easy-to-type passwords (some passwords are generated more often then others).
+
 === 22.08.2012 Version 1.3.2 ===
   * Bugs fixed;
   * Minor changes.

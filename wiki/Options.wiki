@@ -6,12 +6,11 @@ Solution is to generate password from lowercase letters (which are easiest to ty
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/easytotype.png
 
-As password includes symbols from all selected charsets, strength is not reduced.
+WARNING: Rejecting all non-an-easy-to-type passwords reduces total combinations quantity; you can see it in the strength meter.
 
 == Exclude confusing characters ==
 Some symbols like 0 (zero) and O (letter) are very similar (difficult to distinguish) which cause difficulties when typing. This option makes it possible to exclude such symbols.
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/excludeConfusingCharacters.png
 
-As long as hacker does not know you have generated password with this option, we can assume that the strength is not reduced.
-
+WARNING: Excluding this symbols leads to reduced password strength (see the strength meter).
