@@ -6,7 +6,7 @@ Solution is to generate password from lowercase letters (which are easiest to ty
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/easytotype.png
 
-<font color="red">Warning:</font> Rejecting all non-an-easy-to-type passwords reduces total combinations quantity; you can see it in the strength meter.
+<font color="red">Warning:</font> Rejecting all not-an-easy-to-type passwords reduces total combinations quantity; you can see it in the strength meter.
 
 == Exclude confusing characters ==
 Some symbols like 0 (zero) and O (letter) are very similar (difficult to distinguish) which cause difficulties when typing. This option makes it possible to exclude such symbols.

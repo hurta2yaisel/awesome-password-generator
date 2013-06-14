@@ -1,7 +1,7 @@
 = Changes (what's new) =
 
 === 14.06.2013 Version 1.4.0 ===
-  * Password strength meter now has a tooltip with combinations number, password length in bits and maximum crack time for the currently selected password options.
+  * [Strength Password strength meter] now has a tooltip with combinations number, password length in bits and maximum crack time for the currently selected password options.
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/StrengthMeterTooltip.png
 
