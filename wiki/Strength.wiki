@@ -2,7 +2,7 @@
 
 = Password strength =
 
-That thing under password is called the Strength meter and it shows you... well... password strength :)
+That thing under the password is called the Strength meter and it shows you... well... password strength :)
 Mouse over it and you will see a tooltip with combinations number, password length in bits and maximum crack time for the currently selected password options.
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/StrengthMeterTooltip.png
