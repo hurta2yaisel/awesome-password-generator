@@ -50,7 +50,7 @@
                 <StackPanel Orientation="Vertical">
                     <DockPanel>
                         <Label Margin="0,4,0,0" FontWeight="Normal">Password length</Label>
-                        <extToolkit:IntegerUpDown Name="udPswLength" Margin="4" Width="50" FontWeight="Normal" Minimum="1" Value="10" ValueChanged="udPswLength_ValueChanged" />
+                        <extToolkit:IntegerUpDown Name="udPswLength" Margin="4" Width="50" FontWeight="Normal" Minimum="1" Value="11" ValueChanged="udPswLength_ValueChanged" />
                     </DockPanel>
                     <DockPanel>
                         <CheckBox Name="chkPswLowercase" Tag="enL" Margin="4" FontWeight="Normal" IsChecked="True" Checked="cmdRegenerate_Click" Unchecked="cmdRegenerate_Click">a..z</CheckBox>
