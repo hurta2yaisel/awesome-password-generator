@@ -21,6 +21,6 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/easytotype.png
 In this case you will get a common password without preference to any specific charset.
 Common passwords are more secure than easy-to-type passwords of the same length and charsets.
 
-It is one special feature however. Imagine you was selected 0..9 and a..z charsets for you password. Most password generators will generate either "strong" passwords with both numbers and letters and "weak" passwords with only digits or letters included. And if algorithm produces a weak password (because of "accept any password" policy) and you use it, attacker can decide to run a quick brute force with lesser charsets included and accidentally win the game.
+It is one special feature however. Imagine you was selected 0..9 and a..z charsets for you password. Most password generators will generate either "strong" passwords with both numbers and letters and "weak" passwords with only digits or letters included. And if algorithm produces a weak password and you use it, attacker can decide to run a quick brute force with lesser charsets included and accidentally win the game.
 
-Assuming you have checked both charsets for a reason, *Awesome Password Generator* will not generate "weak" passwords. It reduces total combinations number of course, but on the other hand you will only get strong passwords.
+Assuming you have checked both charsets for a reason, *Awesome Password Generator* will not generate "weak" passwords. It reduces total combinations number of course (strength meter reflects this reduction), but on the other hand you will only get strong passwords.
