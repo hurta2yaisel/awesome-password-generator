@@ -546,7 +546,31 @@ namespace Password_Generator
         /// <returns></returns>
         private double CalculateStrongCombinationsNumber(string[] charsetsAr)
         {
-            //` todo: describe this function
+            // Imagine user has checked 0..9 and a..z charsets and password length is... let's say 7. How many combinations possible?
+            // easy: (09.len+az.len)^7 == (10+26)^7. But it includes either "strong" passwords with both numbers and letters and "weak" passwords 
+            // with only digits or letters included. Assuming user has checked both charsets for a reason, application must not generate
+            // "weak" passwords. It reduces total combinations number of course, but how much exactly combinations remains?
+            // Simple subtraction will help: we already know all combinations number - (10+26)^7, also we have 10^7 passwords with only digits
+            // and 26^7 password with letters only. So it will be  
+            // (09+az)^7 - 09^7 - az^7 == (10+26)^7 - 10^7 - 26^7  == 7.03e+10
+            // "strong" passwords.
+            //
+            // Another example - with same password length but more charsets: 0..9, a..z, #..$.
+            // Here passwords with 2 charsets will be also "weak", together with 1 charset passwords.
+            // Assumption 
+            // (09+az+#$)^7 - (09+az)^7 - (09+#$)^7 - (az+#$)^7 - 09^7 - az^7 - #$^7 
+            //       ^             ^          ^           ^        ^      ^      ^
+            // all passwords       weak passwords with only       weak passwords with
+            //                           2 charsets                  only 1 charset
+            // is wrong, because we subtracting too much: (09+az)^7, for example, includes 09^7 and az^7. Correct answer is:
+            // (09+az+#$)^7 - ((09+az)^7 - 09^7 - az^7) - ((09+#$)^7 - 09^7 - #$^7) - ((az+#$)^7 - az^7 - #$^7) - 09^7 - az^7 - #$^7 ==
+            // (10+26+32)^7 - ((10+26)^7 - 10^7 - 26^7) - ((10+32)^7 - 10^7 - 32^7) - ((26+32)^7 - 26^7 - 32^7) - 10^7 - 26^7 - 32^7 ==
+            // == 4.25e+12
+            //
+            // Let's skip example with 4 charsets, ok? ;)
+            // Auxiliary GetAllPossibleItemsCombinations() function do some rearranging. 
+            // For example, from (09, az, #$) it returns (09, az), (09, #$) and (az, #$),
+            // (09, az) -> (09) and (az), and so on.
 
             int allCharsetsLength = 0;
             foreach (string s in charsetsAr)
