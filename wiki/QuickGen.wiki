@@ -16,4 +16,4 @@ To alter password length and other properties just open the application normally
 
 == Security warning ==
 
-Since *Copy to clipboard automatically* and *Clear clipboard on exit* options are ignored in the !QuickGen mode, the generated password will always be copied to the clipboard and stay there until something else replaces it. It's recommended to rewrite clipboard after using password (just copy something else to it).
+Since *Copy to clipboard automatically* and *Clear clipboard on exit* options are ignored in the !QuickGen mode, the generated password will always be copied to the clipboard and stay there until something else replaces it. It's recommended to rewrite clipboard after using password (just copy something else into it).

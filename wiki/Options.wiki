@@ -16,7 +16,7 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/easytotype.png
 <font color="red">Warning:</font> Rejecting all not-an-easy-to-type passwords reduces total combinations quantity; you can see it in the strength meter.
 
 == Common password (not an easy-to-type) ==
-(That is *Easy to type password* options is not checked)
+(That is *Easy to type password* option is not checked)
 
 In this case you will get a common password without preference to any specific charset.
 Common passwords are more secure than easy-to-type passwords of the same length and charsets.
