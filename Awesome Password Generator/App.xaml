@@ -8,8 +8,8 @@
                 Description="Generate Wi-Fi WPA passphrase"
                 Arguments="--quickgen:wpa"
                 IconResourceIndex="0" />
-            <JumpTask Title="Common password"
-                Description="Generate common password"
+            <JumpTask Title="Password"
+                Description="Generate a single password"
                 Arguments="--quickgen:password"
                 IconResourceIndex="0" />
         </JumpList>
