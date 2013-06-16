@@ -1,14 +1,16 @@
 = Changes (what's new) =
 
 === 06/14/2013 Version 1.4.0 ===
-  * [Strength Password strength meter] now has a tooltip with combinations number, password length in bits and maximum crack time for the currently selected password options.
+  * [Strength Password strength meter] now has a tooltip with combinations number, password length in bits and maximum crack time for the currently selected password options;
 
 http://awesome-password-generator.googlecode.com/svn/wiki/pics/StrengthMeterTooltip.png
 
-  * Borders of password strength "classes" are changed (see [Strength Password strength] section).
-  * Bug fixed: Password strength meter now shows a correct reduced strength when *Exclude confused characters* or *Easy-to-type passwords* options are selected. Strength is also reduces while generating common (not an easy-to-type) passwords because of excluding weak passwords (which doesn't include all selected charsets). (See [Strength Password strength] and [Options Options] sections).
-  * Bug fixed: Bias problem in common passwords (some passwords are generated more often then others).
-  * Bug fixed: Bias problem in easy-to-type passwords (some passwords are generated more often then others).
+  * Borders of password strength "classes" are changed (see [Strength Password strength] section);
+  * Bug fixed: Password strength meter now shows a correct reduced strength when *Exclude confused characters* or *Easy-to-type passwords* options are selected. Strength is also reduces while generating common (not an easy-to-type) passwords because of excluding weak passwords (which doesn't include all selected charsets). (See [Strength Password strength] and [Options Options] sections);
+  * Bug fixed: Bias problem in common passwords (some passwords are generated more often then others);
+  * Bug fixed: Bias problem in easy-to-type passwords (some passwords are generated more often then others);
+  * Minor changes.
+Sincere gratitude to Michael Samuel, who found thouse bugs and helped me fix them.
 
 === 08/22/2012 Version 1.3.2 ===
   * Bugs fixed;
