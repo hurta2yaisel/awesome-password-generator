@@ -10,7 +10,7 @@ http://awesome-password-generator.googlecode.com/svn/wiki/pics/StrengthMeterTool
   * Bug fixed: Bias problem in common passwords (some passwords are generated more often then others);
   * Bug fixed: Bias problem in easy-to-type passwords (some passwords are generated more often then others);
   * Minor changes.
-Sincere gratitude to Michael Samuel, who found thouse bugs and helped me fix them.
+Sincere gratitude to Michael Samuel, who found those bugs and helped me fix them!
 
 === 08/22/2012 Version 1.3.2 ===
   * Bugs fixed;
