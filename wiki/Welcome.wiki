@@ -7,8 +7,8 @@
 [https://code.google.com/p/awesome-password-generator/ http://awesome-password-generator.googlecode.com/svn/wiki/pics/en.png] [https://code.google.com/p/awesome-password-generator/wiki/Welcome?wl=ru&tm=6 http://awesome-password-generator.googlecode.com/svn/wiki/pics/ru.png]
 </td>
 <td width="546">
-[http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.3.2-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadWindowsInstaller.png]
-[http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.3.2-portable.zip http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadPortableVersion.png]
+[http://code.google.com/p/awesome-password-generator/downloads/detail?name=agp1.4.0-setup.exe http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadWindowsInstaller.png]
+[http://code.google.com/p/awesome-password-generator/downloads/detail?name=apg1.4.0-portable.zip http://awesome-password-generator.googlecode.com/svn/wiki/pics/DownloadPortableVersion.png]
 </td>
 </tr>
 </table>
@@ -19,7 +19,7 @@
 <tr>
 <td valign="top">
 = News =
-Version *1.3.2* released! See [Changes what's new] and download it!
+Version *1.4.0* released! See [Changes what's new] and download it!
 = Description =
 *Awesome Password Generator* is an easy to use application for quick generation of common passwords or Wi-Fi (WPA) passphrases. Just launch the generator and a shiny new password will be copied in the clipboard automatically!
   * Common, "general purpose" passwords for e-mail, online accounts and any desktop applications;
