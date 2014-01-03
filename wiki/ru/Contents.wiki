@@ -1,9 +1,12 @@
 #labels Featured
 
 = Содержание =
+  === [Changes Изменения] ===
+  === [Screenshots Скриншоты] ===
+
   === [Strength Стойкость пароля] ===
   === [Options Опции] ===
   === [QuickGen] ===
   === [ConsoleVersion Консольная версия (apg-cl.exe)] ===
-  === [Changes Изменения] ===
+
   === [Donate Помочь проекту] ===
