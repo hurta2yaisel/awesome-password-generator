@@ -1,9 +1,12 @@
 #labels Featured
 
 = Contents =
+  === [Changes What's new?] ===
+  === [Screenshots Screenshots]
+
   === [Strength Password strength] ===
   === [Options] ===
   === [QuickGen] ===
   === [ConsoleVersion Console version (apg-cl.exe)] ===
-  === [Changes What's new?] ===
+
   === [Donate] ===
