@@ -2,7 +2,7 @@
 
 = Contents =
   === [Changes What's new?] ===
-  === [Screenshots Screenshots]
+  === [Screenshots Screenshots] ===
 
   === [Strength Password strength] ===
   === [Options] ===
