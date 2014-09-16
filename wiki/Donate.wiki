@@ -91,20 +91,3 @@ RUR purse: <b>410011190316396</b>
 </td>
 </tr>
 </table>
-
-<br>
-
-== QIWI purse ==
-
-<table border="0" cellpadding="0">
-<tr>
-<td>
-[http://awesome-password-generator.googlecode.com/svn/wiki/pics/qiwi.png]
-</td>
-<td width="20"></td>
-<td>
-*9277070022*
-</td>
-</tr>
-</table>
-
